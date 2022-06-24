@@ -33,12 +33,16 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+Ctrl+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec "rofi -run-command '/bin/bash -c -i {cmd}' -show run"
+
+#Start game launcher as a floating window
+bindsym $mod+g exec "python /run/media/spandan/Projects/Python/GameLauncher/glaunch.py" 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
+exec --no-startup-id i3-volome
 bindsym $mod+Ctrl+m exec alacritty -e 'alsamixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
@@ -46,8 +50,8 @@ bindsym $mod+Ctrl+m exec alacritty -e 'alsamixer'
 
 # mouse bt volume
 # exec --no-startup-id xbindkeys
-bindsym button9 --whole-window exec "pactl set-sink-volume 1 +5%; exec notify-send 'Volume up'"
-bindsym button8 --whole-window exec "pactl set-sink-volume 1 -5%; exec notify-send 'Volume down'"
+bindsym button9 --whole-window exec "pactl set-sink-volume 1 +10%;
+bindsym button8 --whole-window exec "pactl set-sink-volume 1 -10%;
 ################################################################################################
 
 # Screen brightness controls
@@ -58,10 +62,10 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 bindsym Scroll_Lock exec xset led named "Scroll Lock"
 
 # Start Applications
-bindsym $mod+F2 exec google-chrome-stable
+bindsym $mod+F2 exec prime-run google-chrome-stable --force-dark-mode
 bindsym $mod+F3 exec thunar
-bindsym $mod+t exec --no-startup-id pkill compton
-bindsym $mod+Ctrl+t exec --no-startup-id compton -b
+bindsym $mod+t exec --no-startup-id pkill picom
+bindsym $mod+Ctrl+t exec --no-startup-id picom -b
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print --release exec --no-startup-id scrot ~/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png
 bindsym $mod+Print --release exec --no-startup-id scrot -w ~/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S.png
@@ -97,7 +101,6 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -127,16 +130,22 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
+set $ws1 ≥ 
+set $ws2 ꔮ
+set $ws3 🗀
+set $ws4 ♪
+set $ws5 📚
+set $ws6 🎮 
 set $ws7 7
 set $ws8 8
 
-# switch to workspace
+#launch apps in workspaces
+#exec --no-startup-id i3-msg 'workspace ≥ ; exec alacritty'
+#exec --no-startup-id i3-msg 'workspace ꔮ; exec google-chrome-stable'
+#exec --no-startup-id i3-msg 'workspace 🗀; exec thunar' 
+#exec --no-startup-id i3-msg 'workspace 📚; exec okular && alacritty'
+
+# switch to workspace                   
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
@@ -178,9 +187,10 @@ for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="qbittorrent"] floating enable border normal
+for_window [class="qBittorrent"] floating enable border normal
 
 for_window [class="OpenGL"] floating enable border normal
+for_window [class="Tk" instance="tk"] floating enable
 for_window [class="steam"] flaoting enable border normal
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -243,9 +253,10 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
-exec --no-startup-id compton
+exec --no-startup-id picom
 exec --no-startup-id bluetoothctl power on
 exec_always --no-startup-id udiskie
+exec_always --no-startup-id autotiling
 # Disable keyboard on startup
 exec --no-startup-id xinput float 15
 exec --no-startup-id blueman-applet
@@ -296,8 +307,8 @@ bindsym $mod+Shift+Ctrl+b bar mode toggle
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
 set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-set_from_resource $bg_alt i3wm.color1 #f0f0f0
+set_from_resource $bg i3wm.color3 #f0f0f0
+set_from_resource $bg_alt i3wm.color8 #f0f0f0
 
 # class                 border  backgr. text indicator child_border
 client.focused          $bg     $bg     $fg  $bg       $bg
@@ -362,3 +373,33 @@ mode "$mode_gaps_outer" {
 		bindsym Return mode "default"
 		bindsym Escape mode "default"
 }
+# Review the lines below and append to ~/.config/i3/config
+
+## Volume control
+
+# Path to volume control, without trailing slash
+set $volumepath ~/i3-volume
+
+# Command for the status line
+#   ie: i3blocks, i3status
+set $statuscmd i3status
+
+# Signal used to update the status line
+#   i3blocks uses SIGRTMIN+10 by default
+#   i3status uses SIGUSR1 by default
+set $statussig SIGUSR1
+
+# Amount to increase/decrease volume as a percentage
+set $volumestep 5
+
+# pulseaudio-utils settings
+#
+# Symbolic name for sink (numeric index not supported)
+#   Recommended: comment out this setting and omit the -s option to use default sink
+#   List sink names: pacmd list-sinks | awk -F "[<>]" '/^\s+name: <.*>/{print $2}'
+#set $sinkname alsa_output.pci-0000_00_1b.0.analog-stereo
+
+# Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
+bindsym XF86AudioRaiseVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig up $volumestep
+bindsym XF86AudioLowerVolume exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig down $volumestep
+bindsym XF86AudioMute        exec --no-startup-id $volumepath/volume -n -t $statuscmd -u $statussig mute

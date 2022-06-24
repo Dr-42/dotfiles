@@ -1,0 +1,134 @@
+01:10:23.073: CPU Name: Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+01:10:23.073: CPU Speed: 2700.000MHz
+01:10:23.074: Physical Cores: 2, Logical Cores: 4
+01:10:23.074: Physical Memory: 15887MB Total, 4396MB Free
+01:10:23.074: Kernel Version: Linux 5.18.2-arch1-1
+01:10:23.074: Distribution: "Arch Linux" Unknown
+01:10:23.074: Session Type: x11
+01:10:23.074: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.21.1
+01:10:23.075: Qt Version: 5.15.4 (runtime), 5.15.3 (compiled)
+01:10:23.075: Portable mode: false
+01:10:23.117: OBS 27.2.4-1 (linux)
+01:10:23.117: ---------------------------------
+01:10:23.117: ---------------------------------
+01:10:23.117: audio settings reset:
+01:10:23.117: 	samples per sec: 48000
+01:10:23.117: 	speakers:        2
+01:10:23.119: ---------------------------------
+01:10:23.119: Initializing OpenGL...
+01:10:23.197: Loading up OpenGL on adapter Intel Mesa Intel(R) HD Graphics 620 (KBL GT2)
+01:10:23.197: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 22.1.1, shading language 4.60
+01:10:23.252: ---------------------------------
+01:10:23.252: video settings reset:
+01:10:23.252: 	base resolution:   1920x1080
+01:10:23.252: 	output resolution: 1280x720
+01:10:23.252: 	downscale filter:  Bicubic
+01:10:23.252: 	fps:               30/1
+01:10:23.252: 	format:            NV12
+01:10:23.252: 	YUV mode:          709/Partial
+01:10:23.253: NV12 texture support not available
+01:10:23.256: Audio monitoring device:
+01:10:23.256: 	name: Default
+01:10:23.256: 	id: default
+01:10:23.256: ---------------------------------
+01:10:23.258: Failed to load 'en-US' text for module: 'decklink-captions.so'
+01:10:23.259: Failed to load 'en-US' text for module: 'decklink-ouput-ui.so'
+01:10:23.345: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+01:10:23.345: No blackmagic support
+01:10:23.352: v4l2loopback not installed, virtual camera disabled
+01:10:23.392: NVENC supported
+01:10:23.392: FFMPEG VAAPI supported
+01:10:23.409: os_dlopen(/usr//lib/obs-plugins/sndio.so->/usr//lib/obs-plugins/sndio.so): libsndio.so.7: cannot open shared object file: No such file or directory
+01:10:23.409: 
+01:10:23.409: Module '/usr//lib/obs-plugins/sndio.so' not loaded
+01:10:23.410: ---------------------------------
+01:10:23.410:   Loaded Modules:
+01:10:23.410:     text-freetype2.so
+01:10:23.410:     rtmp-services.so
+01:10:23.410:     obs-x264.so
+01:10:23.410:     obs-transitions.so
+01:10:23.410:     obs-outputs.so
+01:10:23.410:     obs-libfdk.so
+01:10:23.410:     obs-filters.so
+01:10:23.410:     obs-ffmpeg.so
+01:10:23.410:     linux-v4l2.so
+01:10:23.410:     linux-pulseaudio.so
+01:10:23.410:     linux-jack.so
+01:10:23.410:     linux-decklink.so
+01:10:23.410:     linux-capture.so
+01:10:23.410:     linux-alsa.so
+01:10:23.410:     image-source.so
+01:10:23.410:     frontend-tools.so
+01:10:23.410:     decklink-ouput-ui.so
+01:10:23.410:     decklink-captions.so
+01:10:23.410: ---------------------------------
+01:10:23.410: ==== Startup complete ===============================================
+01:10:23.416: No scene file found, creating default scene
+01:10:23.477: All scene data cleared
+01:10:23.477: ------------------------------------------------
+01:10:23.493: pulse-input: Server name: 'pulseaudio 16.0'
+01:10:23.494: pulse-input: Audio format: s16le, 44100 Hz, 2 channels
+01:10:23.494: pulse-input: Started recording from 'bluez_sink.F4_4E_FD_0A_DC_4C.a2dp_sink.monitor'
+01:10:23.612: pulse-input: Server name: 'pulseaudio 16.0'
+01:10:23.613: pulse-input: Audio format: s16le, 44100 Hz, 2 channels
+01:10:23.613: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+01:10:23.613: Switched to scene 'Scene'
+01:10:23.614: Failed to glob scene collections
+01:10:24.220: adding 42 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Desktop Audio)
+01:10:24.220: 
+01:10:24.392: [rtmp-services plugin] Successfully updated file 'services.json' (version 195)
+01:10:24.392: [rtmp-services plugin] Successfully updated package (version 195)
+01:10:36.136: 
+01:10:36.136: ==== Auto-config wizard testing commencing ======
+
+01:10:37.657: ---------------------------------
+01:10:37.657: video settings reset:
+01:10:37.657: 	base resolution:   1920x1080
+01:10:37.657: 	output resolution: 1280x720
+01:10:37.657: 	downscale filter:  Bicubic
+01:10:37.657: 	fps:               30/1
+01:10:37.657: 	format:            NV12
+01:10:37.657: 	YUV mode:          709/Partial
+01:10:37.658: NV12 texture support not available
+01:10:37.671: 
+01:10:37.671: ==== Auto-config wizard testing stopping ========
+
+01:10:47.720: xshm-input: Geometry 1920x1080 @ 0,0
+01:10:47.747: User added source 'Screen Capture (XSHM)' (xshm_input) to scene 'Scene'
+01:10:57.813: pulse-input: Server name: 'pulseaudio 16.0'
+01:10:57.814: pulse-input: Audio format: s16le, 44100 Hz, 2 channels
+01:10:57.814: pulse-input: Started recording from 'bluez_sink.F4_4E_FD_0A_DC_4C.a2dp_sink.monitor'
+01:10:57.821: User added source 'Audio Output Capture (PulseAudio)' (pulse_output_capture) to scene 'Scene'
+01:11:28.549: ---------------------------------
+01:11:28.550: [NVENC encoder: 'simple_h264_recording'] settings:
+01:11:28.550: 	rate_control: CQP
+01:11:28.550: 	bitrate:      0
+01:11:28.550: 	cqp:          21
+01:11:28.550: 	keyint:       250
+01:11:28.550: 	preset:       hq
+01:11:28.550: 	profile:      high
+01:11:28.550: 	width:        1280
+01:11:28.550: 	height:       720
+01:11:28.550: 	2-pass:       false
+01:11:28.550: 	b-frames:     2
+01:11:28.550: 	psycho-aq:    1
+01:11:28.550: 	GPU:          0
+01:11:28.550: 
+01:11:28.680: [NVENC encoder: 'simple_h264_recording'] Failed to open NVENC codec: Generic error in an external library
+01:11:28.680: [NVENC encoder] nvenc_create_internal failed, trying again without Psycho Visual Tuning
+01:11:28.680: ---------------------------------
+01:11:28.681: [NVENC encoder: 'simple_h264_recording'] settings:
+01:11:28.681: 	rate_control: CQP
+01:11:28.681: 	bitrate:      0
+01:11:28.681: 	cqp:          21
+01:11:28.681: 	keyint:       250
+01:11:28.681: 	preset:       hq
+01:11:28.681: 	profile:      high
+01:11:28.681: 	width:        1280
+01:11:28.681: 	height:       720
+01:11:28.681: 	2-pass:       false
+01:11:28.681: 	b-frames:     2
+01:11:28.681: 	psycho-aq:    0
+01:11:28.681: 	GPU:          0
+01:11:28.681: 
+01:11:28.724: [NVENC encoder: 'simple_h264_recording'] Failed to open NVENC codec: Generic error in an external library

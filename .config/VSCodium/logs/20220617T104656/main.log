@@ -1,0 +1,10 @@
+[2022-06-17 10:46:56.618] [main] [info] update#setState idle
+[2022-06-17 10:46:58.202] [main] [info] Starting extension host with pid 57494 (fork() took 14 ms).
+[2022-06-17 10:47:26.628] [main] [info] update#setState checking for updates
+[2022-06-17 10:47:26.948] [main] [info] update#setState idle
+[2022-06-17 10:55:28.980] [main] [info] Extension host with pid 57494 exited with code: 0, signal: null.
+[2022-06-17 10:55:30.349] [main] [info] Starting extension host with pid 58915 (fork() took 18 ms).
+[2022-06-17 11:00:35.285] [main] [info] Extension host with pid 58915 exited with code: 0, signal: null.
+[2022-06-17 11:00:36.685] [main] [info] Starting extension host with pid 59183 (fork() took 17 ms).
+[2022-06-17 11:01:32.962] [main] [info] Waiting for extension host with pid 59183 to exit.
+[2022-06-17 11:01:32.982] [main] [info] Extension host with pid 59183 exited with code: 0, signal: null.

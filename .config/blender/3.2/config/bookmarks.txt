@@ -1,0 +1,4 @@
+[Bookmarks]
+[Recent]
+/run/media/spandan/Projects/C++/OpenGL/resources/cube/
+/run/media/spandan/Projects/C++/OpenGL/resources/andre/

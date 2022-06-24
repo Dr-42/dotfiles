@@ -1,0 +1,24 @@
+[2022-06-17T05:31:41.001Z] Log level: Info
+[2022-06-17T05:31:41.003Z] [info] Validating found git in: git
+[2022-06-17T05:31:41.039Z] [info] Using git 2.36.1 from git
+[2022-06-17T05:31:41.061Z] > git rev-parse --show-toplevel [4ms]
+[2022-06-17T05:31:41.062Z] fatal: not a git repository (or any parent up to mount point /run/media/spandan)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[2022-06-17T05:31:41.089Z] > git rev-parse --show-toplevel [12ms]
+[2022-06-17T05:31:41.089Z] fatal: not a git repository (or any parent up to mount point /run/media/spandan)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[2022-06-17T05:31:41.112Z] > git rev-parse --show-toplevel [7ms]
+[2022-06-17T05:31:41.112Z] fatal: not a git repository (or any parent up to mount point /run/media/spandan)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[2022-06-17T05:31:41.124Z] > git rev-parse --show-toplevel [3ms]
+[2022-06-17T05:31:41.124Z] fatal: not a git repository (or any parent up to mount point /run/media/spandan)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[2022-06-17T05:31:41.133Z] > git rev-parse --show-toplevel [3ms]
+[2022-06-17T05:31:41.134Z] fatal: not a git repository (or any parent up to mount point /run/media/spandan)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[2022-06-17T05:31:41.579Z] > git rev-parse --show-toplevel [46ms]
+[2022-06-17T05:31:41.579Z] fatal: not a git repository (or any parent up to mount point /run/media/spandan)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).
+[2022-06-17T05:31:49.946Z] > git rev-parse --show-toplevel [1ms]
+[2022-06-17T05:31:49.946Z] fatal: not a git repository (or any parent up to mount point /run/media/spandan)
+Stopping at filesystem boundary (GIT_DISCOVERY_ACROSS_FILESYSTEM not set).

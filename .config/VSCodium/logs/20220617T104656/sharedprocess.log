@@ -1,0 +1,21 @@
+[2022-06-17 10:46:59.222] [sharedprocess] [info] Starting worker process with pid 57529 (type: fileWatcher, window: 1).
+[2022-06-17 10:52:02.646] [sharedprocess] [info] Installing extension: github.copilot
+[2022-06-17 10:52:04.440] [sharedprocess] [info] Extracted extension to /home/spandan/.vscode-oss/extensions/.75a4dfe3-e154-4154-88c4-eb4c3654aed5: github.copilot
+[2022-06-17 10:52:04.490] [sharedprocess] [info] Renamed to /home/spandan/.vscode-oss/extensions/github.copilot-1.30.6165
+[2022-06-17 10:52:04.491] [sharedprocess] [info] Extracting completed. github.copilot
+[2022-06-17 10:52:04.492] [sharedprocess] [info] Extension installed successfully: github.copilot
+[2022-06-17 10:55:18.094] [sharedprocess] [info] Installing extension: github.copilot
+[2022-06-17 10:55:19.515] [sharedprocess] [info] Deleted from disk github.copilot /home/spandan/.vscode-oss/extensions/github.copilot-1.30.6165
+[2022-06-17 10:55:19.729] [sharedprocess] [info] Extracted extension to /home/spandan/.vscode-oss/extensions/.00c8a545-67e4-48b3-aaf3-db2acecede70: github.copilot
+[2022-06-17 10:55:19.777] [sharedprocess] [info] Renamed to /home/spandan/.vscode-oss/extensions/github.copilot-1.30.6165
+[2022-06-17 10:55:19.781] [sharedprocess] [info] Extracting completed. github.copilot
+[2022-06-17 10:55:19.781] [sharedprocess] [info] Extension installed successfully: github.copilot
+[2022-06-17 10:55:28.966] [sharedprocess] [info] Worker process with pid 57529 terminated normally (type: fileWatcher, window: 1).
+[2022-06-17 10:55:30.376] [sharedprocess] [info] Starting worker process with pid 58914 (type: fileWatcher, window: 1).
+[2022-06-17 10:55:53.808] [sharedprocess] [info] Installing extension: github.vscode-pull-request-github
+[2022-06-17 10:55:55.577] [sharedprocess] [info] Extracted extension to /home/spandan/.vscode-oss/extensions/.64cf7502-d436-4dfe-a58b-f05398512fa8: github.vscode-pull-request-github
+[2022-06-17 10:55:55.589] [sharedprocess] [info] Renamed to /home/spandan/.vscode-oss/extensions/github.vscode-pull-request-github-0.45.2022061609
+[2022-06-17 10:55:55.591] [sharedprocess] [info] Extracting completed. github.vscode-pull-request-github
+[2022-06-17 10:55:55.593] [sharedprocess] [info] Extension installed successfully: github.vscode-pull-request-github
+[2022-06-17 11:00:35.285] [sharedprocess] [info] Worker process with pid 58914 terminated normally (type: fileWatcher, window: 1).
+[2022-06-17 11:00:36.687] [sharedprocess] [info] Starting worker process with pid 59181 (type: fileWatcher, window: 1).

@@ -1,0 +1,6 @@
+[Info] /home/spandan/.ssh/config: ENOENT: no such file or directory, open '/home/spandan/.ssh/config'
+[Info] TemporaryState> Error in initialization: Unable to delete nonexistent file '/home/spandan/.config/VSCodium/User/globalStorage/github.vscode-pull-request-github/temp'
+[Info] Registering git provider
+[Info] Looking for git repository
+[Info] Found 0 repositories during activation
+[Info] Git repository found, initializing review manager and pr tree view.

@@ -1,0 +1,15 @@
+[2022-06-17 11:01:40.577] [exthost] [info] Extension host with pid 60034 started
+[2022-06-17 11:01:40.578] [exthost] [info] Skipping acquiring lock for /home/spandan/.config/VSCodium/User/workspaceStorage/8a41819aa9a261da0c29748a487a12ca.
+[2022-06-17 11:01:40.730] [exthost] [info] ExtensionService#_doActivateExtension vscode.debug-auto-launch, startup: true, activationEvent: '*'
+[2022-06-17 11:01:40.740] [exthost] [info] ExtensionService#_doActivateExtension vscode.git-base, startup: true, activationEvent: '*', root cause: vscode.git
+[2022-06-17 11:01:40.743] [exthost] [info] ExtensionService#_doActivateExtension vscode.ipynb, startup: true, activationEvent: '*'
+[2022-06-17 11:01:40.747] [exthost] [info] ExtensionService#_doActivateExtension vscode.github-authentication, startup: true, activationEvent: '*', root cause: GitHub.vscode-pull-request-github
+[2022-06-17 11:01:40.840] [exthost] [info] ExtensionService#_doActivateExtension vscode.git, startup: true, activationEvent: '*'
+[2022-06-17 11:01:40.913] [exthost] [info] ExtensionService#_doActivateExtension vscode.github, startup: true, activationEvent: '*'
+[2022-06-17 11:01:40.921] [exthost] [info] ExtensionService#_doActivateExtension GitHub.vscode-pull-request-github, startup: true, activationEvent: '*'
+[2022-06-17 11:01:41.216] [exthost] [info] Eager extensions activated
+[2022-06-17 11:01:41.244] [exthost] [info] ExtensionService#_doActivateExtension vscode.emmet, startup: false, activationEvent: 'onStartupFinished'
+[2022-06-17 11:01:41.251] [exthost] [info] ExtensionService#_doActivateExtension vscode.merge-conflict, startup: false, activationEvent: 'onStartupFinished'
+[2022-06-17 11:01:41.255] [exthost] [info] ExtensionService#_doActivateExtension GitHub.copilot, startup: false, activationEvent: 'onStartupFinished'
+[2022-06-17 11:02:28.951] [exthost] [info] Extension host terminating: received terminate message from renderer
+[2022-06-17 11:02:28.965] [exthost] [info] Extension host with pid 60034 exiting with code 0
