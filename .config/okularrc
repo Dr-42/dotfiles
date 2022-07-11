@@ -1,11 +1,23 @@
 [Desktop Entry]
 FullScreen=false
 
+[General]
+CommandBarLastUsedActions=
+
 [MainWindow]
-RestorePositionForNextInstance=false
-State=AAAA/wAAAAD9AAAAAAAAB34AAAO7AAAABAAAAAQAAAAIAAAACPwAAAADAAAAAQAAAAEAAAAsAHEAdQBpAGMAawBBAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHICAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
+State=AAAA/wAAAAD9AAAAAAAAB34AAAPEAAAABAAAAAQAAAAIAAAACPwAAAADAAAAAQAAAAEAAAAsAHEAdQBpAGMAawBBAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHICAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAFgBtAGEAaQBuAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAAAAAAAAAAAIAAAABAAAAIgBhAG4AbgBvAHQAYQB0AGkAbwBuAFQAbwBvAGwAQgBhAHIAAAAAAP////8AAAAAAAAAAA==
 ToolBarsMovable=Disabled
 eDP-1 Height 1920x1080=1037
 eDP-1 Width 1920x1080=1918
 eDP-1 XPosition 1920x1080=1
 eDP-1 YPosition 1920x1080=42
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/Hollow Knight - City of Tears.pdf
+File2[$e]=/run/media/spandan/SpandyHDD/Data/Books Sorted/PDF/Medical books/NEET PG Questions/NEET-PG-2020-Question-Paper-With-Solutions.pdf
+File3[$e]=/run/media/spandan/SpandyHDD/Data/Books Sorted/PDF/Medical books/NEET PG Questions/NEET-PG-2019-Question-Paper-With-Solutions.pdf
+File4[$e]=/run/media/spandan/SpandyHDD/Data/Books Sorted/PDF/Coding/Hacking for Dummies.pdf
+Name1[$e]=Hollow Knight - City of Tears.pdf
+Name2[$e]=NEET-PG-2020-Question-Paper-With-Solutions.pdf
+Name3[$e]=NEET-PG-2019-Question-Paper-With-Solutions.pdf
+Name4[$e]=Hacking for Dummies.pdf

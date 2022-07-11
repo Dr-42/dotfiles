@@ -12,7 +12,6 @@ nnoremap <C-Home> :call vimspector#StepOut()<CR>
 
 call plug#begin()
 
-Plug 'github/copilot.vim'
 Plug 'preservim/nerdtree'
 
 Plug 'vim-airline/vim-airline'
@@ -27,6 +26,7 @@ Plug 'aserowy/tmux.nvim'
 
 call plug#end()
 
+let g:rehash256 = 1
 colorscheme wal
 
 nnoremap <C-n> :NERDTreeToggle<CR>

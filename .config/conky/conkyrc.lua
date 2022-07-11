@@ -45,9 +45,9 @@ conky.config = {
 	color2 = '#AAAAAA',
 	color3 = '#888888',
 -- Orange
-	color4 = '#2d4667',
+	color4 = '#4f266a',
 -- Green
-	color5 = '#BB5D63',
+	color5 = '#A8454F',
 };
 
 conky.text = [[

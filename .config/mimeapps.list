@@ -8,12 +8,18 @@ application/pdf=okularApplication_pdf.desktop
 image/jpeg=feh.desktop
 application/x-desktop=nvim.desktop
 image/png=feh.desktop
+inode/directory=thunar.desktop
+text/x-python=nvim.desktop
+text/plain=nvim.desktop
 
 [Added Associations]
 application/pdf=google-chrome.desktop;okularApplication_pdf.desktop;
 image/jpeg=gimp.desktop;feh.desktop;
 application/x-desktop=nvim.desktop;
-image/png=feh.desktop;
+image/png=gimp.desktop;feh.desktop;
 x-scheme-handler/http=xfce4-web-browser.desktop;
 x-scheme-handler/https=xfce4-web-browser.desktop;
 image/heif=gimp.desktop;
+text/x-python=nvim.desktop;
+text/plain=nvim.desktop;
+application/x-ms-dos-executable=wine.desktop;

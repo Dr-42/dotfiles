@@ -26,7 +26,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178708
+      "expiry": 1657572671368
     },
     "/usr/sbin/python3.v3": {
       "data": {
@@ -51,7 +51,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178682
+      "expiry": 1657572671370
     },
     "/usr/sbin/python.v3": {
       "data": {
@@ -76,7 +76,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178684
+      "expiry": 1657572671373
     },
     "/bin/python3.10.v3": {
       "data": {
@@ -101,7 +101,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178689
+      "expiry": 1657572671384
     },
     "/bin/python3.v3": {
       "data": {
@@ -126,7 +126,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178690
+      "expiry": 1657572671385
     },
     "/bin/python.v3": {
       "data": {
@@ -151,7 +151,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178691
+      "expiry": 1657572671386
     },
     "/usr/bin/python3.10.v3": {
       "data": {
@@ -176,7 +176,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178693
+      "expiry": 1657572671387
     },
     "/usr/bin/python3.v3": {
       "data": {
@@ -201,7 +201,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178694
+      "expiry": 1657572671388
     },
     "/usr/bin/python.v3": {
       "data": {
@@ -226,7 +226,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178694
+      "expiry": 1657572671389
     },
     "INTERPRETERS_CACHE_v3_CurrentPathService": [
       {
@@ -322,7 +322,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178710
+      "expiry": 1657572671398
     },
     "/sbin/python3.10.v3": {
       "data": {
@@ -347,7 +347,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178706
+      "expiry": 1657572671395
     },
     "/sbin/python3.v3": {
       "data": {
@@ -372,7 +372,7 @@
         "sysPrefix": "/usr",
         "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71"
       },
-      "expiry": 1656021178707
+      "expiry": 1657572671397
     },
     "INTERPRETERS_CACHE_v3_KnownPathsService": [
       {
@@ -791,30 +791,6 @@
       }
     ],
     "PipEnvInformation": [],
-    "InterpreterAutoSeletionRule-currentPath": {
-      "architecture": 3,
-      "path": "/usr/bin/python",
-      "version": {
-        "options": {
-          "loose": false,
-          "includePrerelease": false
-        },
-        "loose": false,
-        "raw": "3.10.5-final",
-        "major": 3,
-        "minor": 10,
-        "patch": 5,
-        "prerelease": [
-          "final"
-        ],
-        "build": [],
-        "version": "3.10.5-final"
-      },
-      "sysPrefix": "/usr",
-      "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
-      "type": "Unknown",
-      "cachedEntry": true
-    },
     "preferredGlobalPyInterpreter": {
       "architecture": 3,
       "path": "/usr/bin/python",
@@ -843,28 +819,28 @@
         "displayName": "Python 3.10.5 64-bit",
         "hash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71-c12ad1801131e2ec9b07e626a66f5fba"
       },
-      "expiry": 1656021178722
+      "expiry": 1657572671567
     },
     "/bin/python.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.10.5 64-bit",
         "hash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71-08fa36efb095a6d81de8eec6ab34e679"
       },
-      "expiry": 1655700293971
+      "expiry": 1657572671473
     },
     "/usr/sbin/python.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.10.5 64-bit",
         "hash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71-acd84181b67308f37b8e27efa8abe7c3"
       },
-      "expiry": 1655700293973
+      "expiry": 1657572671475
     },
     "/sbin/python.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.10.5 64-bit",
         "hash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71-f55385eee89d76f030ec1dfeae3c4bbc"
       },
-      "expiry": 1655700293974
+      "expiry": 1657572671477
     },
     "InterpreterAutoSeletionRule-system": {
       "architecture": 3,
@@ -888,7 +864,6 @@
       "sysPrefix": "/usr",
       "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
       "type": "Unknown",
-      "cachedEntry": true,
       "displayName": "Python 3.10.5 64-bit"
     },
     "InterpreterAutoSeletionRule-cachedInterpreters": {
@@ -913,7 +888,6 @@
       "sysPrefix": "/usr",
       "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
       "type": "Unknown",
-      "cachedEntry": true,
       "displayName": "Python 3.10.5 64-bit"
     },
     "/usr/bin/python.interpreter.Details.v7": {
@@ -941,12 +915,11 @@
           "sysPrefix": "/usr",
           "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
           "type": "Unknown",
-          "cachedEntry": true,
           "displayName": "Python 3.10.5 64-bit",
           "__store": true
         }
       },
-      "expiry": 1656021178717
+      "expiry": 1657572671513
     },
     "/bin/python.interpreter.Details.v7": {
       "data": {
@@ -976,7 +949,7 @@
           "displayName": "Python 3.10.5 64-bit"
         }
       },
-      "expiry": 1655700293982
+      "expiry": 1657572671498
     },
     "/usr/sbin/python.interpreter.Details.v7": {
       "data": {
@@ -1006,7 +979,7 @@
           "displayName": "Python 3.10.5 64-bit"
         }
       },
-      "expiry": 1655700293986
+      "expiry": 1657572671501
     },
     "/sbin/python.interpreter.Details.v7": {
       "data": {
@@ -1036,16 +1009,136 @@
           "displayName": "Python 3.10.5 64-bit"
         }
       },
-      "expiry": 1655700293989
+      "expiry": 1657572671505
     },
-    "ProposeLSBanner": false
-  },
-  "coc-python|/run/media/spandan/Projects/Python/GameLauncher": {
-    "INTERPRETERS_CACHE_v3_PipEnvService": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
-    "INTERPRETERS_CACHE_v3_PipEnvService:fb815366ac8fd1abe68ab6991e8ec6c2": [],
-    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:fb815366ac8fd1abe68ab6991e8ec6c2": [],
-    "autoSelectedWorkspacePythonInterpreter-/run/media/spandan/Projects/Python/GameLauncher": {
+    "ProposeLSBanner": false,
+    "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python3.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.5-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 5,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.5-final"
+        },
+        "sysPrefix": "/run/media/spandan/Projects/Python/GameLauncher/GL",
+        "fileHash": "25a5fba50977a700c35020de839292c3a5aa0ae33e2f049430d7f54abf106cfb0ae95bd919f386cda00cd449de6ccfe98684d505152d160939d981ac00c4b383"
+      },
+      "expiry": 1657009685714
+    },
+    "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.5-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 5,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.5-final"
+        },
+        "sysPrefix": "/run/media/spandan/Projects/Python/GameLauncher/GL",
+        "fileHash": "a704cc737dc58f7daf98ba43a62101bf062916feb8ad848108000b9e056697b66d6d938c6cc2d6225b8ed62eceb32355a1d334c2150e250640ff620a01b5b92f"
+      },
+      "expiry": 1657009685691
+    },
+    "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python3.10.v3": {
+      "data": {
+        "architecture": 3,
+        "path": "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python3.10",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.10.5-final",
+          "major": 3,
+          "minor": 10,
+          "patch": 5,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.10.5-final"
+        },
+        "sysPrefix": "/run/media/spandan/Projects/Python/GameLauncher/GL",
+        "fileHash": "c6adac78b0c432f93ea60644b673f831d7e45fdd9cd51ce8ee2b210f428a5f27dd73d7d7bb54808390e698a93ef278a0098bd40c9cc218bc58f24c5e338fff6b"
+      },
+      "expiry": 1657009685709
+    },
+    "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.10.5 64-bit ('GL': venv)",
+        "hash": "a704cc737dc58f7daf98ba43a62101bf062916feb8ad848108000b9e056697b66d6d938c6cc2d6225b8ed62eceb32355a1d334c2150e250640ff620a01b5b92f-f2965fa3f3ccf15ca84344646fc45135"
+      },
+      "expiry": 1657009685856
+    },
+    "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python3.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "25a5fba50977a700c35020de839292c3a5aa0ae33e2f049430d7f54abf106cfb0ae95bd919f386cda00cd449de6ccfe98684d505152d160939d981ac00c4b383"
+      },
+      "expiry": 1657009685862
+    },
+    "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python.interpreter.Details.v7": {
+      "data": {
+        "fileHash": "a704cc737dc58f7daf98ba43a62101bf062916feb8ad848108000b9e056697b66d6d938c6cc2d6225b8ed62eceb32355a1d334c2150e250640ff620a01b5b92f",
+        "info": {
+          "architecture": 3,
+          "path": "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.10.5-final",
+            "major": 3,
+            "minor": 10,
+            "patch": 5,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.10.5-final"
+          },
+          "sysPrefix": "/run/media/spandan/Projects/Python/GameLauncher/GL",
+          "fileHash": "a704cc737dc58f7daf98ba43a62101bf062916feb8ad848108000b9e056697b66d6d938c6cc2d6225b8ed62eceb32355a1d334c2150e250640ff620a01b5b92f",
+          "envName": "GL",
+          "type": "Venv",
+          "displayName": "Python 3.10.5 64-bit ('GL': venv)"
+        }
+      },
+      "expiry": 1657009685886
+    },
+    "/run/media/spandan/Projects/Python/GameLauncher/GL/bin/python3.interpreter.displayName.v7": {
+      "data": {
+        "displayName": "Python 3.10.5 64-bit ('GL': venv)",
+        "hash": "25a5fba50977a700c35020de839292c3a5aa0ae33e2f049430d7f54abf106cfb0ae95bd919f386cda00cd449de6ccfe98684d505152d160939d981ac00c4b383-4ecf605a659880dfa53317e664311c16"
+      },
+      "expiry": 1657009685897
+    },
+    "InterpreterAutoSeletionRule-currentPath": {
       "architecture": 3,
       "path": "/usr/bin/python",
       "version": {
@@ -1068,6 +1161,13 @@
       "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
       "type": "Unknown"
     }
+  },
+  "coc-python|/run/media/spandan/Projects/Python/GameLauncher": {
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService:fb815366ac8fd1abe68ab6991e8ec6c2": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:fb815366ac8fd1abe68ab6991e8ec6c2": [],
+    "SelectedPythonPath": "/usr/bin/python"
   },
   "coc-python|/home/spandan/Hazel": {
     "INTERPRETERS_CACHE_v3_PipEnvService:46ff81f85e803c6bace55f898bec338a": [],
@@ -1232,6 +1332,184 @@
     "INTERPRETERS_CACHE_v3_PipEnvService:54f83a10cbc834bffbc9c40069f75d8b": [],
     "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:54f83a10cbc834bffbc9c40069f75d8b": [],
     "autoSelectedWorkspacePythonInterpreter-/run/media/spandan/Projects/C++/2DEngine": {
+      "architecture": 3,
+      "path": "/usr/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.5-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 5,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.5-final"
+      },
+      "sysPrefix": "/usr",
+      "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/run/media/spandan/Projects/C++/CppBuild": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:ed6fc5b75540927f0dea819368ec23b0": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:ed6fc5b75540927f0dea819368ec23b0": [],
+    "autoSelectedWorkspacePythonInterpreter-/run/media/spandan/Projects/C++/CppBuild": {
+      "architecture": 3,
+      "path": "/usr/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.5-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 5,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.5-final"
+      },
+      "sysPrefix": "/usr",
+      "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/home/spandan/tmp": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:276a7f3870bb2b902759c95f5b659792": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:276a7f3870bb2b902759c95f5b659792": [],
+    "autoSelectedWorkspacePythonInterpreter-/home/spandan/tmp": {
+      "architecture": 3,
+      "path": "/usr/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.5-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 5,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.5-final"
+      },
+      "sysPrefix": "/usr",
+      "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/home/spandan/.wine/drive_c/Dead Cells": {
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": [],
+    "INTERPRETERS_CACHE_v3_PipEnvService": []
+  },
+  "coc-python|/run/media/spandan/Projects/C++/Music": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:93236e978e6bd5fc88e29beb88109f71": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:93236e978e6bd5fc88e29beb88109f71": [],
+    "autoSelectedWorkspacePythonInterpreter-/run/media/spandan/Projects/C++/Music": {
+      "architecture": 3,
+      "path": "/usr/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.5-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 5,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.5-final"
+      },
+      "sysPrefix": "/usr",
+      "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/run/media/spandan/Projects/C++/SoundGen": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:21f0a9ec998336c0f4e1dced21d2c61e": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:21f0a9ec998336c0f4e1dced21d2c61e": [],
+    "autoSelectedWorkspacePythonInterpreter-/run/media/spandan/Projects/C++/SoundGen": {
+      "architecture": 3,
+      "path": "/usr/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.5-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 5,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.5-final"
+      },
+      "sysPrefix": "/usr",
+      "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/home/spandan/test": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:e37ef10f42447692b4eced205b0f8f93": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:e37ef10f42447692b4eced205b0f8f93": [],
+    "autoSelectedWorkspacePythonInterpreter-/home/spandan/test": {
+      "architecture": 3,
+      "path": "/usr/bin/python",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.10.5-final",
+        "major": 3,
+        "minor": 10,
+        "patch": 5,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.10.5-final"
+      },
+      "sysPrefix": "/usr",
+      "fileHash": "8cdf47b8a3844e0d69b2b5d835d8cedc2cd481983c55bcac42407a601e89bab264ac1e8a67518902489ec39db6bee5b8193a8b7685860da58d793155098bff71",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
+  },
+  "coc-python|/home/spandan/GameLauncher": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:e0844e24c3eb5707684f7eb8b23a689c": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:e0844e24c3eb5707684f7eb8b23a689c": [],
+    "autoSelectedWorkspacePythonInterpreter-/home/spandan/GameLauncher": {
       "architecture": 3,
       "path": "/usr/bin/python",
       "version": {

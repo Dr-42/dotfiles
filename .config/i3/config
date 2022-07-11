@@ -37,7 +37,7 @@ bindsym $mod+Ctrl+d exec --no-startup-id dmenu_run
 bindsym $mod+d exec "rofi -run-command '/bin/bash -c -i {cmd}' -show run"
 
 #Start game launcher as a floating window
-bindsym $mod+g exec "python /run/media/spandan/Projects/Python/GameLauncher/glaunch.py" 
+bindsym $mod+g exec "/home/spandan/GameLauncher/glaunch.py" 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
@@ -191,6 +191,7 @@ for_window [class="qBittorrent"] floating enable border normal
 
 for_window [class="OpenGL"] floating enable border normal
 for_window [class="Tk" instance="tk"] floating enable
+for_window [class="Toplevel"] floating enable
 for_window [class="steam"] flaoting enable border normal
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
