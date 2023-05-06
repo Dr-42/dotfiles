@@ -55,6 +55,12 @@ require('packer').startup(function(use)
   -- File Broswer
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
+  -- DAP
+  use { "mfussenegger/nvim-dap" }
+  use { "rcarriga/nvim-dap-ui" }
+  use { "theHamsta/nvim-dap-virtual-text" }
+  use { "nvim-telescope/telescope-dap.nvim" }
+
   -- Copilot
   use { 'github/copilot.vim' }
 
@@ -63,7 +69,11 @@ require('packer').startup(function(use)
     "startup-nvim/startup.nvim",
     requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
     config = function()
-      require"startup".setup{theme = "dashboard"}
+      -- ignore git and node_modules
+      require"startup".setup{
+        theme = "dashboard",
+      }
+
     end
   }
 
