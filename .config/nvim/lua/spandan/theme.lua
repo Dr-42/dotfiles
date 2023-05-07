@@ -41,4 +41,6 @@ require("catppuccin").setup({
     },
 })
 
-vim.cmd [[colorscheme catppuccin]]
+-- vim.cmd [[colorscheme catppuccin]]
+vim.g.nightflyTransparent = true
+vim.cmd [[colorscheme nightfly]]

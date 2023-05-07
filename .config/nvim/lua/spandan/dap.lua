@@ -17,7 +17,7 @@ vim.api.nvim_set_keymap('n', '<leader>dl', '<Cmd>lua require"dap".run_last()<CR>
 vim.api.nvim_set_keymap('n', '<leader>dui', '<Cmd>lua require"dapui".toggle()<CR>', {desc = '[D]AP [U][I]'})
 
 -- set dap icons
-vim.fn.sign_define('DapBreakpoint', { text = '⭕', texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpoint', { text = '🟥' , texthl = '', linehl = '', numhl = '' })
 vim.fn.sign_define('DapStopped', { text = '🟢', texthl = '', linehl = '', numhl = '' })
 
 dap.adapters.python = {
@@ -66,10 +66,14 @@ dap.configurations.cpp = {
     end,
     cwd = '${workspaceFolder}',
     stopOnEntry = true,
-    args = {},
+    args = function()
+      args = vim.fn.input('Arguments: ', '', 'file')
+      return args ~= '' and vim.split(args, ' ', true) or nil
+    end,
     runInTerminal = false,
   },
 }
 
-  -- Re-use the configuration for C
-  dap.configurations.c = dap.configurations.cpp
+-- Re-use the configuration for C
+dap.configurations.c = dap.configurations.cpp
+dap.configurations.rust = dap.configurations.cpp

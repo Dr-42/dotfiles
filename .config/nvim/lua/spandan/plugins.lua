@@ -40,6 +40,7 @@ require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   use { "catppuccin/nvim", as = "catppuccin" } -- Colorscheme
+  use { "bluz71/vim-nightfly-colors", as = "nightfly" } -- Colorscheme
   use 'kyazdani42/nvim-web-devicons' -- Icons
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
