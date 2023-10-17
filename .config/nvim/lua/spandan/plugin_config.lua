@@ -77,7 +77,7 @@ require('telescope').setup {
         ['<C-d>'] = false,
       },
     },
-    file_ignore_patterns = { 'node_modules', 'vendor', '.git' },
+    file_ignore_patterns = { 'node_modules', 'vendor', '.git', '.cache', '.bld_cpp', 'target' },
   },
 }
 

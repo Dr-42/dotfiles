@@ -7,6 +7,8 @@ vim.o.number = true
 
 -- Set tabstop to 4 spaces
 vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -36,4 +38,7 @@ if vim.fn.has 'win32' == 1 then
   vim.o.shell = 'pwsh'
   --vim.o.shell = 'C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -shell zsh'
 end
+
+-- Hide line numbers in terminal windows
+vim.cmd [[ au TermOpen term://* setlocal nonumber norelativenumber | setfiletype terminal ]]
 
