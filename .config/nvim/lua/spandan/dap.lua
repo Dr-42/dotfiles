@@ -33,9 +33,9 @@ local nvimad7EnginePath = vim.fn.stdpath('data') .. '/mason/packages/cpptools/ex
 local nvimad7EngineExists = vim.fn.filereadable(nvimad7EnginePath) == 1
 
 if not nvimad7EngineExists then
-  print('nvim-dap.ad7Engine.json not found, copying from cppdbg.ad7Engine.json')
+  print('cpptools.ad7Engine.json not found, copying from cppdbg.ad7Engine.json')
   if cppad7EngineExists then
-    print('cppdbg.ad7Engine.json found, copying to nvim-dap.ad7Engine.json')
+    print('cppdbg.ad7Engine.json found, copying to cpptools.ad7Engine.json')
     -- copy cppdbg.cppad7Engine.json to nvim-dap.ad7Engine.json
     vim.fn.system('cp ' .. cppad7EnginePath .. ' ' .. nvimad7EnginePath)
   else
