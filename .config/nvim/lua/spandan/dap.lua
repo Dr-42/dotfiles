@@ -26,22 +26,10 @@ dap.adapters.python = {
   args = {'-m', 'debugpy.adapter'};
 }
 
--- setup cpptools adapter
-dap.adapters.cpptools = {
-  type = 'executable',
-  name = "cpptools",
-  command = vim.fn.stdpath('data') .. '/mason/bin/OpenDebugAD7',
-  args = {},
-  attach = {
-    pidProperty = "processId",
-    pidSelect = "ask"
-  },
-}
-
--- check if nvim-dap.ad7Engine.json exists
+-- check if cpptools.ad7Engine.json exists
 local cppad7EnginePath = vim.fn.stdpath('data') .. '/mason/packages/cpptools/extension/debugAdapters/bin/cppdbg.ad7Engine.json'
 local cppad7EngineExists = vim.fn.filereadable(cppad7EnginePath) == 1
-local nvimad7EnginePath = vim.fn.stdpath('data') .. '/mason/packages/cpptools/extension/debugAdapters/bin/nvim-dap.ad7Engine.json'
+local nvimad7EnginePath = vim.fn.stdpath('data') .. '/mason/packages/cpptools/extension/debugAdapters/bin/cpptools.ad7Engine.json'
 local nvimad7EngineExists = vim.fn.filereadable(nvimad7EnginePath) == 1
 
 if not nvimad7EngineExists then
@@ -54,6 +42,18 @@ if not nvimad7EngineExists then
     print('cppdbg.ad7Engine.json not found, not copying')
   end
 end
+
+local is_win = vim.fn.has('win32') == 1
+
+-- setup cpptools adapter
+dap.adapters.cpptools = {
+  id = "cpptools",
+  type = 'executable',
+  command = vim.fn.stdpath('data') .. '/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
+  options = {
+    detached = !is_win,
+  }
+}
 
 -- this configuration should start cpptools and the debug the executable main in the current directory when executing :DapContinue
 dap.configurations.cpp = {

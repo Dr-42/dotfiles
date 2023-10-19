@@ -46,8 +46,13 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
+  -- Colorschemes
+  use ({ 'projekt0n/github-nvim-theme' })
   use { "catppuccin/nvim", as = "catppuccin" } -- Colorscheme
   use { "bluz71/vim-nightfly-colors", as = "nightfly" } -- Colorscheme
+  use { "folke/tokyonight.nvim", as = "tokyonight" } -- Colorscheme
+  use { "ayu-theme/ayu-vim", as = "ayu" } -- Colorscheme
+
   use 'kyazdani42/nvim-web-devicons' -- Icons
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
@@ -84,6 +89,9 @@ require('packer').startup(function(use)
 
     end
   }
+
+  -- Rust
+  use("simrat39/rust-tools.nvim")
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')

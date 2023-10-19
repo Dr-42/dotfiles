@@ -41,6 +41,8 @@ require("catppuccin").setup({
     },
 })
 
+vim.cmd [[colorscheme ayu]]
+-- vim.cmd [[colorscheme github_dark_dimmed]]
 -- vim.cmd [[colorscheme catppuccin]]
-vim.g.nightflyTransparent = true
-vim.cmd [[colorscheme nightfly]]
+-- vim.g.nightflyTransparent = true
+-- vim.cmd [[colorscheme nightfly]]
