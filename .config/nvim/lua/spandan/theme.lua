@@ -1,6 +1,6 @@
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
-    background = { -- :h background
+    background = {     -- :h background
         light = "latte",
         dark = "mocha",
     },
@@ -13,7 +13,7 @@ require("catppuccin").setup({
         percentage = 0.15,
     },
     no_italic = false, -- Force no italic
-    no_bold = false, -- Force no bold
+    no_bold = false,   -- Force no bold
     styles = {
         comments = { "italic" },
         conditionals = { "italic" },
@@ -41,7 +41,37 @@ require("catppuccin").setup({
     },
 })
 
+require('ayu').setup({
+    overrides = {
+        Normal = { bg = "None" },
+        ColorColumn = { bg = "None" },
+        SignColumn = { bg = "None" },
+        Folded = { bg = "None" },
+        FoldColumn = { bg = "None" },
+        CursorLine = { bg = "None" },
+        CursorColumn = { bg = "None" },
+        WhichKeyFloat = { bg = "None" },
+        VertSplit = { bg = "None" },
+    },
+})
+
+require('ayu_green').setup({
+    overrides = {
+        -- Normal = { bg = "None" },
+        -- ColorColumn = { bg = "None" },
+        -- SignColumn = { bg = "None" },
+        -- Folded = { bg = "None" },
+        -- FoldColumn = { bg = "None" },
+        -- CursorLine = { bg = "None" },
+        -- CursorColumn = { bg = "None" },
+        -- WhichKeyFloat = { bg = "None" },
+        -- VertSplit = { bg = "None" },
+    },
+})
+
+-- vim.cmd [[colorscheme paper]]
 vim.cmd [[colorscheme ayu]]
+-- vim.cmd [[colorscheme ayu-green]]
 -- vim.cmd [[colorscheme github_dark_dimmed]]
 -- vim.cmd [[colorscheme catppuccin]]
 -- vim.g.nightflyTransparent = true

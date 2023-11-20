@@ -41,23 +41,38 @@ require('packer').startup(function(use)
     after = 'nvim-treesitter',
   }
 
+  use {
+    'folke/noice.nvim',
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  }
+
+  vim.opt.termguicolors = true
+  require('notify').setup {
+    background_colour = "#000000",
+  }
+
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
   -- Colorschemes
-  use ({ 'projekt0n/github-nvim-theme' })
-  use { "catppuccin/nvim", as = "catppuccin" } -- Colorscheme
+  use({ 'projekt0n/github-nvim-theme' })
+  use { "catppuccin/nvim", as = "catppuccin" }          -- Colorscheme
   use { "bluz71/vim-nightfly-colors", as = "nightfly" } -- Colorscheme
-  use { "folke/tokyonight.nvim", as = "tokyonight" } -- Colorscheme
-  use { "ayu-theme/ayu-vim", as = "ayu" } -- Colorscheme
+  use { "folke/tokyonight.nvim", as = "tokyonight" }    -- Colorscheme
+  use { "Shatur/neovim-ayu", as = "ayu" }               -- Colorscheme
+  use { "Dr-42/neovim-ayu-green", as = "ayu_green" }    -- Colorscheme
+  use { "yorickpeterse/vim-paper", as = "paper" }       -- Colorscheme
 
-  use 'kyazdani42/nvim-web-devicons' -- Icons
-  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
-  use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
-  use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
-  use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
+  use 'kyazdani42/nvim-web-devicons'                    -- Icons
+  use 'nvim-lualine/lualine.nvim'                       -- Fancier statusline
+  use 'lukas-reineke/indent-blankline.nvim'             -- Add indentation guides even on blank lines
+  use 'numToStr/Comment.nvim'                           -- "gc" to comment visual regions/lines
+  use 'tpope/vim-sleuth'                                -- Detect tabstop and shiftwidth automatically
 
   -- Fuzzy Finder (files, lsp, etc)
   use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
@@ -80,18 +95,33 @@ require('packer').startup(function(use)
   -- Startup nvim
   use {
     "startup-nvim/startup.nvim",
-    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
     config = function()
       -- ignore git and node_modules
-      require"startup".setup{
+      require "startup".setup {
         theme = "dashboard",
       }
-
     end
   }
 
   -- Rust
   use("simrat39/rust-tools.nvim")
+
+  -- Autoformat
+  use("elentok/format-on-save.nvim")
+
+  -- Show colors from hex codes
+  use("norcalli/nvim-colorizer.lua")
+
+  use { "Dr-42/error-jump.nvim", as = "error-jump" }
+
+  -- Compile mode
+  use { "ej-shafran/compile-mode.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "m00qek/baleia.nvim",
+    },
+  }
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')

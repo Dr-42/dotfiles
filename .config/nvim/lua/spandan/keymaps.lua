@@ -20,6 +20,12 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer]' })
 
+--[[ vim.keymap.set('n', '<leader>sa', function()
+  vim.ui.input({prompt = ' Search For > ', cancelreturn = '', completion = 'dir', history = 'search'}, function(input)
+  require('telescope.builtin').grep_string({ search = input })
+  end)
+  end, { desc = '[S]earch [A]ll' }) ]]
+
 vim.keymap.set('n', '<leader>lg', require('telescope.builtin').live_grep, { desc = '[L]ive [G]rep' })
 
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
@@ -29,6 +35,10 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser' })
 vim.keymap.set('n', '<leader>tl', ":botright split | resize 7 | terminal<CR>", { desc = '[T]ermina[L]' })
+
+vim.keymap.set('n', '<leader>es', require('error-jump').jump_to_error, { desc = '[E]rror [S]ource' })
+vim.keymap.set('n', '<leader>en', require('error-jump').next_error, { desc = '[E]rror [N]ext' })
+vim.keymap.set('n', '<leader>eN', require('error-jump').next_error, { desc = '[E]rror [N]previous' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)

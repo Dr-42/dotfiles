@@ -1,3 +1,7 @@
+-- Make all files create with unix line endings
+vim.o.fileformat = 'unix'
+vim.o.fileformats = 'unix,dos'
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
@@ -35,10 +39,12 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- Set shell to pwsh on windows
 if vim.fn.has 'win32' == 1 then
-  vim.o.shell = 'pwsh'
-  --vim.o.shell = 'C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -shell zsh'
+    vim.o.shell = 'pwsh -NoLogo'
+    vim.o.shellcmdflag = '-NoProfile -command'
+    vim.o.shellquote = '\"'
+    vim.o.shellxquote = ''
+    --vim.o.shell = 'C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -shell zsh'
 end
 
 -- Hide line numbers in terminal windows
 vim.cmd [[ au TermOpen term://* setlocal nonumber norelativenumber | setfiletype terminal ]]
-

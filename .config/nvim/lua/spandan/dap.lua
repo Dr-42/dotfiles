@@ -33,9 +33,9 @@ local nvimad7EnginePath = vim.fn.stdpath('data') .. '/mason/packages/cpptools/ex
 local nvimad7EngineExists = vim.fn.filereadable(nvimad7EnginePath) == 1
 
 if not nvimad7EngineExists then
-  print('cpptools.ad7Engine.json not found, copying from cppdbg.ad7Engine.json')
+  print('nvim-dap.ad7Engine.json not found, copying from cppdbg.ad7Engine.json')
   if cppad7EngineExists then
-    print('cppdbg.ad7Engine.json found, copying to cpptools.ad7Engine.json')
+    print('cppdbg.ad7Engine.json found, copying to nvim-dap.ad7Engine.json')
     -- copy cppdbg.cppad7Engine.json to nvim-dap.ad7Engine.json
     vim.fn.system('cp ' .. cppad7EnginePath .. ' ' .. nvimad7EnginePath)
   else
@@ -43,7 +43,6 @@ if not nvimad7EngineExists then
   end
 end
 
-local is_win = vim.fn.has('win32') == 1
 
 -- setup cpptools adapter
 dap.adapters.cpptools = {
@@ -51,7 +50,7 @@ dap.adapters.cpptools = {
   type = 'executable',
   command = vim.fn.stdpath('data') .. '/mason/packages/cpptools/extension/debugAdapters/bin/OpenDebugAD7',
   options = {
-    detached = !is_win,
+    detached = false,
   }
 }
 

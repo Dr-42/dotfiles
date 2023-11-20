@@ -157,6 +157,7 @@ local opts = {
         -- enable clippy on save
         checkOnSave = {
           command = "clippy",
+          allTargets = false,
         },
       },
     },
