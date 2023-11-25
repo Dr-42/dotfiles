@@ -1,7 +1,7 @@
 require("spandan.plugins")
 require("spandan.settings")
 require("spandan.plugin_config")
+require("spandan.theme")
 require("spandan.keymaps")
 require("spandan.lsp")
-require("spandan.theme")
 require("spandan.dap")

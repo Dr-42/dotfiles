@@ -49,11 +49,6 @@ require('packer').startup(function(use)
     }
   }
 
-  vim.opt.termguicolors = true
-  require('notify').setup {
-    background_colour = "#000000",
-  }
-
   -- Git related plugins
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'

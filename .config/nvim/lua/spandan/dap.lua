@@ -4,32 +4,35 @@ require('dap').defaults.fallback.terminal_win_cmd = "50vsplit new"
 -- set up nvim-dap-ui
 require('dapui').setup()
 
--- Keymaps 
-vim.api.nvim_set_keymap('n', '<leader>dc', '<Cmd>lua require"dap".continue()<CR>', { desc = '[D]AP [C]ontinue'})
-vim.api.nvim_set_keymap('n', '<leader>ds', '<Cmd>lua require"dap".step_over()<CR>', {desc = '[D]AP [S]tep over'})
-vim.api.nvim_set_keymap('n', '<leader>di', '<Cmd>lua require"dap".step_into()<CR>', {desc = '[D]AP Step [I]nto'})
-vim.api.nvim_set_keymap('n', '<leader>do', '<Cmd>lua require"dap".step_out()<CR>', {desc = '[D]AP Step [O]ut'})
-vim.api.nvim_set_keymap('n', '<leader>db', '<Cmd>lua require"dap".toggle_breakpoint()<CR>', {desc = '[D]AP [B]reakpoint toggle'})
-vim.api.nvim_set_keymap('n', '<leader>dR', '<Cmd>lua require"dap".repl.open()<CR>', {desc = '[D]AP [R]epl'})
-vim.api.nvim_set_keymap('n', '<leader>dl', '<Cmd>lua require"dap".run_last()<CR>', {desc = '[D]AP run [L]ast'})
+-- Keymaps
+vim.api.nvim_set_keymap('n', '<leader>dc', '<Cmd>lua require"dap".continue()<CR>', { desc = '[D]AP [C]ontinue' })
+vim.api.nvim_set_keymap('n', '<leader>ds', '<Cmd>lua require"dap".step_over()<CR>', { desc = '[D]AP [S]tep over' })
+vim.api.nvim_set_keymap('n', '<leader>di', '<Cmd>lua require"dap".step_into()<CR>', { desc = '[D]AP Step [I]nto' })
+vim.api.nvim_set_keymap('n', '<leader>do', '<Cmd>lua require"dap".step_out()<CR>', { desc = '[D]AP Step [O]ut' })
+vim.api.nvim_set_keymap('n', '<leader>db', '<Cmd>lua require"dap".toggle_breakpoint()<CR>',
+  { desc = '[D]AP [B]reakpoint toggle' })
+vim.api.nvim_set_keymap('n', '<leader>dR', '<Cmd>lua require"dap".repl.open()<CR>', { desc = '[D]AP [R]epl' })
+vim.api.nvim_set_keymap('n', '<leader>dl', '<Cmd>lua require"dap".run_last()<CR>', { desc = '[D]AP run [L]ast' })
 
 -- DapUI keymaps
-vim.api.nvim_set_keymap('n', '<leader>dui', '<Cmd>lua require"dapui".toggle()<CR>', {desc = '[D]AP [U][I]'})
+vim.api.nvim_set_keymap('n', '<leader>dui', '<Cmd>lua require"dapui".toggle()<CR>', { desc = '[D]AP [U][I]' })
 
 -- set dap icons
-vim.fn.sign_define('DapBreakpoint', { text = '🟥' , texthl = '', linehl = '', numhl = '' })
+vim.fn.sign_define('DapBreakpoint', { text = '🟥', texthl = '', linehl = '', numhl = '' })
 vim.fn.sign_define('DapStopped', { text = '🟢', texthl = '', linehl = '', numhl = '' })
 
 dap.adapters.python = {
-  type = 'executable';
-  command = 'python';
-  args = {'-m', 'debugpy.adapter'};
+  type = 'executable',
+  command = 'python',
+  args = { '-m', 'debugpy.adapter' },
 }
 
 -- check if cpptools.ad7Engine.json exists
-local cppad7EnginePath = vim.fn.stdpath('data') .. '/mason/packages/cpptools/extension/debugAdapters/bin/cppdbg.ad7Engine.json'
+local cppad7EnginePath = vim.fn.stdpath('data') ..
+    '/mason/packages/cpptools/extension/debugAdapters/bin/cppdbg.ad7Engine.json'
 local cppad7EngineExists = vim.fn.filereadable(cppad7EnginePath) == 1
-local nvimad7EnginePath = vim.fn.stdpath('data') .. '/mason/packages/cpptools/extension/debugAdapters/bin/cpptools.ad7Engine.json'
+local nvimad7EnginePath = vim.fn.stdpath('data') ..
+    '/mason/packages/cpptools/extension/debugAdapters/bin/cpptools.ad7Engine.json'
 local nvimad7EngineExists = vim.fn.filereadable(nvimad7EnginePath) == 1
 
 if not nvimad7EngineExists then
@@ -66,10 +69,11 @@ dap.configurations.cpp = {
     cwd = '${workspaceFolder}',
     stopOnEntry = true,
     args = function()
-      args = vim.fn.input('Arguments: ', '', 'file')
+      local args = vim.fn.input('Arguments: ', '', 'file')
       return args ~= '' and vim.split(args, ' ', true) or nil
     end,
     runInTerminal = false,
+    miDebuggerPath = "C:/msys64/clang64/bin/gdb.exe",
   },
 }
 

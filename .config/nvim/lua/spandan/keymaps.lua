@@ -20,6 +20,8 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = '[/] Fuzzily search in current buffer]' })
 
+vim.keymap.set('n', '<leader><esc>', require('notify').dismiss, { desc = '[ ] Close all notifications' })
+
 --[[ vim.keymap.set('n', '<leader>sa', function()
   vim.ui.input({prompt = ' Search For > ', cancelreturn = '', completion = 'dir', history = 'search'}, function(input)
   require('telescope.builtin').grep_string({ search = input })
