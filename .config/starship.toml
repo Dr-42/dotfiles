@@ -1,0 +1,29 @@
+# ~/.config/starship.toml
+# Use custom format
+format = '[$os | $directory$git_branch$git_status> ](fg:bold green)'
+right_format = '$time'
+scan_timeout = 10
+add_newline = false
+
+[time]
+style = 'bg:black fg:green'
+utc_time_offset = '5.5'
+disabled = false
+use_12hr = false
+
+[git_status]
+style = 'bg:black fg:green'
+staged = '[++\($count\)](green)'
+modified = '[!\($count\)](red)'
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[os]
+style = 'bg:black fg:white'
+disabled = false
+
+[os.symbols]
+Fedora = ''
+Windows = ''
+Arch = ''
