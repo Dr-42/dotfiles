@@ -12,11 +12,10 @@
         "warp-on-scroll": false,
         "format": "{name}: {icon}",
         "format-icons": {
-            "1": "",
-            "2": "󰈹",
-            "3": "",
-            "4": "",
-            "5": "",
+			"1": "",
+            "2": "",
+            "3": "󰈹",
+            "4": "",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -50,10 +49,12 @@
     },
     "cpu": {
         "format": "{usage}% ",
-        "tooltip": false
+        "tooltip": false,
+		"on-click": "htop",
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}% ",
+		"on-click": "htop",
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -85,9 +86,9 @@
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "tooltip-format": "{ifname} via {gwaddr} 󰈀",
+        "format-linked": "{ifname} (No IP) 󰈀",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -101,8 +102,8 @@
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "󰥰",
+            "headset": "󰥰",
             "phone": "",
             "portable": "",
             "car": "",
