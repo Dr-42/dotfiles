@@ -1,0 +1,156 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "0x737d87"
+blue = "0x59c2ff"
+cyan = "0x5ccfe6"
+green = "0xc2d94c"
+magenta = "0xb77ee0"
+red = "0xff3333"
+white = "0xffffff"
+yellow = "0xe7c547"
+
+[colors.normal]
+black = "0x000000"
+blue = "0x73d0ff"
+cyan = "0x83CEC6"
+green = "0xbae67e"
+magenta = "0xd4bfff"
+red = "0xf34a4a"
+white = "0xf2f2f2"
+yellow = "0xffee99"
+
+[colors.primary]
+background = "0x0f1419"
+foreground = "0xe6e1cf"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 12.0
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold Italic"
+
+[font.italic]
+style = "Italic"
+
+[font.normal]
+family = "MesloLGS NF"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 1
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "Insert"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ToggleFullscreen"
+key = "F11"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "Paste"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "Copy"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+chars = "\f"
+key = "L"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ScrollPageUp"
+key = "PageUp"
+mode = "~Alt"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ScrollPageDown"
+key = "PageDown"
+mode = "~Alt"
+mods = "None"
+
+[[keyboard.bindings]]
+action = "ScrollToTop"
+key = "Home"
+mode = "~Alt"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "ScrollToBottom"
+key = "End"
+mode = "~Alt"
+mods = "Shift"
+
+[scrolling]
+history = 5000
+
+[shell]
+program = "zsh"
+
+[window]
+dynamic_padding = false
+opacity = 0.85
+title = "Terminal-42"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.dimensions]
+columns = 110
+lines = 30
+
+[window.padding]
+x = 6
+y = 6
