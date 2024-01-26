@@ -14,15 +14,8 @@ require('packer').startup(function(use)
     },
   }
 
-  use {
-    'j-hui/fidget.nvim',
-    tag = 'legacy',
-    config = function()
-      require("fidget").setup {
-        -- options
-      }
-    end,
-  }
+  -- Fidget
+  use { 'j-hui/fidget.nvim', as = 'fidget' }
 
   use { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -62,6 +55,7 @@ require('packer').startup(function(use)
   use { "Shatur/neovim-ayu", as = "ayu" }               -- Colorscheme
   use { "Dr-42/neovim-ayu-green", as = "ayu_green" }    -- Colorscheme
   use { "yorickpeterse/vim-paper", as = "paper" }       -- Colorscheme
+  use { 'rose-pine/neovim', as = 'rose-pine' }          -- Colorscheme
 
   use 'kyazdani42/nvim-web-devicons'                    -- Icons
   use 'nvim-lualine/lualine.nvim'                       -- Fancier statusline
@@ -101,6 +95,9 @@ require('packer').startup(function(use)
 
   -- Rust
   use("simrat39/rust-tools.nvim")
+
+  -- Kitty
+  use { "fladson/vim-kitty" }
 
   -- Autoformat
   use("elentok/format-on-save.nvim")

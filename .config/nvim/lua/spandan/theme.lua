@@ -70,9 +70,10 @@ require('ayu_green').setup({
 })
 
 -- vim.cmd [[colorscheme paper]]
-vim.cmd [[colorscheme ayu]]
+-- vim.cmd [[colorscheme ayu]]
 -- vim.cmd [[colorscheme ayu-green]]
 -- vim.cmd [[colorscheme github_dark_dimmed]]
 -- vim.cmd [[colorscheme catppuccin]]
 -- vim.g.nightflyTransparent = true
 -- vim.cmd [[colorscheme nightfly]]
+vim.cmd [[colorscheme rose-pine]]

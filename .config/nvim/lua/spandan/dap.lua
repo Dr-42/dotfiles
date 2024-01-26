@@ -73,7 +73,7 @@ dap.configurations.cpp = {
       return args ~= '' and vim.split(args, ' ', true) or nil
     end,
     runInTerminal = false,
-    miDebuggerPath = "C:/msys64/clang64/bin/gdb.exe",
+    miDebuggerPath = "gdb",
   },
 }
 
