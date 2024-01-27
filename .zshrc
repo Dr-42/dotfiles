@@ -1,3 +1,4 @@
+export ENABLE_CORRECTION="true"
 fastfetch
 
 alias vim='nvim'
@@ -24,3 +25,12 @@ SAVEHIST=1000
 setopt appendhistory
 
 eval "$(starship init zsh)"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# Home, end and delete keys
+bindkey '\e[H'  beginning-of-line
+bindkey '\e[F'  end-of-line
+bindkey '\e[3~' delete-char
