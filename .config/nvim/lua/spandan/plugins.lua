@@ -82,7 +82,8 @@ require('packer').startup(function(use)
   use { "nvim-telescope/telescope-dap.nvim" }
 
   -- Copilot
-  use { 'github/copilot.vim' }
+  -- use { 'github/copilot.vim' }
+  use { "zbirenbaum/copilot.lua" }
 
   -- Startup nvim
   use {
