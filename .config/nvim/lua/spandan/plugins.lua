@@ -72,6 +72,9 @@ require('packer').startup(function(use)
   -- File Broswer
   use { "nvim-telescope/telescope-file-browser.nvim" }
 
+  -- NerdTree
+  use { "preservim/nerdtree" }
+
   -- DAP
   use { "mfussenegger/nvim-dap" }
   use { "rcarriga/nvim-dap-ui" }
@@ -96,6 +99,16 @@ require('packer').startup(function(use)
   -- Rust
   use("simrat39/rust-tools.nvim")
 
+  -- Flutter
+  use {
+    "akinsho/flutter-tools.nvim",
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim',
+    },
+    config = true,
+  }
+
   -- Kitty
   use { "fladson/vim-kitty" }
 
@@ -106,14 +119,6 @@ require('packer').startup(function(use)
   use("norcalli/nvim-colorizer.lua")
 
   use { "Dr-42/error-jump.nvim", as = "error-jump" }
-
-  -- Compile mode
-  use { "ej-shafran/compile-mode.nvim",
-    requires = {
-      "nvim-lua/plenary.nvim",
-      "m00qek/baleia.nvim",
-    },
-  }
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')

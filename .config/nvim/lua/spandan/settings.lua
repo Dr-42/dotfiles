@@ -2,6 +2,30 @@
 vim.o.fileformat = 'unix'
 vim.o.fileformats = 'unix,dos'
 
+-- Get GLSL file types
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+    pattern = { "*.vert", "*.frag" },
+    callback = function(_ev)
+        vim.bo.filetype = "glsl"
+    end
+})
+
+-- Get Assembly file types
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+    pattern = { "*.s", "*.asm" },
+    callback = function(_ev)
+        vim.bo.filetype = "nasm"
+    end
+})
+
+-- Get llvmIR file types
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+    pattern = { "*.ll" },
+    callback = function(_ev)
+        vim.bo.filetype = "llvm"
+    end
+})
+
 -- Set highlight on search
 vim.o.hlsearch = false
 

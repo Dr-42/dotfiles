@@ -54,7 +54,7 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   -- tsserver = {},
-  clangd = {},
+  -- clangd = {},
   rust_analyzer = {},
   lua_ls = {
     disable = { "missing-fields", "incomplete-signature-doc" }
@@ -70,6 +70,19 @@ require("lspconfig").clangd.setup {
     "clangd",
     "--offset-encoding=utf-16",
   },
+}
+
+require("lspconfig").asm_lsp.setup {
+  command = {
+    "asm-lsp",
+  },
+  filetypes = {
+    "asm", "s", "S",
+  },
+  -- current working directory
+  root_dir = function()
+    return vim.loop.cwd()
+  end,
 }
 
 -- Setup neovim lua configuration
