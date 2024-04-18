@@ -12,14 +12,14 @@ export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 export PATH="$PATH:/home/spandan/sdks/flutter/bin"
 export PATH="$PATH:/home/spandan/.local/bin"
 export PATH="$PATH:/usr/local/cuda/bin"
-export CHROME_EXECUTABLE="chromium-browser"
+export CHROME_EXECUTABLE="chromium"
 
-if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if [ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source  /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 HISTFILE=~/.zsh_history
