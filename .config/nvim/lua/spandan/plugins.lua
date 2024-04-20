@@ -53,7 +53,6 @@ require('packer').startup(function(use)
   use { "bluz71/vim-nightfly-colors", as = "nightfly" } -- Colorscheme
   use { "folke/tokyonight.nvim", as = "tokyonight" }    -- Colorscheme
   use { "Shatur/neovim-ayu", as = "ayu" }               -- Colorscheme
-  use { "Dr-42/neovim-ayu-green", as = "ayu_green" }    -- Colorscheme
   use { "yorickpeterse/vim-paper", as = "paper" }       -- Colorscheme
   use { 'rose-pine/neovim', as = 'rose-pine' }          -- Colorscheme
 
@@ -111,6 +110,8 @@ require('packer').startup(function(use)
 
   -- Kitty
   use { "fladson/vim-kitty" }
+  -- Qt QML
+  use { "peterhoeg/vim-qml" }
 
   -- Autoformat
   use("elentok/format-on-save.nvim")
