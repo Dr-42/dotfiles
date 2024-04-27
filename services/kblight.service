@@ -1,0 +1,11 @@
+[Unit]
+Description=Turn on scrolllock based keyboar light
+
+[Service]
+Type=exec
+StandardOutput=journal
+ExecStart=/usr/bin/kblight.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=default.target
