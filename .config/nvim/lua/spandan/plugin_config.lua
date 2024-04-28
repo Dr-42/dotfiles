@@ -353,7 +353,7 @@ require('telescope').setup {
 -- See `:help nvim-treesitter`
 require('nvim-treesitter.configs').setup {
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vimdoc', 'vim', 'glsl' },
+  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vimdoc', 'vim', 'glsl', 'markdown' },
 
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -426,7 +426,7 @@ format_on_save.setup({
     ".local/share/nvim/lazy",
   },
   formatter_by_ft = {
-    css = formatters.lsp,
+    css = formatters.prettier,
     html = formatters.lsp,
     java = formatters.lsp,
     javascript = formatters.lsp,
