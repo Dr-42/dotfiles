@@ -1,0 +1,15 @@
+[Unit]
+Description=Update Flatpak apps every 6 hours
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c '/usr/bin/flatpak update -y > /var/log/flatpak-update.log 2>&1'
+
+[Timer]
+# start on boot directly
+OnBootSec=0
+# start every 6h after it was active
+OnUnitActiveSec=6h
+
+[Install]
+WantedBy=multi-user.target
