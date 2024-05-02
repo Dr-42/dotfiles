@@ -41,8 +41,9 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser' })
   vim.keymap.set('n', '<leader>tl', ":botright split | resize 7 | terminal<CR>", { desc = '[T]ermina[L]' })
 
-  -- Nerdtree
-  vim.keymap.set('n', '<leader>nt', ':NERDTreeToggle<CR>', { desc = '[N]erd[T]ree' })
+  -- Keymaps for better tab management
+  vim.keymap.set('n', '<leader>tn', ':tabnew<CR>', { desc = '[T]ab [N]ew' })
+  vim.keymap.set('n', '<leader>tc', ':tabclose<CR>', { desc = '[T]ab [C]lose' })
 
   vim.keymap.set('n', '<leader>es', require('error-jump').jump_to_error, { desc = '[E]rror [S]ource' })
   vim.keymap.set('n', '<leader>en', require('error-jump').next_error, { desc = '[E]rror [N]ext' })
@@ -62,27 +63,17 @@ function M.keymaps()
   vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
 
   -- Pane navigation
-  vim.keymap.set('n', '<leader>p<up>', '<C-w><up>', { desc = '[T]ab [U]p' })
-  vim.keymap.set('n', '<leader>p<down>', '<C-w><down>', { desc = '[T]ab [D]own' })
-  vim.keymap.set('n', '<leader>p<left>', '<C-w><left>', { desc = '[T]ab [L]eft' })
-  vim.keymap.set('n', '<leader>p<right>', '<C-w><right>', { desc = '[T]ab [R]ight' })
+  vim.keymap.set('n', '<leader>P<up>', ':split<CR><C-w><up>', { desc = '[P]ane [U]p' })
+  vim.keymap.set('n', '<leader>P<down>', ':split<CR><C-w><down>', { desc = '[P]ane [D]own' })
+  vim.keymap.set('n', '<leader>P<left>', ':vsplit<CR><C-w><left>', { desc = '[P]ane [L]eft' })
+  vim.keymap.set('n', '<leader>P<right>', ':vsplit<CR><C-w><right>', { desc = '[P]ane [R]ight' })
 
-  vim.keymap.set('n', '<leader>P<up>', ':split<CR><C-w><up>', { desc = '[T]ab [U]p' })
-  vim.keymap.set('n', '<leader>P<down>', ':split<CR><C-w><down>', { desc = '[T]ab [D]own' })
-  vim.keymap.set('n', '<leader>P<left>', ':vsplit<CR><C-w><left>', { desc = '[T]ab [L]eft' })
-  vim.keymap.set('n', '<leader>P<right>', ':vsplit<CR><C-w><right>', { desc = '[T]ab [R]ight' })
+  vim.keymap.set('n', '<leader>pc', '<C-w>c', { desc = '[P]ane [C]lose' })
 
-  vim.keymap.set('n', '<leader>pc', '<C-w>c', { desc = '[T]ab [C]lose' })
-
-  vim.keymap.set('n', '<leader>pk', '<C-w><up>', { desc = '[T]ab [U]p' })
-  vim.keymap.set('n', '<leader>pj', '<C-w><down>', { desc = '[T]ab [D]own' })
-  vim.keymap.set('n', '<leader>pl', '<C-w><left>', { desc = '[T]ab [L]eft' })
-  vim.keymap.set('n', '<leader>ph', '<C-w><right>', { desc = '[T]ab [R]ight' })
-
-  vim.keymap.set('n', '<leader>Pk', ':split<CR><C-w><up>', { desc = '[T]ab [U]p' })
-  vim.keymap.set('n', '<leader>Pj', ':split<CR><C-w><down>', { desc = '[T]ab [D]own' })
-  vim.keymap.set('n', '<leader>Pl', ':vsplit<CR><C-w><left>', { desc = '[T]ab [L]eft' })
-  vim.keymap.set('n', '<leader>Ph', ':vsplit<CR><C-w><right>', { desc = '[T]ab [R]ight' })
+  vim.keymap.set('n', '<C-up>', '<C-w><up>', { desc = '[P]ane [U]p' })
+  vim.keymap.set('n', '<C-down>', '<C-w><down>', { desc = '[P]ane [D]own' })
+  vim.keymap.set('n', '<C-left>', '<C-w><left>', { desc = '[P]ane [L]eft' })
+  vim.keymap.set('n', '<C-right>', '<C-w><right>', { desc = '[P]ane [R]ight' })
 end
 
 return M

@@ -49,8 +49,7 @@ return {
           '░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░▒▓█▓▒░        \n' ..
           '░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░▒▓████████▓▒░ \n'
     })
-
-    -- ... and there is more!
-    --  Check out: https://github.com/echasnovski/mini.nvim
+    local tabline = require('mini.tabline')
+    tabline.setup()
   end,
 }
