@@ -4,26 +4,26 @@ vim.o.fileformats = 'unix,dos'
 
 -- Get GLSL file types
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-    pattern = { "*.vert", "*.frag" },
-    callback = function(_ev)
-        vim.bo.filetype = "glsl"
-    end
+	pattern = { "*.vert", "*.frag" },
+	callback = function(_ev)
+		vim.bo.filetype = "glsl"
+	end
 })
 
 -- Get Assembly file types
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-    pattern = { "*.s", "*.asm" },
-    callback = function(_ev)
-        vim.bo.filetype = "nasm"
-    end
+	pattern = { "*.s", "*.asm" },
+	callback = function(_ev)
+		vim.bo.filetype = "nasm"
+	end
 })
 
 -- Get llvmIR file types
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-    pattern = { "*.ll" },
-    callback = function(_ev)
-        vim.bo.filetype = "llvm"
-    end
+	pattern = { "*.ll" },
+	callback = function(_ev)
+		vim.bo.filetype = "llvm"
+	end
 })
 
 -- Set highlight on search
@@ -63,11 +63,11 @@ vim.o.completeopt = 'menuone,noselect'
 
 -- Set shell to pwsh on windows
 if vim.fn.has 'win32' == 1 then
-    vim.o.shell = 'pwsh -NoLogo'
-    vim.o.shellcmdflag = '-NoProfile -command'
-    vim.o.shellquote = '\"'
-    vim.o.shellxquote = ''
-    --vim.o.shell = 'C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -shell zsh'
+	vim.o.shell = 'pwsh -NoLogo'
+	vim.o.shellcmdflag = '-NoProfile -command'
+	vim.o.shellquote = '\"'
+	vim.o.shellxquote = ''
+	--vim.o.shell = 'C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -shell zsh'
 end
 
 -- Hide line numbers in terminal windows

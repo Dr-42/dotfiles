@@ -1,0 +1,16 @@
+return {
+	require('spandan.plugins.mini'),
+	require('spandan.plugins.colorschemes'),
+	require('spandan.plugins.copilot'),
+	require('spandan.plugins.customlsp'),
+	require('spandan.plugins.dap'),
+	require('spandan.plugins.fidget'),
+	require('spandan.plugins.git'),
+	require('spandan.plugins.lspconfig'),
+	require('spandan.plugins.noice'),
+	require('spandan.plugins.nvim-cmp'),
+	-- require('spandan.plugins.startup'),
+	require('spandan.plugins.telescope'),
+	require('spandan.plugins.treesitter'),
+	require('spandan.plugins.visual'),
+}

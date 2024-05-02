@@ -1,7 +1,7 @@
-require("spandan.plugins")
-require("spandan.settings")
-require("spandan.plugin_config")
-require("spandan.theme")
-require("spandan.keymaps")
-require("spandan.lsp")
-require("spandan.dap")
+require('spandan.lazystrap')
+require('spandan.settings')
+require('lazy').setup(require('spandan.plugins'), {
+  ui = require('spandan.lazyui')
+})
+require("spandan.keymaps").keymaps()
+vim.cmd [[colorscheme github_dark_dimmed]]
