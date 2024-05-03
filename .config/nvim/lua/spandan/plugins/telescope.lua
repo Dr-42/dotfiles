@@ -1,7 +1,6 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       {
@@ -23,9 +22,6 @@ return {
               ['<C-d>'] = require('telescope.actions').delete_buffer,
             }
           },
-          file_ignore_patterns = { 'node_modules', 'vendor', '.git', '.cache', '.bld_cpp', 'target' },
-          -- ignore all files in .gitignore
-          git_ignore_patterns = { 'node_modules', 'vendor', '.cache', '.bld_cpp', 'target' },
           preview = {
             mime_hook = function(filepath, bufnr, opts)
               local is_image = function(path)
@@ -57,6 +53,22 @@ return {
         },
         extensions = {
           hijack_netrw = true,
+          fzf = {
+            override_generic_sorter = true,
+            override_file_sorter = true,
+            case_mode = 'smart_case',
+          },
+          file_browser = {
+            -- disable if you don't want the file browser
+            -- the default is true
+            enabled = true,
+            -- ignored file types
+            ignored_file_types = { 'node_modules', 'vendor', '.cache', '.bld_cpp', 'target' },
+            -- the command that runs when "open" is called
+            open_cmd = 'xdg-open',
+            -- the command that runs when "open_all" is called
+            open_all_cmd = 'xdg-open',
+          },
         },
       }
     end
