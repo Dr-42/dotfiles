@@ -1,3 +1,7 @@
+-- Remap leader
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- Make all files create with unix line endings
 vim.o.fileformat = 'unix'
 vim.o.fileformats = 'unix,dos'
