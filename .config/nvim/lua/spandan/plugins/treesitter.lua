@@ -10,6 +10,11 @@ return { -- Highlight, edit, and navigate code
     require('nvim-treesitter.configs').setup {
       -- Add languages to be installed here that you want installed for treesitter
       ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vimdoc', 'vim', 'glsl', 'markdown' },
+      auto_install = true,
+      sync_install = true,
+
+      ignore_install = {},
+      parser_install_dir = nil,
 
       highlight = { enable = true },
       indent = { enable = true, disable = { 'python' } },
