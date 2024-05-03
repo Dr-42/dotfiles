@@ -9,8 +9,8 @@ return {
 	require('spandan.plugins.lspconfig'),
 	require('spandan.plugins.noice'),
 	require('spandan.plugins.nvim-cmp'),
-	-- require('spandan.plugins.startup'),
 	require('spandan.plugins.telescope'),
 	require('spandan.plugins.treesitter'),
 	require('spandan.plugins.visual'),
+	require('spandan.plugins.whichkey'),
 }

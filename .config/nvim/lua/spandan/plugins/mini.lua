@@ -48,6 +48,8 @@ return {
           '░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░▒▓█▓▒░        \n' ..
           '░▒▓█▓▒░░▒▓█▓▒░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░▒▓█▓▒░        \n' ..
           '░▒▓███████▓▒░░▒▓█▓▒░░▒▓█▓▒░      ░▒▓█▓▒░▒▓████████▓▒░ \n'
+      ,
+      footer = 'Hesitation is defeat',
     })
     local tabline = require('mini.tabline')
     tabline.setup()
