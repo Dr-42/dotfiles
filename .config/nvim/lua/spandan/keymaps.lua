@@ -36,6 +36,7 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
   vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
   vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser' })
+  vim.keymap.set('n', '<leader>fh', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', { desc = '[F]ile [H]eader' })
   vim.keymap.set('n', '<leader>tl', ":botright split | resize 7 | terminal<CR>", { desc = '[T]ermina[L]' })
 
   -- Keymaps for better tab management

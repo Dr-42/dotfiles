@@ -1,6 +1,7 @@
 return {
 	require('spandan.plugins.mini'),
 	require('spandan.plugins.colorschemes'),
+	require('spandan.plugins.nvimtree'),
 	require('spandan.plugins.copilot'),
 	require('spandan.plugins.customlsp'),
 	require('spandan.plugins.dap'),
