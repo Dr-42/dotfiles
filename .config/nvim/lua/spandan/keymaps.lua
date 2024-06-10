@@ -8,6 +8,8 @@ function M.keymaps()
   -- Remap for dealing with word wrap
   vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
   vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+  vim.keymap.set('n', '<up>', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+  vim.keymap.set('n', '<down>', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
   -- See `:help telescope.builtin`
   vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
@@ -22,12 +24,6 @@ function M.keymaps()
 
   vim.keymap.set('n', '<leader><esc>', require('notify').dismiss, { desc = '[ ] Close all notifications' })
 
-  --[[ vim.keymap.set('n', '<leader>sa', function()
-  vim.ui.input({prompt = ' Search For > ', cancelreturn = '', completion = 'dir', history = 'search'}, function(input)
-  require('telescope.builtin').grep_string({ search = input })
-  end)
-  end, { desc = '[S]earch [A]ll' }) ]]
-
   vim.keymap.set('n', '<leader>lg', require('telescope.builtin').live_grep, { desc = '[L]ive [G]rep' })
 
   vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
@@ -35,8 +31,11 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
   vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
   vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-  vim.keymap.set('n', '<leader>fb', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser' })
-  vim.keymap.set('n', '<leader>fh', ':NvimTreeRefresh<CR>:NvimTreeToggle<CR>', { desc = '[F]ile [H]eader' })
+
+  vim.keymap.set('n', '<leader>fo', ':Oil<CR>', { desc = '[F]ile [O]perator' })
+  vim.keymap.set('n', '<leader>fh', ':Telescope file_browser<CR>', { desc = '[F]ile [B]rowser' })
+  vim.keymap.set('n', '<leader>fb', ':NvimTreeRefresh | NvimTreeToggle<CR>', { desc = '[F]ile [H]eader' })
+
   vim.keymap.set('n', '<leader>tl', ":botright split | resize 7 | terminal<CR>", { desc = '[T]ermina[L]' })
 
   -- Keymaps for better tab management
@@ -58,7 +57,7 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>G', ":Git<CR>", { desc = '[G]it' })
 
   -- Return to normal mode from terminal
-  vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { silent = true })
+  vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { silent = true })
 
   -- Pane navigation
   vim.keymap.set('n', '<leader>P<up>', ':split<CR><C-w><up>', { desc = '[P]ane [U]p' })
@@ -72,6 +71,18 @@ function M.keymaps()
   vim.keymap.set('n', '<C-down>', '<C-w><down>', { desc = '[P]ane [D]own' })
   vim.keymap.set('n', '<C-left>', '<C-w><left>', { desc = '[P]ane [L]eft' })
   vim.keymap.set('n', '<C-right>', '<C-w><right>', { desc = '[P]ane [R]ight' })
+
+  vim.keymap.set('n', '<leader>mp', require("mpv").toggle_player, { desc = '[M]usic [P]layer' })
+
+  vim.keymap.set('n', '<leader>chg', require('spandan.plugins.custom.hdr_guard').create_guard,
+    { desc = '[C]reate [H]eader [G]uard' })
+
+  vim.keymap.set('n', '<leader>wso', require('spandan.plugins.custom.workspace').open_project,
+    { desc = '[W]ork[S]pace [O]pen' })
+  vim.keymap.set('n', '<leader>wsp', require('spandan.plugins.custom.workspace').open_probe,
+    { desc = '[W]ork[S]pace [P]robe' })
+  vim.keymap.set('n', '<leader>wst', require('spandan.plugins.custom.workspace').open_third_party,
+    { desc = '[W]ork[S]pace [T]hird Party' })
 end
 
 return M

@@ -10,29 +10,32 @@ vim.g.maplocalleader = ' '
 vim.o.fileformat = 'unix'
 vim.o.fileformats = 'unix,dos'
 
--- Get GLSL file types
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-	pattern = { "*.vert", "*.frag" },
-	callback = function(_ev)
-		vim.bo.filetype = "glsl"
+local setft = function(exts, ft)
+	local mexts = {}
+	for _, ext in ipairs(exts) do
+		table.insert(mexts, "*." .. ext)
 	end
-})
+	vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+		pattern = mexts,
+		callback = function(_ev)
+			vim.bo.filetype = ft
+		end
+	})
+end
 
--- Get Assembly file types
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-	pattern = { "*.s", "*.asm" },
-	callback = function(_ev)
-		vim.bo.filetype = "nasm"
-	end
-})
+-- Set GLSL file types
+setft({ "glsl", "vert", "frag", "geom", "comp" }, "glsl")
+-- Set Assembly file types
+setft({ "s", "asm" }, "nasm")
+-- Set llvmIR file types
+setft({ "ll" }, "llvm")
+-- Set lalrpop file types
+setft({ "lalrpop" }, "lalrpop")
+-- Set c header file types
+setft({ "h" }, "c")
 
--- Get llvmIR file types
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
-	pattern = { "*.ll" },
-	callback = function(_ev)
-		vim.bo.filetype = "llvm"
-	end
-})
+-- Set crust file types
+setft({ "crust", "syn" }, "crust")
 
 -- Set highlight on search
 vim.o.hlsearch = false
@@ -45,6 +48,10 @@ vim.o.number = true
 vim.o.tabstop = 4
 vim.o.softtabstop = 4
 vim.o.shiftwidth = 4
+
+-- Set width of number columns
+vim.o.numberwidth = 2
+vim.o.signcolumn = 'number'
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
@@ -61,7 +68,6 @@ vim.o.smartcase = true
 
 -- Decrease update time
 vim.o.updatetime = 250
-vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
@@ -77,6 +83,11 @@ if vim.fn.has 'win32' == 1 then
 	vim.o.shellxquote = ''
 	--vim.o.shell = 'C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -shell zsh'
 end
+
+-- Set foldmethod to indent
+vim.o.foldmethod = 'indent'
+-- Set foldlevelstart to 99
+vim.o.foldlevelstart = 99
 
 -- Hide line numbers in terminal windows
 vim.cmd [[ au TermOpen term://* setlocal nonumber norelativenumber | setfiletype terminal ]]

@@ -15,13 +15,29 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
+  -- vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
+  --   config = config or {}
+  --   config.focus_id = ctx.method
+  --   if not (result and result.contents) then
+  --     return
+  --   end
+  --   local markdown_lines = vim.lsp.util.convert_input_to_markdown_lines(result.contents)
+  --   markdown_lines = vim.lsp.util.trim_empty_lines(markdown_lines)
+  --   -- Set encoding to utf-8
+  --   if vim.tbl_isempty(markdown_lines) then
+  --     return
+  --   end
+  --   return vim.lsp.util.open_floating_preview(markdown_lines, 'markdown', config)
+  -- end
+
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+  nmap('<F2>', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', vim.lsp.buf.implementation, '[G]oto [I]mplementation')
-  nmap('<leader>D', vim.lsp.buf.type_definition, 'Type [D]efinition')
+  nmap('<leader>TD', vim.lsp.buf.type_definition, '[T]ype [D]efinition')
   nmap('<leader>Ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols ')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
@@ -39,7 +55,12 @@ local on_attach = function(_, bufnr)
 
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
-    vim.lsp.buf.format()
+    vim.lsp.buf.format {
+      tabSize = 4,
+      insertSpaces = false,
+      trimTrailingWhitespace = true,
+      insertFinalNewline = true,
+    }
   end, { desc = 'Format current buffer with LSP' })
 end
 
@@ -54,6 +75,20 @@ local servers = {
     disable = { "missing-fields", "incomplete-signature-doc" }
   },
 }
+
+local clangd_capabilities = function()
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+  capabilities.textDocument.completion.completionItem.resolveSupport = {
+    properties = {
+      'documentation',
+      'detail',
+      'additionalTextEdits',
+    },
+  }
+  capabilities.offsetEncoding = 'utf-16'
+  return capabilities
+end
 
 return { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
@@ -70,13 +105,11 @@ return { -- LSP Configuration & Plugins
     'folke/neodev.nvim',
   },
   config = function()
-    local cmp_nvim_lsp = require "cmp_nvim_lsp"
     require("lspconfig").clangd.setup {
       on_attach = on_attach,
-      capabilities = cmp_nvim_lsp.default_capabilities(),
+      capabilities = clangd_capabilities(),
       cmd = {
         "clangd",
-        "--offset-encoding=utf-16",
       },
     }
 
@@ -133,7 +166,7 @@ return { -- LSP Configuration & Plugins
           behavior = cmp.ConfirmBehavior.Replace,
           select = true,
         },
-        ['<C-Tab>'] = cmp.mapping(function(fallback)
+        ['<C-S-up>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_next_item()
           elseif luasnip.expand_or_jumpable() then
@@ -142,7 +175,7 @@ return { -- LSP Configuration & Plugins
             fallback()
           end
         end, { 'i', 's' }),
-        ['<S-Tab>'] = cmp.mapping(function(fallback)
+        ['<C-S-down>'] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.select_prev_item()
           elseif luasnip.jumpable(-1) then

@@ -1,5 +1,4 @@
 return {
-  { 'kyazdani42/nvim-web-devicons' },
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function()

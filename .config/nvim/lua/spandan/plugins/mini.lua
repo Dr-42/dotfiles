@@ -28,6 +28,18 @@ return {
       end
       return string.format('󰑋 %s', macro)
     end
+
+    local python_venv = function()
+      local venv = vim.env.VIRTUAL_ENV
+      if venv == nil then
+        return ''
+      end
+      -- Chop off the cwd
+      venv = venv:gsub(vim.fn.getcwd(), '')
+      venv = venv:gsub('^/', '')
+      return string.format('󰏔 %s', venv)
+    end
+
     statusline.setup {
       content = {
         active = function()
@@ -36,6 +48,7 @@ return {
           local diagnostics   = MiniStatusline.section_diagnostics({ trunc_width = 75 })
           local macro         = macroline()
           local filename      = MiniStatusline.section_filename({ trunc_width = 140 })
+          local python_venv   = python_venv()
           local fileinfo      = MiniStatusline.section_fileinfo({ trunc_width = 120 })
           local location      = MiniStatusline.section_location({ trunc_width = 75 })
           local search        = MiniStatusline.section_searchcount({ trunc_width = 75 })
@@ -45,10 +58,11 @@ return {
             { hl = 'MiniStatuslineDevinfo', strings = { git, diagnostics } },
             { hl = 'MiniStatuslineMacro',   strings = { macro } },
             '%<', -- Mark general truncate point
-            { hl = 'MiniStatuslineFilename', strings = { filename } },
+            { hl = 'MiniStatuslineFilename',   strings = { filename } },
             '%=', -- End left alignment
-            { hl = 'MiniStatuslineFileinfo', strings = { fileinfo } },
-            { hl = mode_hl,                  strings = { search, location } },
+            { hl = 'MiniStatuslinePythonVenv', strings = { python_venv } },
+            { hl = 'MiniStatuslineFileinfo',   strings = { fileinfo } },
+            { hl = mode_hl,                    strings = { search, location } },
           })
         end
       },

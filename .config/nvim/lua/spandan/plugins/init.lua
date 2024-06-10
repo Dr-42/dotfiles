@@ -14,4 +14,6 @@ return {
 	require('spandan.plugins.treesitter'),
 	require('spandan.plugins.visual'),
 	require('spandan.plugins.whichkey'),
+	require('spandan.plugins.oil'),
+	require('spandan.plugins.mpv'),
 }

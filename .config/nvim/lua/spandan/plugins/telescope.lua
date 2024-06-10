@@ -8,7 +8,7 @@ return {
         build = 'make',
         cond = vim.fn.executable 'make' == 1
       },
-      { "nvim-telescope/telescope-file-browser.nvim" }
+      { "nvim-telescope/telescope-file-browser.nvim" },
     },
     config = function()
       require('telescope').setup {
@@ -22,6 +22,7 @@ return {
               ['<C-d>'] = require('telescope.actions').delete_buffer,
             }
           },
+          file_ignore_patterns = { 'node_modules', 'vendor', '.cache', '.bld_cpp', 'target', 'docs' },
           preview = {
             mime_hook = function(filepath, bufnr, opts)
               local is_image = function(path)
@@ -63,7 +64,7 @@ return {
             -- the default is true
             enabled = true,
             -- ignored file types
-            ignored_file_types = { 'node_modules', 'vendor', '.cache', '.bld_cpp', 'target' },
+            ignored_file_types = { 'node_modules', 'vendor', '.cache', '.bld_cpp', 'target', 'docs' },
             -- the command that runs when "open" is called
             open_cmd = 'xdg-open',
             -- the command that runs when "open_all" is called
@@ -71,6 +72,8 @@ return {
           },
         },
       }
+      require('telescope').load_extension('fzf')
+      require('telescope').load_extension('file_browser')
     end
   }
 }

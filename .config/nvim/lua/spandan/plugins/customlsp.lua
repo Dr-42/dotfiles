@@ -36,7 +36,8 @@ return {
           typescript = formatters.prettier,
           typescriptreact = formatters.prettier,
           yaml = formatters.lsp,
-          c = formatters.clang_format,
+          -- c = formatters.clang_format,
+          -- cpp = formatters.clang_format,
 
           go = {
             formatters.shell({
@@ -46,6 +47,24 @@ return {
               end
             }),
             formatters.shell({ cmd = { "gofmt" } }),
+          },
+          c = {
+            formatters.shell({
+              cmd = { "clang-format", "-style=file" },
+              tempfile = function()
+                return vim.fn.expand("%") .. '.formatter-temp'
+              end
+            }),
+            formatters.shell({ cmd = { "clang-format" } }),
+          },
+          cpp = {
+            formatters.shell({
+              cmd = { "clang-format", "-style=file" },
+              tempfile = function()
+                return vim.fn.expand("%") .. '.formatter-temp'
+              end
+            }),
+            formatters.shell({ cmd = { "clang-format" } }),
           },
         },
       })
