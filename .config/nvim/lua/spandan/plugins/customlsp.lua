@@ -8,6 +8,9 @@ return {
   { "norcalli/nvim-colorizer.lua" },
 
   { "Dr-42/error-jump.nvim",      name = "error-jump" },
+
+  -- Yuck for eww
+  { "elkowar/yuck.vim" },
   -- Autoformat
   {
     "elentok/format-on-save.nvim",
