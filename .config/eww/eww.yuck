@@ -1,4 +1,4 @@
-(defpoll time :interval "1" :command "scripts/playgong")
+(defpoll gonger :interval "1s" "scripts/playgong")
 
 (defwidget clockmarker[num]
   (circular-progress
@@ -14,6 +14,7 @@
 
 (defwidget clockmarkers[]
   (overlay
+    (label :text gonger)
     (clockmarker :num 0)
     (clockmarker :num 1)
     (clockmarker :num 2)
@@ -113,4 +114,24 @@
   :windowtype "dock"
   :reserve    (struts :distance "50px" :side "top")
   (clock))
+
+(defpoll getimage :interval "10m" "scripts/getimage")
+
+(defwidget background[]
+  (image
+    :image-width { 1920 / 1.25 }
+    :image-height { 1080 / 1.25 }
+    :path getimage))
+
+(defwindow background 
+  :stacking "bg" 
+  :focusable "false" 
+  :monitor 0
+  :geometry (geometry 
+    :anchor "top left"
+    :x 0 
+    :y 0 
+    :width "100%"
+    :height "100%")
+  (background))
 
