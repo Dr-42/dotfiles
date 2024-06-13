@@ -31,9 +31,9 @@
 (defwidget hour-prog[]
   (circular-progress
     :class "hour"
-    :value { 100 * ( formattime(EWW_TIME, "%H", "Asia/Calcutta") % 12 ) / 12}
+    :value { 100 / 60 }
+    :start-at { ((75 + 100 * formattime(EWW_TIME, "%I", "Asia/Calcutta") / 12) - 100/120) % 100 }
     :thickness 60
-    :start-at 75
     :geometry (geometry
     :x 0 
     :y 0 
@@ -43,9 +43,9 @@
 (defwidget minute-prog[]
   (circular-progress
     :class "minute"
-    :value { 100 * formattime(EWW_TIME, "%M", "Asia/Calcutta") / 60}
+    :value { 100 / 60 }
+    :start-at { ((75 + 100 * formattime(EWW_TIME, "%M", "Asia/Calcutta") / 60) - 100/120) % 100 }
     :thickness 35
-    :start-at 75
     :geometry (geometry
     :x 0 
     :y 0 
@@ -55,9 +55,9 @@
 (defwidget second-prog[]
   (circular-progress
     :class "second"
-    :value { 100 * formattime(EWW_TIME, "%S", "Asia/Calcutta") / 60}
+    :value { 100 / 60 }
+    :start-at { ((75 + 100 * formattime(EWW_TIME, "%S", "Asia/Calcutta") / 60) - 100/120) % 100 }
     :thickness 10
-    :start-at 75
     :geometry (geometry
     :x 0 
     :y 0 
