@@ -1,0 +1,116 @@
+(defpoll time :interval "1" :command "scripts/playgong")
+
+(defwidget clockmarker[num]
+  (circular-progress
+    :class { num % 2 == 0 ? "clockmarkerfilled" : "clockmarkerempty" }
+    :value { 100 / 12 }
+    :thickness 60
+    :start-at { (75 + 100 * num / 12) % 100 }
+    :geometry (geometry
+    :x 0 
+    :y 0 
+    :width 250 
+    :height 250)))
+
+(defwidget clockmarkers[]
+  (overlay
+    (clockmarker :num 0)
+    (clockmarker :num 1)
+    (clockmarker :num 2)
+    (clockmarker :num 3)
+    (clockmarker :num 4)
+    (clockmarker :num 5)
+    (clockmarker :num 6)
+    (clockmarker :num 7)
+    (clockmarker :num 8)
+    (clockmarker :num 9)
+    (clockmarker :num 10)
+    (clockmarker :num 11)))
+
+(defwidget hour-prog[]
+  (circular-progress
+    :class "hour"
+    :value { 100 * ( formattime(EWW_TIME, "%H", "Asia/Calcutta") % 12 ) / 12}
+    :thickness 60
+    :start-at 75
+    :geometry (geometry
+    :x 0 
+    :y 0 
+    :width 250 
+    :height 250)))
+
+(defwidget minute-prog[]
+  (circular-progress
+    :class "minute"
+    :value { 100 * formattime(EWW_TIME, "%M", "Asia/Calcutta") / 60}
+    :thickness 35
+    :start-at 75
+    :geometry (geometry
+    :x 0 
+    :y 0 
+    :width 180 
+    :height 180)))
+
+(defwidget second-prog[]
+  (circular-progress
+    :class "second"
+    :value { 100 * formattime(EWW_TIME, "%S", "Asia/Calcutta") / 60}
+    :thickness 10
+    :start-at 75
+    :geometry (geometry
+    :x 0 
+    :y 0 
+    :width 160 
+    :height 160)))
+
+(defwidget clocktext[]
+  (box
+    :width 250
+    :height 250
+    :orientation "v"
+    :valign "center"
+    (label
+      :class "clocktext"
+      :yalign 1
+      :text { formattime(EWW_TIME, "%I:%M:%S %p", "Asia/Calcutta")}
+      :geometry (geometry
+        :anchor "bottom"
+        :x 0
+        :y 0
+        :width 250
+        :height 250))
+    (label
+      :class "clockdate"
+      :yalign 0.1
+      :text { formattime(EWW_TIME, "%a, %d %B %Y", "Asia/Calcutta")}
+      :geometry (geometry
+        :x 0
+        :y 0
+        :width 250
+        :height 250))
+  ))
+
+(defwidget clock[]
+  (box 
+    :width 250
+    :height 250
+    (overlay
+      (clocktext)
+      (hour-prog)
+      (minute-prog)
+      (second-prog)
+      (clockmarkers)
+    )))
+
+(defwindow clock
+  :monitor 0
+  :anchor "top left"
+  :geometry (geometry
+    :x      "10%"
+    :y      "10%"
+    :anchor "top left")
+  :stacking   "bg"
+  :windowtype "dock"
+  :reserve    (struts :distance "50px" :side "top")
+  (clock))
+

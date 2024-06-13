@@ -1,0 +1,50 @@
+* {
+    all: unset;
+}
+
+.clockmarkerfilled {
+    color: rgba(107, 00, 105, 0.2);
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.clockmarkerempty {
+    color: rgba(55, 55, 55, 0.1);
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.hour {
+    color: #006769;
+    background-color: #333333;
+}
+
+.minute {
+    color: #40a578;
+    background-color: #444444;
+}
+
+.second {
+    color: #9dde8b;
+    background-color: #555555;
+}
+
+.clocktext {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: #e6ff94;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 150px 150px 0 0;
+}
+
+.clockdate {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: #e6ff94;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0 0 150px 150px;
+}
+
+.clockmarker {
+    color: #ff0000;
+}
