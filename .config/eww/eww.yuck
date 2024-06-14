@@ -1,7 +1,9 @@
 (defpoll gonger :interval "1s" "scripts/playgong")
+(defpoll getcss :interval "1m" "scripts/getcss")
 
 (defwidget clockmarker[num]
   (circular-progress
+    :css getcss
     :class { num % 2 == 0 ? "clockmarkerfilled" : "clockmarkerempty" }
     :value { 100 / 12 }
     :thickness 60
@@ -30,9 +32,10 @@
 
 (defwidget hour-prog[]
   (circular-progress
+    :css getcss
     :class "hour"
-    :value { 100 / 60 }
-    :start-at { ((75 + 100 * formattime(EWW_TIME, "%I", "Asia/Calcutta") / 12) - 100/120) % 100 }
+    :value { 200 / 60 }
+    :start-at { ((75 + 100 * formattime(EWW_TIME, "%I", "Asia/Calcutta") / 12) - 200/120) % 100 }
     :thickness 60
     :geometry (geometry
     :x 0 
@@ -42,6 +45,7 @@
 
 (defwidget minute-prog[]
   (circular-progress
+    :css getcss
     :class "minute"
     :value { 100 / 60 }
     :start-at { ((75 + 100 * formattime(EWW_TIME, "%M", "Asia/Calcutta") / 60) - 100/120) % 100 }
@@ -54,10 +58,11 @@
 
 (defwidget second-prog[]
   (circular-progress
+    :css getcss
     :class "second"
     :value { 100 / 60 }
     :start-at { ((75 + 100 * formattime(EWW_TIME, "%S", "Asia/Calcutta") / 60) - 100/120) % 100 }
-    :thickness 10
+    :thickness 15
     :geometry (geometry
     :x 0 
     :y 0 
@@ -71,6 +76,7 @@
     :orientation "v"
     :valign "center"
     (label
+      :css getcss
       :class "clocktext"
       :yalign 1
       :text { formattime(EWW_TIME, "%I:%M:%S %p", "Asia/Calcutta")}
@@ -81,6 +87,7 @@
         :width 250
         :height 250))
     (label
+      :css getcss
       :class "clockdate"
       :yalign 0.1
       :text { formattime(EWW_TIME, "%a, %d %B %Y", "Asia/Calcutta")}
@@ -104,6 +111,7 @@
     )))
 
 (defwindow clock
+  :css getcss
   :monitor 0
   :anchor "top left"
   :geometry (geometry

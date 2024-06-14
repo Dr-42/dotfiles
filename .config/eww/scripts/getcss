@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+
+import os
+from Pylette import extract_colors
+
+# Get the wallpaper path from .cache/.wallpaper
+wallpaper_path = ""
+home = os.path.expanduser("~")
+try:
+    with open(home + "/.cache/.wallpaper", "r") as f:
+        wallpaper_path = f.read().strip()
+except FileNotFoundError:
+    wallpaper_path = home + "/dotfiles/Wallpapers/GLADOS.jpg"
+
+# Get the wallpaper color
+
+colors = extract_colors(
+    image=wallpaper_path,
+    palette_size=6,
+    resize=True,
+    mode="MC",
+    sort_mode="luminance",
+)
+colors = [color.rgb for color in colors]
+
+# .hour, .minute, .second background color gets zeroth color inverted
+# .hour gets the first color
+# .minute gets the second color
+# .second gets the third color
+# .clocktext and clockdate gets the fourth color
+# .clockmarker gets the fifth color
+# .clockmarkerfilled gets the fifth color with 0.2 alpha
+# .clockmarkerempty gets the fifth color with 0.1 alpha
+
+# clocktext and clockdate have a background color of inverse of the fourth color with 0.8 alpha
+
+dialcolor = "rgb({0}, {1}, {2})".format(
+    255 - colors[0][0], 255 - colors[0][1], 255 - colors[0][2]
+)
+hourcolor = "rgb({0}, {1}, {2})".format(colors[1][0], colors[1][1], colors[1][2])
+minutecolor = "rgb({0}, {1}, {2})".format(colors[2][0], colors[2][1], colors[2][2])
+secondcolor = "rgb({0}, {1}, {2})".format(colors[3][0], colors[3][1], colors[3][2])
+markerfilledcolor = "rgba({0}, {1}, {2}, 0.2)".format(
+    colors[4][0], colors[4][1], colors[4][2]
+)
+markeremptycolor = "rgba({0}, {1}, {2}, 0.1)".format(
+    colors[4][0], colors[4][1], colors[4][2]
+)
+
+textcolor = "rgb(20, 20, 20)"
+textbg = "rgba(200, 200, 200, 0.8)"
+
+css = """.clockmarkerfilled {{
+    color: {0};
+    background-color: rgba(255, 0, 0, 0);
+}}
+
+.clockmarkerempty {{
+    color: {1};
+    background-color: rgba(255, 0, 0, 0);
+}}
+
+.hour {{
+    background-color: {2};
+    color: {9};
+}}
+
+.minute {{
+    background-color: {3};
+    color: {9};
+}}
+
+.second {{
+    background-color: {4};
+    color: {9};
+}}
+
+.clocktext {{
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: {5};
+    background-color: {6};
+    border-radius: 150px 150px 0 0;
+}}
+
+.clockdate {{
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: {7};
+    background-color: {8};
+    border-radius: 0 0 150px 150px;
+}}
+
+.clockmarker {{
+    color: #ff0000;
+}}"""
+
+css = css.format(
+    markerfilledcolor,
+    markeremptycolor,
+    hourcolor,
+    minutecolor,
+    secondcolor,
+    textcolor,
+    textbg,
+    textcolor,
+    textbg,
+    dialcolor,
+)
+
+print(css)
