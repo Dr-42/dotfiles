@@ -2,18 +2,37 @@
 
 import subprocess
 
-icons = ["󰤨", "󰤭"]
+icons = ["󰌗 ", "󰤨 ", "󰤭 "]
 
-# Get current wifi card status
-battery_status = subprocess.run(
-    "iw wlp0s20f3 link | grep SSID", shell=True, capture_output=True
-).stdout.decode("utf-8")
+ifconfig_data = subprocess.check_output(["ifconfig"]).decode("utf-8").split("\n")
 
-# if returned string is 0 means there is not any active connection
+group_data = []
+group_count = 0
+for i in range(len(ifconfig_data)):
+    if ifconfig_data[i] != "":
+        if group_count >= len(group_data):
+            group_data.append([])
+        group_data[group_count].append(ifconfig_data[i])
+    else:
+        group_count += 1
 
-ssid = battery_status.split("SSID: ")[1].strip()
 
-if len(battery_status) != 0:
-    print(icons[0], " ", ssid)
-else:
-    print(icons[1])
+def get_out():
+    for i in range(len(group_data)):
+        for j in range(len(group_data[i])):
+            if "enp" in group_data[i][j]:
+                for k in range(len(group_data[i])):
+                    if "inet" in group_data[i][k]:
+                        return icons[0]
+
+            if "wlp" in group_data[i][j]:
+                for k in range(len(group_data[i])):
+                    if "inet" in group_data[i][k]:
+                        return icons[1]
+
+    return icons[2]
+
+
+out = get_out()
+
+print(out)

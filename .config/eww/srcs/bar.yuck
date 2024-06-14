@@ -24,7 +24,7 @@
 		(label 
 			:class "time_battery" 
 			:halign "end" 
-			:text "${wifi} ${volume} ${battery} ${time}"
+			:text "${wifi} ${volume} ${battery} ${round(EWW_BATTERY["total_avg"], 2)} ${time}"
 			(systray
 				:spacing 2
 				:orientation "h"

@@ -32,7 +32,7 @@
     :css getcss
     :class "hour"
     :value { 200 / 60 }
-    :start-at { ((75 + 100 * formattime(EWW_TIME, "%I", "Asia/Calcutta") / 12) - 200/120) % 100 }
+    :start-at { ((75 + 100 * (formattime(EWW_TIME, "%I", "Asia/Calcutta") + ( formattime(EWW_TIME, "%M", "Asia/Calcutta") / 60 )) / 12) - 200/120) % 100 }
     :thickness 60
     :geometry (geometry
     :x 0 
