@@ -3,6 +3,11 @@
 import os
 from Pylette import extract_colors
 
+
+def get_lightness(rgb):
+    return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]
+
+
 # Get the wallpaper path from .cache/.wallpaper
 wallpaper_path = ""
 home = os.path.expanduser("~")
@@ -23,17 +28,6 @@ colors = extract_colors(
 )
 colors = [color.rgb for color in colors]
 
-# .hour, .minute, .second background color gets zeroth color inverted
-# .hour gets the first color
-# .minute gets the second color
-# .second gets the third color
-# .clocktext and clockdate gets the fourth color
-# .clockmarker gets the fifth color
-# .clockmarkerfilled gets the fifth color with 0.2 alpha
-# .clockmarkerempty gets the fifth color with 0.1 alpha
-
-# clocktext and clockdate have a background color of inverse of the fourth color with 0.8 alpha
-
 dialcolor = "rgb({0}, {1}, {2})".format(
     255 - colors[0][0], 255 - colors[0][1], 255 - colors[0][2]
 )
@@ -47,8 +41,20 @@ markeremptycolor = "rgba({0}, {1}, {2}, 0.1)".format(
     colors[4][0], colors[4][1], colors[4][2]
 )
 
-textcolor = "rgb(20, 20, 20)"
-textbg = "rgba(200, 200, 200, 0.8)"
+textrgb = colors[5]
+textrgb_inv = (255 - textrgb[0], 255 - textrgb[1], 255 - textrgb[2])
+
+
+if get_lightness(textrgb) > get_lightness(textrgb_inv):
+    tmp = textrgb
+    textrgb = textrgb_inv
+    textrgb_inv = tmp
+
+
+textcolor = "rgb({0}, {1}, {2})".format(textrgb[0], textrgb[1], textrgb[2])
+textbg = "rgba({0}, {1}, {2}, 0.8)".format(
+    textrgb_inv[0], textrgb_inv[1], textrgb_inv[2]
+)
 
 css = """.clockmarkerfilled {{
     color: {0};
