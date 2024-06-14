@@ -1,0 +1,31 @@
+(defvar home_dir "/home/$USER/.config/eww/scripts")
+
+(defpoll time :interval "20s"
+	`date +" %a %b %d %I:%M %p"`)
+
+(defpoll battery :interval "30s"
+	`/home/$USER/.config/eww/scripts/battery.py`)
+
+(defpoll volume :interval "1s"
+	`/home/$USER/.config/eww/scripts/volume.py`)
+
+(defpoll wifi :interval "3s"
+	`/home/$USER/.config/eww/scripts/wifi.py`)
+
+(defpoll workspaces :interval "0.1s"
+	`/home/$USER/.config/eww/scripts/workspaces.py`)
+
+(defwidget bar[]
+	(box 
+		:class "main-container"
+		:space-evenly true
+		:orientation "h"
+		(literal :content workspaces)
+		(label 
+			:class "time_battery" 
+			:halign "end" 
+			:text "${wifi} ${volume} ${battery} ${time}"
+			(systray
+				:spacing 2
+				:orientation "h"
+				:space-evenly true))))

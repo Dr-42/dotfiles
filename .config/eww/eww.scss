@@ -1,3 +1,38 @@
 * {
-  all: unset;
+    all: unset;
+}
+
+$bg: rgba(#ffffff,0.1);
+$fg: #dddddd;
+$shadow: rgba(#000000,0.3);
+$border_col: rgba(#cccccc,0.18);
+$best_so_far: rgba(255,255,255,0.1); 
+
+.bar {
+    background-color: #000000;
+}
+
+.workspaces {
+    background-color: $bg;
+    border-radius: 10px;
+    color: $fg;	
+    border: 1px solid $border_col;
+    padding: 6px 20px 4px 20px;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px $shadow;
+}
+
+.time_battery {
+    background: $bg;
+    border-radius: 10px;
+    color: $fg;
+    font-size: 16px;
+    padding: 5px 15px 5px 14px; 
+    border: 1px solid $border_col;
+    box-shadow: 2px 2px 2px $shadow;
+    text-shadow: none;
+}
+
+.time_battery:hover {
+    background: rgba(#ffffff,0.15);
 }
