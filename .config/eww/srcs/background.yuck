@@ -1,0 +1,5 @@
+(defwidget background[]
+  (image
+    :image-width { 1920 / 1.25 }
+    :image-height { 1080 / 1.25 }
+    :path getimage))

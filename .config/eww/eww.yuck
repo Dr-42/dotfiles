@@ -1,114 +1,6 @@
-(defpoll gonger :interval "1s" "scripts/playgong")
-(defpoll getcss :interval "1m" "scripts/getcss")
-
-(defwidget clockmarker[num]
-  (circular-progress
-    :css getcss
-    :class { num % 2 == 0 ? "clockmarkerfilled" : "clockmarkerempty" }
-    :value { 100 / 12 }
-    :thickness 60
-    :start-at { (75 + 100 * num / 12) % 100 }
-    :geometry (geometry
-    :x 0 
-    :y 0 
-    :width 250 
-    :height 250)))
-
-(defwidget clockmarkers[]
-  (overlay
-    (label :text gonger)
-    (clockmarker :num 0)
-    (clockmarker :num 1)
-    (clockmarker :num 2)
-    (clockmarker :num 3)
-    (clockmarker :num 4)
-    (clockmarker :num 5)
-    (clockmarker :num 6)
-    (clockmarker :num 7)
-    (clockmarker :num 8)
-    (clockmarker :num 9)
-    (clockmarker :num 10)
-    (clockmarker :num 11)))
-
-(defwidget hour-prog[]
-  (circular-progress
-    :css getcss
-    :class "hour"
-    :value { 200 / 60 }
-    :start-at { ((75 + 100 * formattime(EWW_TIME, "%I", "Asia/Calcutta") / 12) - 200/120) % 100 }
-    :thickness 60
-    :geometry (geometry
-    :x 0 
-    :y 0 
-    :width 250 
-    :height 250)))
-
-(defwidget minute-prog[]
-  (circular-progress
-    :css getcss
-    :class "minute"
-    :value { 100 / 60 }
-    :start-at { ((75 + 100 * formattime(EWW_TIME, "%M", "Asia/Calcutta") / 60) - 100/120) % 100 }
-    :thickness 35
-    :geometry (geometry
-    :x 0 
-    :y 0 
-    :width 180 
-    :height 180)))
-
-(defwidget second-prog[]
-  (circular-progress
-    :css getcss
-    :class "second"
-    :value { 100 / 60 }
-    :start-at { ((75 + 100 * formattime(EWW_TIME, "%S", "Asia/Calcutta") / 60) - 100/120) % 100 }
-    :thickness 15
-    :geometry (geometry
-    :x 0 
-    :y 0 
-    :width 160 
-    :height 160)))
-
-(defwidget clocktext[]
-  (box
-    :width 250
-    :height 250
-    :orientation "v"
-    :valign "center"
-    (label
-      :css getcss
-      :class "clocktext"
-      :yalign 1
-      :text { formattime(EWW_TIME, "%I:%M:%S %p", "Asia/Calcutta")}
-      :geometry (geometry
-        :anchor "bottom"
-        :x 0
-        :y 0
-        :width 250
-        :height 250))
-    (label
-      :css getcss
-      :class "clockdate"
-      :yalign 0.1
-      :text { formattime(EWW_TIME, "%a, %d %B %Y", "Asia/Calcutta")}
-      :geometry (geometry
-        :x 0
-        :y 0
-        :width 250
-        :height 250))
-  ))
-
-(defwidget clock[]
-  (box 
-    :width 250
-    :height 250
-    (overlay
-      (clocktext)
-      (hour-prog)
-      (minute-prog)
-      (second-prog)
-      (clockmarkers)
-    )))
+(include "srcs/common.yuck")
+(include "srcs/clock.yuck")
+(include "srcs/background.yuck")
 
 (defwindow clock
   :css getcss
@@ -123,13 +15,6 @@
   :reserve    (struts :distance "50px" :side "top")
   (clock))
 
-(defpoll getimage :interval "10m" "scripts/getimage")
-
-(defwidget background[]
-  (image
-    :image-width { 1920 / 1.25 }
-    :image-height { 1080 / 1.25 }
-    :path getimage))
 
 (defwindow background 
   :stacking "bg" 

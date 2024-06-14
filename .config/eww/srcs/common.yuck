@@ -1,0 +1,4 @@
+(defpoll gonger :interval "1s" "scripts/playgong")
+(defpoll getcss :interval "1m" "scripts/getcss")
+
+(defpoll getimage :interval "10m" "scripts/getimage")
