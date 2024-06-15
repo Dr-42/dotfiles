@@ -20,8 +20,12 @@
 (defpoll active_window :interval "1s"
 	`/home/$USER/.config/eww/scripts/active_window.py`)
 
+(defpoll cursor_ypos :interval "0.1s"
+	`hyprctl cursorpos | cut -d "," -f 2 | awk '{print $1}'`)
+
 (defwidget bar[]
 	(box 
+		:visible {cursor_ypos < 30}
 		:css getcss
 		:class "main_content"
 		:space-evenly true
