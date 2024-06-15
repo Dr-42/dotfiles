@@ -56,7 +56,7 @@ textbg = "rgba({0}, {1}, {2}, 0.8)".format(
     textrgb_inv[0], textrgb_inv[1], textrgb_inv[2]
 )
 
-bar_bg = "rgb({0}, {1}, {2})".format(colors[0][0], colors[0][1], colors[0][2])
+bar_bg = "rgba({0}, {1}, {2}, 0.7)".format(colors[0][0], colors[0][1], colors[0][2])
 
 bar_fg = "rgba({0}, {1}, {2}, 0.9)".format(
     255 - colors[0][0], 255 - colors[0][1], 255 - colors[0][2]
