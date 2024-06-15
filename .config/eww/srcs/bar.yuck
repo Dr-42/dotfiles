@@ -1,3 +1,5 @@
+(include "srcs/common.yuck")
+
 (defvar home_dir "/home/$USER/.config/eww/scripts")
 
 (defpoll time :interval "20s"
@@ -9,23 +11,47 @@
 (defpoll volume :interval "1s"
 	`/home/$USER/.config/eww/scripts/volume.py`)
 
-(defpoll wifi :interval "3s"
-	`/home/$USER/.config/eww/scripts/wifi.py`)
-
 (defpoll workspaces :interval "0.1s"
 	`/home/$USER/.config/eww/scripts/workspaces.py`)
 
+(defpoll brightness :interval "1s"
+	`/home/$USER/.config/eww/scripts/brightness.py`)
+
+(defpoll active_window :interval "1s"
+	`/home/$USER/.config/eww/scripts/active_window.py`)
+
 (defwidget bar[]
 	(box 
-		:class "main-container"
+		:css getcss
+		:class "main_content"
 		:space-evenly true
 		:orientation "h"
-		(literal :content workspaces)
-		(label 
-			:class "time_battery" 
+		(literal :css getcss :content workspaces)
+		(label :css getcss :class "time_battery" :truncate true :text active_window)
+		(box
+			:css getcss
+			:class "time_battery"
 			:halign "end" 
-			:text "${wifi} ${volume} ${battery} ${round(EWW_BATTERY["total_avg"], 2)} ${time}"
+			:spacing 5
+			:space-evenly false
+			(eventbox
+				:css getcss
+				:onclick "pavucontrol"
+				:onscroll "scripts/set_volume.py {}"
+				volume)
+			(eventbox
+				:css getcss
+				:onscroll "scripts/set_brightness.py {}"
+				brightness)
+			(label
+				:css getcss
+				:text "${battery} ${round(EWW_BATTERY["total_avg"], 2)}")
+			(label
+				:css getcss
+				:text time)
 			(systray
+				:css getcss
 				:spacing 2
 				:orientation "h"
-				:space-evenly true))))
+				:space-evenly true)
+)))

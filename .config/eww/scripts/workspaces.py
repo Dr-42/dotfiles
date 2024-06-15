@@ -3,7 +3,7 @@
 import subprocess
 import json
 
-icons = ["󰄰", "󰄯", "⌾︎"]
+icons = ["󰄰", "󰄯", "󰄮"]
 
 has_window = [False] * 9
 
@@ -34,7 +34,7 @@ for i in range(9):
         window_icons.append(icons[0])
 
 
-output = '(box :class "workspaces" :halign "start" :spacing 8'
+output = '(box :css getcss :class "workspaces" :halign "start" :spacing 8'
 
 for i in range(9):
     output += (

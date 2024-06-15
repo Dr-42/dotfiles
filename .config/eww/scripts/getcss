@@ -56,7 +56,54 @@ textbg = "rgba({0}, {1}, {2}, 0.8)".format(
     textrgb_inv[0], textrgb_inv[1], textrgb_inv[2]
 )
 
-css = """.clockmarkerfilled {{
+bar_bg = "rgb({0}, {1}, {2})".format(colors[0][0], colors[0][1], colors[0][2])
+
+bar_fg = "rgba({0}, {1}, {2}, 0.9)".format(
+    255 - colors[0][0], 255 - colors[0][1], 255 - colors[0][2]
+)
+
+bar_fg_hover = "rgba({0}, {1}, {2}, 0.7)".format(
+    255 - colors[1][0], 255 - colors[1][1], 255 - colors[1][2]
+)
+
+bar_bg_hover = "rgba({0}, {1}, {2}, 0.7)".format(
+    colors[1][0], colors[1][1], colors[1][2]
+)
+
+bar_border = "rgba({0}, {1}, {2}, 0.9)".format(
+    255 - colors[1][0], 255 - colors[1][1], 255 - colors[1][2]
+)
+
+bar_shadow = "rgba({0}, {1}, {2}, 0.9)".format(
+    255 - colors[2][0], 255 - colors[2][1], 255 - colors[2][2]
+)
+
+css = """.bar {{
+    background-color: {10};
+}}
+
+.workspaces {{
+    background-color: {10};
+    border-radius: 10px;
+    color: {11};
+    border: 1px solid {12};
+    padding: 6px 20px 4px 20px;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px {13};
+}}
+
+.time_battery {{
+    background: {10};
+    border-radius: 10px;
+    color: {11};
+    font-size: 16px;
+    padding: 5px 15px 5px 14px; 
+    border: 1px solid {12};
+    box-shadow: 2px 2px 2px {13};
+    text-shadow: none;
+}}
+
+.clockmarkerfilled {{
     color: {0};
     background-color: rgba(255, 0, 0, 0);
 }}
@@ -101,7 +148,8 @@ css = """.clockmarkerfilled {{
 
 .clockmarker {{
     color: #ff0000;
-}}"""
+}}
+"""
 
 css = css.format(
     markerfilledcolor,
@@ -114,6 +162,10 @@ css = css.format(
     textcolor,
     textbg,
     dialcolor,
+    bar_bg,
+    bar_fg,
+    bar_border,
+    bar_shadow,
 )
 
 print(css)

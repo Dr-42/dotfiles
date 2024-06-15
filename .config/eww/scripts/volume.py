@@ -7,7 +7,7 @@ icons = ["󰕾  ", "󰖁  "]
 # Get current volume status
 volume_status = (
     subprocess.run(
-        "amixer get Master | grep -oP '(?<=\[).\d?(?=%\])' | tail -n 1",
+        "amixer get Master | grep -oP '(?<=\[).*?(?=%\])' | tail -n 1",
         shell=True,
         capture_output=True,
     )
