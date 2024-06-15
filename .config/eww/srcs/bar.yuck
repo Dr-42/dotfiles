@@ -26,6 +26,7 @@
 (defpoll cursor_ypos :interval "0.1s"
 	`hyprctl cursorpos | cut -d "," -f 2 | awk '{print $1}'`)
 
+
 (defwidget bar[]
 	(box 
 		:visible {cursor_ypos < 30}
@@ -56,13 +57,26 @@
 				:css getcss
 				:text "${battery} "
 				:tooltip `Battery: ${round(EWW_BATTERY["total_avg"], 0)}%`)
-			(label
-				:css getcss
-				:text `${formattime(EWW_TIME, "%I:%M:%S %p")}`
-				:tooltip `${formattime(EWW_TIME, "%A, %B %d, %Y")}`)
 			(systray
 				:css getcss
 				:spacing 2
 				:orientation "h"
 				:space-evenly true)
+			(eventbox
+				:css getcss
+				:onclick `${EWW_CMD} update showcal=true; ${EWW_CMD} open cal`
+				:tooltip `${formattime(EWW_TIME, "%A, %B %d, %Y")}`
+				`${formattime(EWW_TIME, "%I:%M:%S %p")}`
+			)
 )))
+
+(defwidget cal[]
+	(eventbox
+		:visible showcal
+		:css getcss
+		:class "time_battery"
+		:onhover `${EWW_CMD} update showcal=true`
+		:onhoverlost `${EWW_CMD} update showcal=false`
+		:visible showcal
+		(calendar))
+)

@@ -40,4 +40,14 @@
   (bar)
 )
 
-
+(defwindow cal
+  :monitor 0
+  :stacking "fg" 
+  :css getcss
+  :geometry (geometry 
+    :x "2%"
+    :y "2%"
+    :anchor "top right"
+  )
+  (cal)
+)

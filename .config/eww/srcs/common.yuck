@@ -2,3 +2,4 @@
 (defpoll getcss :interval "1m" "scripts/getcss")
 
 (defpoll getimage :interval "10m" "scripts/getimage")
+(defvar showcal false)
