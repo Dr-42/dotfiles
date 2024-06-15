@@ -2,20 +2,23 @@
 
 (defvar home_dir "/home/$USER/.config/eww/scripts")
 
-(defpoll time :interval "20s"
-	`date +" %a %b %d %I:%M %p"`)
-
 (defpoll battery :interval "30s"
 	`/home/$USER/.config/eww/scripts/battery.py`)
 
 (defpoll volume :interval "1s"
 	`/home/$USER/.config/eww/scripts/volume.py`)
 
+(defpoll volume_num :interval "1s"
+	`/home/$USER/.config/eww/scripts/get_volume.py`)
+
 (defpoll workspaces :interval "0.1s"
 	`/home/$USER/.config/eww/scripts/workspaces.py`)
 
 (defpoll brightness :interval "1s"
 	`/home/$USER/.config/eww/scripts/brightness.py`)
+
+(defpoll brightness_num :interval "1s"
+	`brightnessctl get -P`)
 
 (defpoll active_window :interval "1s"
 	`/home/$USER/.config/eww/scripts/active_window.py`)
@@ -36,23 +39,27 @@
 			:css getcss
 			:class "time_battery"
 			:halign "end" 
-			:spacing 5
+			:spacing 8
 			:space-evenly false
 			(eventbox
 				:css getcss
-				:onclick "pavucontrol"
+				:onclick `echo "pavucontrol" | at now`
 				:onscroll "scripts/set_volume.py {}"
+				:tooltip "Volume: ${volume_num}%"
 				volume)
 			(eventbox
 				:css getcss
 				:onscroll "scripts/set_brightness.py {}"
+				:tooltip "Brightness: ${brightness_num}%"
 				brightness)
 			(label
 				:css getcss
-				:text "${battery} ${round(EWW_BATTERY["total_avg"], 2)}")
+				:text "${battery} "
+				:tooltip `Battery: ${round(EWW_BATTERY["total_avg"], 0)}%`)
 			(label
 				:css getcss
-				:text time)
+				:text `${formattime(EWW_TIME, "%I:%M:%S %p")}`
+				:tooltip `${formattime(EWW_TIME, "%A, %B %d, %Y")}`)
 			(systray
 				:css getcss
 				:spacing 2

@@ -2,7 +2,7 @@
 
 import subprocess
 
-icons = ["󰕾  ", "󰖁  "]
+icons = ["󰕾 ", "󰖁 "]
 
 # Get current volume status
 volume_status = (
@@ -26,4 +26,4 @@ is_muted = subprocess.run(
 if "off" in is_muted:
     print(icons[1])
 else:
-    print(icons[0], str(volume_status), "%", sep="")
+    print(icons[0])

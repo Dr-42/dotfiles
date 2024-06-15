@@ -31,8 +31,7 @@
 
 (defwindow bar
   :monitor 0
-  :stacking "bg" 
-  :exclusive true
+  :stacking "fg" 
   :css getcss
   :geometry (geometry 
     :width { 1920 / 1.25 }
