@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import sys
 import subprocess
 import json
 
@@ -34,7 +35,7 @@ for i in range(9):
         window_icons.append(icons[0])
 
 
-output = '(box :css getcss :class "workspaces" :halign "start" :spacing 8'
+output = '(eventbox :onscroll "scripts/workspaces.py {}" (box :css getcss :class "workspaces" :halign "start" :spacing 8'
 
 for i in range(9):
     output += (
@@ -45,6 +46,15 @@ for i in range(9):
         + '")'
     )
 
-output += ")"
+output += "))"
 
-print(output)
+args = sys.argv
+
+if len(args) > 1:
+    arg = args[1]
+    if arg == "up":
+        subprocess.run("hyprctl dispatch workspace e+1", shell=True)
+    elif arg == "down":
+        subprocess.run("hyprctl dispatch workspace e-1", shell=True)
+else:
+    print(output)
