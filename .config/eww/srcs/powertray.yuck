@@ -24,6 +24,7 @@
 					:halign "center"
 					:vexpand true
 					:hexpand true
+					:tooltip "Sleep"
 					(label
 						:css getcss
 						:class "powertray-button"
@@ -36,6 +37,7 @@
 					:halign "center"
 					:vexpand true
 					:hexpand true
+					:tooltip "Hibernate"
 					(label
 						:css getcss
 						:class "powertray-button"
@@ -48,6 +50,7 @@
 					:halign "center"
 					:vexpand true
 					:hexpand true
+					:tooltip "Shutdown"
 					(label
 						:css getcss
 						:class "powertray-button"
@@ -60,6 +63,7 @@
 					:halign "center"
 					:vexpand true
 					:hexpand true
+					:tooltip "Restart"
 					(label 
 						:css getcss
 						:class "powertray-button"
@@ -72,6 +76,7 @@
 					:halign "center"
 					:vexpand true
 					:hexpand true
+					:tooltip "Logout"
 					(label 
 						:css getcss
 						:class "powertray-button"
