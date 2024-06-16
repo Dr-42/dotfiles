@@ -149,7 +149,54 @@ css = """.bar {{
 .clockmarker {{
     color: #ff0000;
 }}
-"""
+
+.powertray {{
+    background-color: {10};
+    border-radius: 10px;
+    color: {11};
+    border: 1px solid {12};
+    padding: 6px 20px 4px 20px;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px {13};
+    min-width: 300px;
+    min-height: 80px;
+}}
+
+.powertray:hover {{
+    background-color: {10};
+    border-radius: 10px;
+    color: {11};
+    border: 1px solid {12};
+    padding: 6px 20px 4px 20px;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px {13};
+    min-width: 300px;
+    min-height: 80px;
+}}
+
+.powertray-button {{
+    background-color: {10};
+    border-radius: 10px;
+    color: {11};
+    border: 1px solid {12};
+    padding: 8px 20px 4px 20px;
+    font-size: 22px;
+    box-shadow: 2px 2px 2px {13};
+    min-width: 40px;
+    min-height: 60px;
+}}
+
+.powertray-button:hover {{
+    background-color: {11};
+    border-radius: 10px;
+    color: {10};
+    border: 1px solid {12};
+    padding: 8px 20px 4px 20px;
+    font-size: 22px;
+    box-shadow: 2px 2px 2px {13};
+    min-width: 40px;
+    min-height: 60px;
+}}"""
 
 css = css.format(
     markerfilledcolor,

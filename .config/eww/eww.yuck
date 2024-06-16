@@ -1,6 +1,7 @@
 (include "srcs/clock.yuck")
 (include "srcs/background.yuck")
 (include "srcs/bar.yuck")
+(include "srcs/powertray.yuck")
 
 (defwindow clock
   :css getcss
@@ -50,4 +51,16 @@
     :anchor "top right"
   )
   (cal)
+)
+
+(defwindow powertray
+  :monitor 0
+  :stacking "fg" 
+  :css getcss
+  :geometry (geometry 
+    :x "2%"
+    :y "2%"
+    :anchor "top right"
+  )
+  (powertray)
 )

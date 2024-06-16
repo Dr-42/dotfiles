@@ -68,6 +68,12 @@
 				:tooltip `${formattime(EWW_TIME, "%A, %B %d, %Y")}`
 				`${formattime(EWW_TIME, "%I:%M:%S %p")}`
 			)
+			(button
+				:css getcss
+				:onclick `${EWW_CMD} update showpowertray=true; ${EWW_CMD} open powertray`
+				:tooltip "Power"
+				""
+			)
 )))
 
 (defwidget cal[]

@@ -3,3 +3,4 @@
 
 (defpoll getimage :interval "10m" "scripts/getimage")
 (defvar showcal false)
+(defvar showpowertray false)

@@ -1,0 +1,78 @@
+;; Sleep
+;; Hibernate
+;; Shutdown
+;; Restart
+;; Logout
+
+(defvar powertray "scripts/powertray.py")
+
+(defwidget powertray[]
+	(eventbox
+		:visible showpowertray
+		:css getcss
+		:class "powertray"
+		:onhoverlost "${EWW_CMD} update showpowertray=false"
+		:onhover "${EWW_CMD} update showpowertray=true"
+		(box
+			:css getcss
+			:class "powertray"
+				(eventbox 
+					:css getcss
+					:class "powertray-button"
+					:onclick "${powertray} sleep"
+					:valign "center"
+					:halign "center"
+					:vexpand true
+					:hexpand true
+					(label
+						:css getcss
+						:class "powertray-button"
+						:text "󰒲"))
+				(eventbox 
+					:css getcss
+					:class "powertray-button"
+					:onclick "${powertray} hibernate"
+					:valign "center"
+					:halign "center"
+					:vexpand true
+					:hexpand true
+					(label
+						:css getcss
+						:class "powertray-button"
+						:text ""))
+				(eventbox
+					:css getcss
+					:class "powertray-button"
+					:onclick "${powertray} shutdown"
+					:valign "center"
+					:halign "center"
+					:vexpand true
+					:hexpand true
+					(label
+						:css getcss
+						:class "powertray-button"
+						:text "⏻"))
+				(eventbox
+					:css getcss
+					:class "powertray-button"
+					:onclick "${powertray} restart"
+					:valign "center"
+					:halign "center"
+					:vexpand true
+					:hexpand true
+					(label 
+						:css getcss
+						:class "powertray-button"
+						:text "󰜉"))
+				(eventbox
+					:css getcss
+					:class "powertray-button"
+					:onclick "${powertray} logout"
+					:valign "center"
+					:halign "center"
+					:vexpand true
+					:hexpand true
+					(label 
+						:css getcss
+						:class "powertray-button"
+						:text "󰗽")))))
