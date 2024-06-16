@@ -1,27 +1,25 @@
 (include "srcs/common.yuck")
 
-(defvar home_dir "/home/$USER/.config/eww/scripts")
-
 (defpoll battery :interval "30s"
-	`/home/$USER/.config/eww/scripts/battery.py`)
+	`scripts/battery.py`)
 
 (defpoll volume :interval "1s"
-	`/home/$USER/.config/eww/scripts/volume.py`)
+	`scripts/volume.py`)
 
 (defpoll volume_num :interval "1s"
-	`/home/$USER/.config/eww/scripts/get_volume.py`)
+	`scripts/get_volume.py`)
 
 (defpoll workspaces :interval "0.1s"
-	`/home/$USER/.config/eww/scripts/workspaces.py`)
+	`scripts/workspaces.py`)
 
 (defpoll brightness :interval "1s"
-	`/home/$USER/.config/eww/scripts/brightness.py`)
+	`scripts/brightness.py`)
 
 (defpoll brightness_num :interval "1s"
 	`brightnessctl get -P`)
 
 (defpoll active_window :interval "1s"
-	`/home/$USER/.config/eww/scripts/active_window.py`)
+	`scripts/active_window.py`)
 
 (defpoll cursor_ypos :interval "0.1s"
 	`hyprctl cursorpos | cut -d "," -f 2 | awk '{print $1}'`)
