@@ -1,5 +1,3 @@
-(include "srcs/common.yuck")
-
 (defpoll battery :interval "30s"
 	`scripts/battery.py`)
 
@@ -21,7 +19,9 @@
 (defpoll active_window :interval "1s"
 	`scripts/active_window.py`)
 
-(defpoll showbar :interval "0.1s"
+(defpoll showbar 
+	:interval "0.1s"
+	:initial "true"
 	`scripts/showbar.py`)
 
 

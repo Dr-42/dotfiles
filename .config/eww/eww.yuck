@@ -1,3 +1,4 @@
+(include "srcs/common.yuck")
 (include "srcs/clock.yuck")
 (include "srcs/background.yuck")
 (include "srcs/bar.yuck")
@@ -22,8 +23,12 @@
   :stacking "bg" 
   :focusable "false" 
   :monitor 0
+  :passthrough true
+  :wm-ignore true
+  :hexpand true
+  :vexpand true
   :geometry (geometry 
-    :anchor "top left"
+    :anchor "center"
     :x 0 
     :y 0 
     :width "100%"
