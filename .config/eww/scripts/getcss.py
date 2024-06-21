@@ -8,6 +8,48 @@ def get_lightness(rgb):
     return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]
 
 
+def luminance(r, g, b):
+    GAMMA = 2.4  # Ensure this is set correctly as per your requirement
+    RED = 0.2126
+    GREEN = 0.7152
+    BLUE = 0.0722
+
+    def transform(v):
+        v /= 255
+        return v / 12.92 if v <= 0.03928 else ((v + 0.055) / 1.055) ** GAMMA
+
+    a = list(map(transform, [r, g, b]))
+    return a[0] * RED + a[1] * GREEN + a[2] * BLUE
+
+
+def make_readable(fg, bg):
+    # Make the luminance of the text color readable on the background color
+    # lumnance ratio is to be greater than 4.5
+    # https://www.w3.org/TR/WCAG20-TECHS/G18.html
+
+    fg_lum = luminance(fg[0], fg[1], fg[2])
+    bg_lum = luminance(bg[0], bg[1], bg[2])
+
+    if fg_lum > bg_lum:
+        ratio = (fg_lum + 0.05) / (bg_lum + 0.05)
+    else:
+        ratio = (bg_lum + 0.05) / (fg_lum + 0.05)
+
+    if ratio < 4.5:
+        if fg_lum > bg_lum:
+            # Make the text color darker
+            fg = (fg[0] * 0.8, fg[1] * 0.8, fg[2] * 0.8)
+        else:
+            # Make the text color lighter
+            fg = (
+                fg[0] + (255 - fg[0]) * 0.2,
+                fg[1] + (255 - fg[1]) * 0.2,
+                fg[2] + (255 - fg[2]) * 0.2,
+            )
+
+    return (fg, bg)
+
+
 # Get the wallpaper path from .cache/.wallpaper
 wallpaper_path = ""
 home = os.path.expanduser("~")
@@ -44,11 +86,7 @@ markeremptycolor = "rgba({0}, {1}, {2}, 0.1)".format(
 textrgb = colors[5]
 textrgb_inv = (255 - textrgb[0], 255 - textrgb[1], 255 - textrgb[2])
 
-
-if get_lightness(textrgb) > get_lightness(textrgb_inv):
-    tmp = textrgb
-    textrgb = textrgb_inv
-    textrgb_inv = tmp
+(textrgb, textrgb_inv) = make_readable(textrgb, textrgb_inv)
 
 
 textcolor = "rgb({0}, {1}, {2})".format(textrgb[0], textrgb[1], textrgb[2])
@@ -100,7 +138,11 @@ css = """.bar {{
     padding: 5px 15px 5px 14px; 
     border: 1px solid {12};
     box-shadow: 2px 2px 2px {13};
-    text-shadow: none;
+    text-shadow:
+        0.07em 0 black,
+        0 0.07em black,
+        -0.07em 0 black,
+        0 -0.07em black;
 }}
 
 .clockmarkerfilled {{
@@ -196,6 +238,39 @@ css = """.bar {{
     box-shadow: 2px 2px 2px {13};
     min-width: 40px;
     min-height: 60px;
+}}
+
+.end-default-notification-box {{
+  background-color: {10};
+  padding: 12px;
+  padding-left: 8px;
+  margin: 12px;
+  border-radius: 10px;
+}}
+
+.notification-text {{
+  color: {11};
+  font-family: 'JetBrainsMono Nerd Font';
+}}
+
+.notification-title {{
+  font-weight: bold;
+  font-size: 1em;
+}}
+
+.notification-content {{
+  font-size: .8em;
+}}
+
+.content-box {{
+  margin-left: 12px;
+}}
+
+.battery-icon {{
+  color: rgb(255, 0, 0);
+  font-size: 2.1em;
+  margin-right: 48px;
+  margin-left: 24px;
 }}"""
 
 css = css.format(
