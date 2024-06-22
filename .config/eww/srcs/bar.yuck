@@ -55,6 +55,12 @@
 				:css getcss
 				:text "${battery} "
 				:tooltip `Battery: ${round(EWW_BATTERY["total_avg"], 0)}%`)
+			(eventbox
+				:css getcss
+				:onclick `~/.cargo/bin/end-rs history toggle`
+				:tooltip `Notifications`
+				""
+			)
 			(systray
 				:css getcss
 				:spacing 2

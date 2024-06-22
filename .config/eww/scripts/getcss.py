@@ -262,6 +262,19 @@ css = """.bar {{
   font-size: .8em;
 }}
 
+.end-history-frame {{
+    background-color: {10};
+    padding: 12px;
+    padding-left: 8px;
+    border-radius: 10px;
+}}
+
+.end-history-box {{
+    background-color: {10};
+    padding: 12px;
+    padding-left: 8px;
+}}
+
 .content-box {{
   margin-left: 12px;
 }}

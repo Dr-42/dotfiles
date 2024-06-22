@@ -1,5 +1,6 @@
 ;; Notifications
 (defvar end-notifications '')
+(defvar end-history '')
 
 (defwindow notification-frame
  :monitor 0
@@ -15,13 +16,26 @@
  :wm-ignore true
  (literal :content end-notifications))
 
-(defwidget end-notification
-  [notification]
-    (base-notification :notification notification))
+(defwindow history-frame
+  :monitor 0
+  :css getcss
+  :class "end-history-frame"
+  :geometry (geometry 
+   :x "0px"
+   :y "0px"
+   :width "480px"
+   :height "150px"
+   :anchor "top right")
+  :stacking "fg"
+  :windowtype "dialog"
+  :passthrough true
+  :wm-ignore true
+  (scroll :hscroll false :vscroll true (literal :content end-history)))
 
-(defwidget base-notification[notification]
+
+(defwidget end-notification[notification]
   (eventbox
-    :onclick "~/.cargo/bin/end-rs close ${notification.id}" ; use the end close command to implement "click-to-dismiss"
+    :onclick "~/.cargo/bin/end-rs close ${notification.id}"
     :valign "start"
     :height 100
     (box
@@ -29,21 +43,16 @@
       :class "end-default-notification-box"
       :orientation "horizontal"
       :space-evenly false
-      :halignment "start"
       (image
         :path {notification.icon}; end sets this property if the notification contains an image
         :image-width 100
         :image-height 100
       )
-      ;; (eventbox 
-      ;;   :onclick "echo ${notification} >> ~/.local/bin/endd.log"
-      ;;   (label :text {notification}))
       (box
         :css getcss
         :class "content-box"
         :orientation "vertical"
         :space-evenly "false"
-        :halignment "end"
         (label 
           :css getcss
           :class "notification-text notification-title"
@@ -61,37 +70,36 @@
           :wrap true
           :text {notification.body})))))
 
-(defwidget battery-notification
-  [notification]
+(defwidget end-history-list[history]
   (eventbox
-    :onclick "end close ${notification.id}" 
+    :onclick "~/.cargo/bin/end-rs history close"
+    :height 50
     (box
       :css getcss
-      :class "end-default-notification-box"
+      :class "end-history-box"
       :orientation "horizontal"
       :space-evenly false
-      (label
-        :css getcss
-        :class "notification-text battery-icon"
-        :yalign 0.5
-        :xalign 0.5
-        :text "󰁺"
+      :geometry (geometry :width "100%" :height "50px")
+      (image
+        :path {history.icon}; end sets this property if the notification contains an image
+        :image-width 50
+        :image-height 50
       )
       (box
+        :css getcss
+        :class "content-box"
         :orientation "vertical"
-        :hexpand true
+        :space-evenly false
         (label 
           :css getcss
           :class "notification-text notification-title"
-          :hexpand true
-          :yalign 0.5
+          :yalign 1
           :xalign 0
-          :text "Low Battery")
+          :text {history.summary})
         (label
           :css getcss
-          :class "notification-text"
-          :vexpand true
-          :hexpand true
-          :yalign 0.5
+          :class "notification-text notification-content"
+          :yalign 1
           :xalign 0
-          :text "${EWW_BATTERY["BAT0"]["capacity"]}% remaining"))))) ; of course we can still use eww built-ins!
+          :wrap true
+          :text {history.body})))))
