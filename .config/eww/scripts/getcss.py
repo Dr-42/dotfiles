@@ -31,21 +31,21 @@ def make_readable(fg, bg):
     bg_lum = luminance(bg[0], bg[1], bg[2])
 
     if fg_lum > bg_lum:
-        ratio = (fg_lum + 0.05) / (bg_lum + 0.05)
-    else:
-        ratio = (bg_lum + 0.05) / (fg_lum + 0.05)
+        tmp = fg
+        fg = bg
+        bg = tmp
+
+    ratio = (bg_lum + 0.05) / (fg_lum + 0.05)
 
     if ratio < 4.5:
-        if fg_lum > bg_lum:
-            # Make the text color darker
-            fg = (fg[0] * 0.8, fg[1] * 0.8, fg[2] * 0.8)
-        else:
-            # Make the text color lighter
-            fg = (
-                fg[0] + (255 - fg[0]) * 0.2,
-                fg[1] + (255 - fg[1]) * 0.2,
-                fg[2] + (255 - fg[2]) * 0.2,
-            )
+        # Decrease the luminance of the fg color
+        # to make it readable on the bg color
+        fg_lum_new = (bg_lum + 0.05) / 4.5 - 0.05
+        fg = (
+            int(fg[0] * fg_lum_new / fg_lum),
+            int(fg[1] * fg_lum_new / fg_lum),
+            int(fg[2] * fg_lum_new / fg_lum),
+        )
 
     return (fg, bg)
 
