@@ -94,6 +94,10 @@ textbg = "rgba({0}, {1}, {2}, 0.8)".format(
     textrgb_inv[0], textrgb_inv[1], textrgb_inv[2]
 )
 
+bar_main_bg = "rgba({0}, {1}, {2}, 0.7)".format(
+    colors[3][0], colors[3][1], colors[3][2]
+)
+
 bar_bg = "rgba({0}, {1}, {2}, 0.7)".format(colors[0][0], colors[0][1], colors[0][2])
 
 bar_fg = "rgba({0}, {1}, {2}, 0.9)".format(
@@ -116,28 +120,28 @@ bar_shadow = "rgba({0}, {1}, {2}, 0.9)".format(
     255 - colors[2][0], 255 - colors[2][1], 255 - colors[2][2]
 )
 
-css = """.bar {{
-    background-color: {10};
+css = f""".bar {{
+    background-color: {bar_main_bg};
 }}
 
 .workspaces {{
-    background-color: {10};
+    background-color: {bar_bg};
     border-radius: 10px;
-    color: {11};
-    border: 1px solid {12};
+    color: {bar_fg};
+    border: 1px solid {bar_border};
     padding: 6px 20px 4px 20px;
     font-size: 16px;
-    box-shadow: 2px 2px 2px {13};
+    box-shadow: 2px 2px 2px {bar_shadow};
 }}
 
 .time_battery {{
-    background: {10};
+    background: {bar_bg};
     border-radius: 10px;
-    color: {11};
+    color: {bar_fg};
     font-size: 16px;
     padding: 5px 15px 5px 14px; 
-    border: 1px solid {12};
-    box-shadow: 2px 2px 2px {13};
+    border: 1px solid {bar_border};
+    box-shadow: 2px 2px 2px {bar_shadow};
     text-shadow:
         0.07em 0 black,
         0 0.07em black,
@@ -146,36 +150,36 @@ css = """.bar {{
 }}
 
 .clockmarkerfilled {{
-    color: {0};
+    color: {markerfilledcolor};
     background-color: rgba(255, 0, 0, 0);
 }}
 
 .clockmarkerempty {{
-    color: {1};
+    color: {markeremptycolor};
     background-color: rgba(255, 0, 0, 0);
 }}
 
 .hour {{
-    background-color: {2};
-    color: {9};
+    background-color: {hourcolor};
+    color: {dialcolor};
 }}
 
 .minute {{
-    background-color: {3};
-    color: {9};
+    background-color: {minutecolor};
+    color: {dialcolor};
 }}
 
 .second {{
-    background-color: {4};
-    color: {9};
+    background-color: {secondcolor};
+    color: {dialcolor};
 }}
 
 .clocktext {{
     margin: 0;
     padding: 0;
     font-size: 20px;
-    color: {5};
-    background-color: {6};
+    color: {textcolor};
+    background-color: {textbg};
     border-radius: 150px 150px 0 0;
 }}
 
@@ -183,8 +187,8 @@ css = """.bar {{
     margin: 0;
     padding: 0;
     font-size: 13px;
-    color: {7};
-    background-color: {8};
+    color: {textcolor};
+    background-color: {textbg};
     border-radius: 0 0 150px 150px;
 }}
 
@@ -193,55 +197,55 @@ css = """.bar {{
 }}
 
 .powertray {{
-    background-color: {10};
+    background-color: {bar_bg};
     border-radius: 10px;
-    color: {11};
-    border: 1px solid {12};
+    color: {bar_fg};
+    border: 1px solid {bar_border};
     padding: 6px 20px 4px 20px;
     font-size: 16px;
-    box-shadow: 2px 2px 2px {13};
+    box-shadow: 2px 2px 2px {bar_shadow};
     min-width: 300px;
     min-height: 80px;
 }}
 
 .powertray:hover {{
-    background-color: {10};
+    background-color: {bar_bg};
     border-radius: 10px;
-    color: {11};
-    border: 1px solid {12};
+    color: {bar_fg};
+    border: 1px solid {bar_border};
     padding: 6px 20px 4px 20px;
     font-size: 16px;
-    box-shadow: 2px 2px 2px {13};
+    box-shadow: 2px 2px 2px {bar_shadow};
     min-width: 300px;
     min-height: 80px;
 }}
 
 .powertray-button {{
-    background-color: {10};
+    background-color: {bar_bg};
     border-radius: 10px;
-    color: {11};
-    border: 1px solid {12};
+    color: {bar_fg};
+    border: 1px solid {bar_border};
     padding: 8px 20px 4px 20px;
     font-size: 22px;
-    box-shadow: 2px 2px 2px {13};
+    box-shadow: 2px 2px 2px {bar_shadow};
     min-width: 40px;
     min-height: 60px;
 }}
 
 .powertray-button:hover {{
-    background-color: {11};
+    background-color: {bar_fg};
     border-radius: 10px;
-    color: {10};
-    border: 1px solid {12};
+    color: {bar_bg};
+    border: 1px solid {bar_border};
     padding: 8px 20px 4px 20px;
     font-size: 22px;
-    box-shadow: 2px 2px 2px {13};
+    box-shadow: 2px 2px 2px {bar_shadow};
     min-width: 40px;
     min-height: 60px;
 }}
 
 .end-default-notification-box {{
-  background-color: {10};
+  background-color: {bar_bg};
   padding: 12px;
   padding-left: 8px;
   margin: 12px;
@@ -249,7 +253,7 @@ css = """.bar {{
 }}
 
 .notification-text {{
-  color: {11};
+  color: {bar_fg};
   font-family: 'JetBrainsMono Nerd Font';
 }}
 
@@ -263,14 +267,14 @@ css = """.bar {{
 }}
 
 .end-history-frame {{
-    background-color: {10};
+    background-color: {bar_bg};
     padding: 12px;
     padding-left: 8px;
     border-radius: 10px;
 }}
 
 .end-history-box {{
-    background-color: {10};
+    background-color: {bar_bg};
     padding: 12px;
     padding-left: 8px;
 }}
@@ -285,22 +289,5 @@ css = """.bar {{
   margin-right: 48px;
   margin-left: 24px;
 }}"""
-
-css = css.format(
-    markerfilledcolor,
-    markeremptycolor,
-    hourcolor,
-    minutecolor,
-    secondcolor,
-    textcolor,
-    textbg,
-    textcolor,
-    textbg,
-    dialcolor,
-    bar_bg,
-    bar_fg,
-    bar_border,
-    bar_shadow,
-)
 
 print(css)
