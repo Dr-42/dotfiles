@@ -10,7 +10,7 @@
   :monitor 0
   :anchor "top left"
   :geometry (geometry
-    :x      "10%"
+    :x      "3%"
     :y      "10%"
     :anchor "top left")
   :stacking   "bg"

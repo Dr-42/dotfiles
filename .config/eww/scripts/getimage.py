@@ -20,8 +20,6 @@ with open(os.path.expanduser("~/.cache/.wallpaper"), "w") as f:
 
 # extract colors from the wallpaper
 css = subprocess.run(["scripts/getcss.py"], capture_output=True).stdout.decode("utf-8")
-# append " before and after the css
-# css = f'"{css}"'
 
 arg = f"getcss={css}"
 

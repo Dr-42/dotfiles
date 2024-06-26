@@ -266,6 +266,46 @@ css = f""".bar {{
   font-size: .8em;
 }}
 
+.end-notification-buttons {{
+    margin-top: 12px;
+}}
+
+.end-notification-button {{
+    background-color: {bar_bg};
+    color: {bar_fg};
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 12px;
+    border: 1px solid {bar_border};
+}}
+
+.end-notification-reply {{
+    background-color: {bar_bg};
+    color: {bar_fg};
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 12px;
+    border: 1px solid {bar_border};
+}}
+
+.end-notification-reply:focus {{
+    background-color: {bar_fg};
+    color: {bar_bg};
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 12px;
+    border: 1px solid {bar_border};
+}}
+
+.end-notification-button:hover {{
+    background-color: {bar_fg};
+    color: {bar_bg};
+    padding: 8px;
+    border-radius: 10px;
+    margin-right: 12px;
+    border: 1px solid {bar_border};
+}}
+
 .end-history-frame {{
     background-color: {bar_bg};
     padding: 12px;
