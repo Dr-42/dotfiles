@@ -1,9 +1,9 @@
 ;; Notifications
+(defvar end-binary "~/Projects/end-rs/target/debug/end-rs") 
 (defvar end-notifications '')
-(defvar end-history '')
-(defvar end-binary "~/.cargo/bin/end-rs") 
-(defvar reply-vis false)
-(defvar reply-text "")
+(defvar end-histories '')
+(defvar end-replies '')
+(defvar end-reply-text '')
 
 (defwindow notification-frame
   :monitor 0
@@ -33,7 +33,22 @@
   :windowtype "dialog"
   :passthrough true
   :wm-ignore true
-  (scroll :hscroll false :vscroll true (literal :content end-history)))
+  (scroll :hscroll false :vscroll true (literal :content end-histories)))
+
+(defwindow reply-frame
+  :monitor 0
+  :geometry (geometry 
+    :x "0px"
+    :y "0px"
+    :width "480px"
+    :height "0px"
+    :anchor "center")
+  :stacking "fg"
+  :windowtype "dialog"
+  :focusable true
+  :passthrough true
+  :wm-ignore true
+  (literal :content end-replies))
 
 
 (defwidget end-notification[notification]
@@ -72,15 +87,8 @@
           :xalign 0
           :vexpand true
           :wrap true
-          :text {notification.body}))
-      ;; (box
-      ;;   :css getcss
-      ;;   :class "end-notification-reply"
-      ;;   :orientation "horizontal"
-      ;;   :space-evenly false
-      ;;   (input
-      ;;     :value reply-text
-      ;;     :onchange "${EWW_CMD} update reply-text={}"))
+          :text {notification.body})
+      )
       (box
         :css getcss
         :class "end-notification-buttons"
@@ -97,7 +105,7 @@
             {action.text}))
         ))))
 
-(defwidget end-history-list[history]
+(defwidget end-history[history]
   (eventbox
     :onclick "${end-binary} history close"
     :height 50
@@ -130,3 +138,34 @@
           :xalign 0
           :wrap true
           :text {history.body})))))
+
+(defwidget end-reply[id]
+  (box
+    :css getcss
+    :class "end-default-notification-box"
+    :orientation "vertical"
+    :space-evenly false
+    (input
+      :css getcss
+      :class "end-notification-reply"
+      :value end-reply-text
+      :onchange "${EWW_CMD} update end-reply-text='{}'")
+    (box
+      :css getcss
+      :class "end-notification-buttons"
+      :orientation "horizontal"
+      :space-evenly false
+      (button
+        :css getcss
+        :class "end-notification-button"
+        :onclick `${end-binary} reply send ${id} "${end-reply-text}"`
+        :vexpand false
+        "Reply")
+      (button
+        :css getcss
+        :class "end-notification-button"
+        :onclick "${end-binary} reply close ${id}"
+        :vexpand false
+        "Cancel"))
+  ))
+

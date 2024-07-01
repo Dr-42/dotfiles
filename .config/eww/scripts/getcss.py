@@ -288,9 +288,9 @@ css = f""".bar {{
     border: 1px solid {bar_border};
 }}
 
-.end-notification-reply:focus {{
+.end-notification-reply:hover:focus {{
     background-color: {bar_fg};
-    color: {bar_bg};
+    color: {hourcolor};
     padding: 8px;
     border-radius: 10px;
     margin-right: 12px;
