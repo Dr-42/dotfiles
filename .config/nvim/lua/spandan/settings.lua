@@ -37,6 +37,9 @@ setft({ "h" }, "c")
 -- Set crust file types
 setft({ "crust", "syn" }, "crust")
 
+-- hyprlang
+setft({ "hypr", "conf" }, "hyprlang")
+
 -- Set highlight on search
 vim.o.hlsearch = false
 

@@ -63,6 +63,7 @@
 			)
 			(systray
 				:css getcss
+				:class "tray"
 				:spacing 2
 				:orientation "h"
 				:space-evenly true)

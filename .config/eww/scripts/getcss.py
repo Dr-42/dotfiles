@@ -245,16 +245,16 @@ css = f""".bar {{
 }}
 
 .end-default-notification-box {{
-  background-color: {bar_bg};
-  padding: 12px;
-  padding-left: 8px;
-  margin: 12px;
-  border-radius: 10px;
+    background-color: {bar_bg};
+    padding: 12px;
+    padding-left: 8px;
+    margin: 12px;
+    border-radius: 10px;
 }}
 
 .notification-text {{
-  color: {bar_fg};
-  font-family: 'JetBrainsMono Nerd Font';
+    color: {bar_fg};
+    font-family: 'JetBrainsMono Nerd Font';
 }}
 
 .notification-title {{
@@ -320,14 +320,42 @@ css = f""".bar {{
 }}
 
 .content-box {{
-  margin-left: 12px;
+    margin-left: 12px;
 }}
 
 .battery-icon {{
-  color: rgb(255, 0, 0);
-  font-size: 2.1em;
-  margin-right: 48px;
-  margin-left: 24px;
+    color: rgb(255, 0, 0);
+    font-size: 2.1em;
+    margin-right: 48px;
+    margin-left: 24px;
+}}
+
+.tray menu {{
+    border-radius: 0px;
+    border: 1px solid {bar_border};
+    padding: 5px 0px;
+    background-color: {bar_bg};
+}}
+
+.tray menu > menuitem {{
+    padding: 0px 5px;
+}}
+
+.tray menu > menuitem:disabled label {{
+    color: gray;
+}}
+
+.tray menu > menuitem:hover {{
+    background-color: {bar_fg_hover};
+}}
+
+.tray menu separator {{
+    background-color: {bar_border};
+    padding-top: 1px;
+}}
+
+.tray menu separator:last-child {{
+    padding: unset;
 }}"""
 
 print(css)

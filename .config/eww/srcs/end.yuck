@@ -1,5 +1,5 @@
 ;; Notifications
-(defvar end-binary "~/Projects/end-rs/target/debug/end-rs") 
+(defvar end-binary "~/.cargo/bin/end-rs") 
 (defvar end-notifications '')
 (defvar end-histories '')
 (defvar end-replies '')
