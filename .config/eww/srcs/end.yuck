@@ -50,7 +50,6 @@
   :wm-ignore true
   (literal :content end-replies))
 
-
 (defwidget end-notification[notification]
   (eventbox
     :onclick "${end-binary} close ${notification.id}"
