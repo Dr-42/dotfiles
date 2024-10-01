@@ -9,7 +9,7 @@ alias cd='z'
 alias bottles='flatpak run com.usebottles.bottles'
 alias blender='flatpak run org.blender.Blender'
 alias obsidian='flatpak run md.obsidian.Obsidian'
-alias code='flatpak run com.vscodium.codium'
+alias cozy='flatpak run com.github.geigi.cozy'
 
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
@@ -25,6 +25,8 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt appendhistory
 
+autoload -Uz compinit && compinit
+
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
@@ -32,8 +34,6 @@ eval "$(zoxide init zsh)"
 bindkey '\e[H'  beginning-of-line
 bindkey '\e[F'  end-of-line
 bindkey '\e[3~' delete-char
-
-autoload -Uz compinit && compinit
 
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
