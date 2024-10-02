@@ -45,6 +45,7 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>es', require('error-jump').jump_to_error, { desc = '[E]rror [S]ource' })
   vim.keymap.set('n', '<leader>en', require('error-jump').next_error, { desc = '[E]rror [N]ext' })
   vim.keymap.set('n', '<leader>eN', require('error-jump').next_error, { desc = '[E]rror [N]previous' })
+  vim.keymap.set('n', '<leader>ec', require('error-jump').compile, { desc = '[E]rror [C]ompile' })
 
   -- Diagnostic keymaps
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
