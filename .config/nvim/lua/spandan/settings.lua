@@ -54,7 +54,7 @@ vim.o.shiftwidth = 4
 
 -- Set width of number columns
 vim.o.numberwidth = 2
-vim.o.signcolumn = 'number'
+vim.o.signcolumn = 'auto'
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
