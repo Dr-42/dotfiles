@@ -17,4 +17,5 @@ return {
 	require('spandan.plugins.whichkey'),
 	require('spandan.plugins.oil'),
 	require('spandan.plugins.mpv'),
+	require('spandan.plugins.hardtime'),
 }

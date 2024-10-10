@@ -288,21 +288,18 @@ return {
         statementStyle = { bold = true },
         typeStyle = {},
         transparent = true,    -- do not set background color
-        dimInactive = true,    -- dim inactive window `:h hl-NormalNC`
+        dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
         terminalColors = true, -- define vim.g.terminal_color_{0,17}
         colors = {             -- add/modify theme and palette colors
           palette = {},
           theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
         },
         overrides = function(colors) -- add/modify highlights
-          if colors.palette.mauve then
-            colors.palette.love = colors.palette.mauve
-          end
-          return colors
+          return {}
         end,
-        theme = "wave",  -- Load "wave" theme when 'background' option is not set
-        background = {   -- map the value of 'background' option to a theme
-          dark = "wave", -- try "dragon" !
+        theme = "dragon",  -- Load "wave" theme when 'background' option is not set
+        background = {     -- map the value of 'background' option to a theme
+          dark = "dragon", -- try "wave" !
           light = "lotus"
         },
       })

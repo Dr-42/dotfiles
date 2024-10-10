@@ -66,12 +66,21 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>P<left>', ':vsplit<CR><C-w><left>', { desc = '[P]ane [L]eft' })
   vim.keymap.set('n', '<leader>P<right>', ':vsplit<CR><C-w><right>', { desc = '[P]ane [R]ight' })
 
+  vim.keymap.set('n', '<leader>Pk', ':split<CR><C-w><up>', { desc = '[P]ane [U]p' })
+  vim.keymap.set('n', '<leader>Pj', ':split<CR><C-w><down>', { desc = '[P]ane [D]own' })
+  vim.keymap.set('n', '<leader>Ph', ':vsplit<CR><C-w><left>', { desc = '[P]ane [L]eft' })
+  vim.keymap.set('n', '<leader>Pl', ':vsplit<CR><C-w><right>', { desc = '[P]ane [R]ight' })
   vim.keymap.set('n', '<leader>pc', '<C-w>c', { desc = '[P]ane [C]lose' })
 
   vim.keymap.set('n', '<C-up>', '<C-w><up>', { desc = '[P]ane [U]p' })
   vim.keymap.set('n', '<C-down>', '<C-w><down>', { desc = '[P]ane [D]own' })
   vim.keymap.set('n', '<C-left>', '<C-w><left>', { desc = '[P]ane [L]eft' })
   vim.keymap.set('n', '<C-right>', '<C-w><right>', { desc = '[P]ane [R]ight' })
+
+  vim.keymap.set('n', '<C-k>', '<C-w><up>', { desc = '[P]ane [U]p' })
+  vim.keymap.set('n', '<C-j>', '<C-w><down>', { desc = '[P]ane [D]own' })
+  vim.keymap.set('n', '<C-h>', '<C-w><left>', { desc = '[P]ane [L]eft' })
+  vim.keymap.set('n', '<C-l>', '<C-w><right>', { desc = '[P]ane [R]ight' })
 
   vim.keymap.set('n', '<leader>n', ':bnext<CR>', { desc = '[N]ext buffer' })
   vim.keymap.set('n', '<leader>N', ':bprevious<CR>', { desc = '[N]Previous buffer' })
