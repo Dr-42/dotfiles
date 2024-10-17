@@ -6,7 +6,7 @@ alias ls='eza --icons --group-directories-first'
 alias cd='z'
 
 # Flatpak aliases
-alias bottles='flatpak run com.usebottles.bottles'
+alias bottles='flatpak run --env="GSK_RENDERER=ngl" com.usebottles.bottles'
 alias blender='flatpak run org.blender.Blender'
 alias obsidian='flatpak run md.obsidian.Obsidian'
 alias cozy='flatpak run com.github.geigi.cozy'
