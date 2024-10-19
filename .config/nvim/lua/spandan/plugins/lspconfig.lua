@@ -68,7 +68,7 @@ local servers = {
   -- gopls = {},
   -- pyright = {},
   -- rust_analyzer = {},
-  -- tsserver = {},
+  ts_ls = {},
   clangd = {},
   rust_analyzer = {},
   lua_ls = {
@@ -228,5 +228,30 @@ return { -- LSP Configuration & Plugins
     }
 
     require("rust-tools").setup(opts)
+
+    -- Vue
+    require('lspconfig').ts_ls.setup {
+      on_attach = on_attach,
+      capabilities = capabilities,
+      init_options = {
+        plugins = { -- I think this was my breakthrough that made it work
+          {
+            name = "@vue/typescript-plugin",
+            location = "/usr/local/lib/node_modules/@vue/language-server",
+            languages = { "vue" },
+          },
+        },
+      },
+      filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+    }
+
+    require('lspconfig').volar.setup {
+      cmd = { "npx", "vue-language-server", "--stdio" },
+      init_options = {
+        vue = {
+          hybridMode = true,
+        },
+      }
+    }
   end
 }
