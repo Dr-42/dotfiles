@@ -251,6 +251,12 @@ return { -- LSP Configuration & Plugins
         vue = {
           hybridMode = true,
         },
+        -- "html.format.wrapAttributes": "force-expand-multiline"
+        html = {
+          format = {
+            wrapAttributes = "force-expand-multiline",
+          },
+        },
       }
     }
   end

@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/spandan/.zsh/completions:"* ]]; then export FPATH="/home/spandan/.zsh/completions:$FPATH"; fi
 export ENABLE_CORRECTION="true"
 fastfetch
 
@@ -18,6 +20,7 @@ export PATH="$PATH:/home/spandan/sdks/flutter/bin"
 export PATH="$PATH:/home/spandan/.local/bin"
 export PATH="$PATH:/usr/local/cuda/bin"
 export PATH="$PATH:/home/spandan/.cargo/bin"
+export PATH="$PATH:/home/spandan/.deno/bin"
 export CHROME_EXECUTABLE="chromium-browser"
 
 HISTFILE=~/.zsh_history

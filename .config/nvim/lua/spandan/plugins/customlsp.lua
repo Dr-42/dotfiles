@@ -39,8 +39,7 @@ return {
           typescript = formatters.prettier,
           typescriptreact = formatters.prettier,
           yaml = formatters.lsp,
-          -- c = formatters.clang_format,
-          -- cpp = formatters.clang_format,
+          vue = formatters.volar,
 
           go = {
             formatters.shell({

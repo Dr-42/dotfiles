@@ -2,7 +2,6 @@ return {
 	require('spandan.plugins.mini'),
 	require('spandan.plugins.colorschemes'),
 	require('spandan.plugins.nvimtree'),
-	-- require('spandan.plugins.copilot'),
 	require('spandan.plugins.nvim-cmp'),
 	require('spandan.plugins.codeium'),
 	require('spandan.plugins.customlsp'),
@@ -17,5 +16,6 @@ return {
 	require('spandan.plugins.whichkey'),
 	require('spandan.plugins.oil'),
 	require('spandan.plugins.mpv'),
+	require('spandan.plugins.render-md'),
 	-- 	require('spandan.plugins.hardtime'),
 }
