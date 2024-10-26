@@ -22,6 +22,7 @@
   "mason-nvim-dap.nvim": { "branch": "main", "commit": "8b9363d83b5d779813cdd2819b8308651cec2a09" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "mini.nvim": { "branch": "main", "commit": "92ff9f0a1291a1bddc8e5a8535dc02930d4d7203" },
+  "moonfly": { "branch": "master", "commit": "7de26ecf5216fffd974ce8f3e4793b8bb1c70ad0" },
   "mpv.nvim": { "branch": "main", "commit": "5c8ed86e7ef49851c946e7388232c9267e97f626" },
   "neodev.nvim": { "branch": "main", "commit": "46aa467dca16cf3dfe27098042402066d2ae242d" },
   "nightfly": { "branch": "master", "commit": "f4f932d3129fee10a0e944445fe6be5abf76465c" },

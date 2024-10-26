@@ -3,7 +3,7 @@ local M = {}
 M.apply_theme = function()
 	-- vim.cmd [[colorscheme paper]]
 	-- vim.cmd [[colorscheme ayu]]
-	vim.cmd [[colorscheme github_dark_dimmed]]
+	-- vim.cmd [[colorscheme github_dark_dimmed]]
 	-- vim.cmd [[colorscheme catppuccin]]
 	-- vim.g.nightflyTransparent = true
 	-- vim.cmd [[colorscheme nightfly]]
@@ -16,6 +16,7 @@ M.apply_theme = function()
 	-- vim.cmd [[colorscheme carbonfox]]
 	-- vim.cmd [[colorscheme terafox]]
 	-- vim.cmd [[colorscheme nordfox]]
+	vim.cmd [[colorscheme moonfly]]
 end
 
 return M
