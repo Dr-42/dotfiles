@@ -87,7 +87,7 @@
       :css getcss
       :class "clockdate"
       :yalign 0.1
-      :text { formattime(EWW_TIME, "%a, %d %B %Y", "Asia/Calcutta")}
+      :text { formattime(EWW_TIME, "%a, %d %b %Y", "Asia/Calcutta")}
       :geometry (geometry
         :x 0
         :y 0

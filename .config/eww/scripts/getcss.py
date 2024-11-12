@@ -90,25 +90,25 @@ textrgb_inv = (255 - textrgb[0], 255 - textrgb[1], 255 - textrgb[2])
 
 
 textcolor = "rgb({0}, {1}, {2})".format(textrgb[0], textrgb[1], textrgb[2])
-textbg = "rgba({0}, {1}, {2}, 0.8)".format(
+textbg = "rgba({0}, {1}, {2}, 0.9)".format(
     textrgb_inv[0], textrgb_inv[1], textrgb_inv[2]
 )
 
-bar_main_bg = "rgba({0}, {1}, {2}, 0.7)".format(
+bar_main_bg = "rgba({0}, {1}, {2}, 0.9)".format(
     colors[3][0], colors[3][1], colors[3][2]
 )
 
-bar_bg = "rgba({0}, {1}, {2}, 0.7)".format(colors[0][0], colors[0][1], colors[0][2])
+bar_bg = "rgba({0}, {1}, {2}, 0.9)".format(colors[0][0], colors[0][1], colors[0][2])
 
 bar_fg = "rgba({0}, {1}, {2}, 0.9)".format(
     255 - colors[0][0], 255 - colors[0][1], 255 - colors[0][2]
 )
 
-bar_fg_hover = "rgba({0}, {1}, {2}, 0.7)".format(
+bar_fg_hover = "rgba({0}, {1}, {2}, 0.9)".format(
     255 - colors[1][0], 255 - colors[1][1], 255 - colors[1][2]
 )
 
-bar_bg_hover = "rgba({0}, {1}, {2}, 0.7)".format(
+bar_bg_hover = "rgba({0}, {1}, {2}, 0.8)".format(
     colors[1][0], colors[1][1], colors[1][2]
 )
 
@@ -126,7 +126,6 @@ css = f""".bar {{
 
 .workspaces {{
     background-color: {bar_bg};
-    border-radius: 10px;
     color: {bar_fg};
     border: 1px solid {bar_border};
     padding: 6px 20px 4px 20px;
@@ -136,7 +135,6 @@ css = f""".bar {{
 
 .time_battery {{
     background: {bar_bg};
-    border-radius: 10px;
     color: {bar_fg};
     font-size: 16px;
     padding: 5px 15px 5px 14px; 
