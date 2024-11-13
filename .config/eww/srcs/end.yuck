@@ -101,7 +101,7 @@
             :valign "start"
             :yalign 0
             :xalign 0
-            :text {notification.summary})
+            :markup {notification.summary})
           (label
             :css getcss
             :class "notification-text notification-content"
@@ -110,7 +110,7 @@
             :xalign 0
             :vexpand true
             :wrap true
-            :text {notification.body})
+            :markup {notification.body})
         )
         (box
           :css getcss
@@ -176,14 +176,14 @@
             :class "notification-text notification-title"
             :yalign 1
             :xalign 0
-            :text {history.summary})
+            :markup {history.summary})
           (label
             :css getcss
             :class "notification-text notification-content"
             :yalign 1
             :xalign 0
             :wrap true
-            :text {history.body}))))))
+            :markup {history.body}))))))
 
 (defwidget end-reply[id]
   (box
