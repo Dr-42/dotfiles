@@ -4,4 +4,5 @@
     :image-height { 1080 / 1.25 }
     :hexpand true
     :vexpand true
+    :preserve-aspect-ratio false
     :path getimage))
