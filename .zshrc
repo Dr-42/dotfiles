@@ -11,7 +11,6 @@ alias cd='z'
 alias bottles='flatpak run --env="GSK_RENDERER=ngl" com.usebottles.bottles'
 alias blender='flatpak run org.blender.Blender'
 alias obsidian='flatpak run md.obsidian.Obsidian'
-alias cozy='flatpak run com.github.geigi.cozy'
 
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
