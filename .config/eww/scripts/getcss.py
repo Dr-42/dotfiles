@@ -120,7 +120,8 @@ bar_shadow = "rgba({0}, {1}, {2}, 0.9)".format(
     255 - colors[2][0], 255 - colors[2][1], 255 - colors[2][2]
 )
 
-css = f""".bar {{
+css = f"""
+.bar {{
     background-color: {bar_main_bg};
 }}
 
@@ -393,32 +394,31 @@ css = f""".bar {{
     margin-left: 24px;
 }}
 
-.tray menu {{
-    border-radius: 0px;
-    border: 1px solid {bar_border};
-    padding: 5px 0px;
-    background-color: {bar_bg};
+.evd-icon {{
+  margin: 5px;
 }}
 
-.tray menu > menuitem {{
-    padding: 0px 5px;
+.evd-box {{
+  background-color: {bar_bg};
+  border-radius: 10px;
 }}
 
-.tray menu > menuitem:disabled label {{
-    color: gray;
+.evd-scale {{
+  background-color: {hourcolor};
+  margin: 4px;
+  border-radius: 4px;
 }}
 
-.tray menu > menuitem:hover {{
-    background-color: {bar_fg_hover};
+.evd-scale progress {{
+  background-color: {secondcolor};
+  border-radius: 4px;
 }}
 
-.tray menu separator {{
-    background-color: {bar_border};
-    padding-top: 1px;
+.evd-text {{
+  color: {bar_fg};
+  background-color: {bar_bg};
+  font-size: 15px;
+  margin: 4px;
 }}
-
-.tray menu separator:last-child {{
-    padding: unset;
-}}"""
-
+"""
 print(css)

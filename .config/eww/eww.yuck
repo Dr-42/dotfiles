@@ -4,6 +4,7 @@
 (include "srcs/end.yuck")
 (include "srcs/bar.yuck")
 (include "srcs/powertray.yuck")
+(include "srcs/evd.yuck")
 
 (defwindow clock
   :css getcss
