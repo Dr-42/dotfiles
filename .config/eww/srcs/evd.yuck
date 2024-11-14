@@ -7,7 +7,7 @@
     :x "0px"
     :y "150px"
     :anchor "bottom center")
-  :stacking "fg"
+  :stacking "overlay"
   :windowtype "dialog"
   :passthrough true
   :wm-ignore true
