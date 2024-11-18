@@ -1,5 +1,10 @@
 local M = {}
 
+local open_link = function()
+  -- vi"gx<Esc>
+  vim.cmd.normal("vi\"gx")
+end
+
 function M.keymaps()
   -- Keymaps for better default experience
   -- See `:help vim.keymap.set()`
@@ -86,6 +91,7 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>N', ':bprevious<CR>', { desc = '[N]Previous buffer' })
 
   vim.keymap.set('n', '<leader>mp', require("mpv").toggle_player, { desc = '[M]usic [P]layer' })
+  vim.keymap.set('n', '<leader>ol', open_link, { desc = '[O]pen [L]ink' })
 
   vim.keymap.set('n', '<leader>chg', require('spandan.plugins.custom.hdr_guard').create_guard,
     { desc = '[C]reate [H]eader [G]uard' })

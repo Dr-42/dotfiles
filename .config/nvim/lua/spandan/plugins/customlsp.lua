@@ -50,24 +50,24 @@ return {
             }),
             formatters.shell({ cmd = { "gofmt" } }),
           },
-          c = {
-            formatters.shell({
-              cmd = { "clang-format", "-style=file" },
-              tempfile = function()
-                return vim.fn.expand("%") .. '.formatter-temp'
-              end
-            }),
-            formatters.shell({ cmd = { "clang-format" } }),
-          },
-          cpp = {
-            formatters.shell({
-              cmd = { "clang-format", "-style=file" },
-              tempfile = function()
-                return vim.fn.expand("%") .. '.formatter-temp'
-              end
-            }),
-            formatters.shell({ cmd = { "clang-format" } }),
-          },
+          --   c = {
+          --     formatters.shell({
+          --       cmd = { "clang-format", "-style=file" },
+          --       tempfile = function()
+          --         return vim.fn.expand("%") .. '.formatter-temp'
+          --       end
+          --     }),
+          --     formatters.shell({ cmd = { "clang-format" } }),
+          --   },
+          --   cpp = {
+          --     formatters.shell({
+          --       cmd = { "clang-format", "-style=file" },
+          --       tempfile = function()
+          --         return vim.fn.expand("%") .. '.formatter-temp'
+          --       end
+          --     }),
+          --     formatters.shell({ cmd = { "clang-format" } }),
+          --   },
         },
       })
     end
