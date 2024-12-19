@@ -187,5 +187,8 @@ return {
         }
       }
     end,
-  }
+  },
+
+  -- Opencl
+  { 'petRUShka/vim-opencl' },
 }
