@@ -2,11 +2,11 @@
 # Use custom format
 format = '[$os | $directory$git_branch$git_status> ](fg:bold green)'
 right_format = '$time'
-scan_timeout = 10
+scan_timeout = 100
 add_newline = false
 
 [time]
-style = 'bg:black fg:green'
+style = 'fg:green'
 utc_time_offset = '5.5'
 disabled = false
 use_12hr = false
@@ -20,7 +20,7 @@ diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
 
 [os]
-style = 'bg:black fg:white'
+style = 'fg:white'
 disabled = false
 
 [os.symbols]
