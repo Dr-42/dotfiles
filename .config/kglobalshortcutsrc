@@ -280,9 +280,6 @@ toggle do not disturb=none,,Toggle do not disturb
 [services][Offflix.desktop]
 _launch=Meta+O
 
-[services][Time Scheduler.desktop]
-_launch=Meta+T
-
 [services][com.usebottles.bottles.desktop]
 _launch=Meta+B
 
@@ -292,3 +289,6 @@ _launch=Meta+Return
 [services][org.mozilla.firefox.desktop]
 _launch=Meta+F
 new-private-window=Meta+Ctrl+F
+
+[services][time-scheduler-client.desktop]
+_launch=Meta+T
