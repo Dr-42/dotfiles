@@ -20,7 +20,7 @@
     :class "evd-box"
     :css getcss
     (image
-      :path "/home/spandan/.local/share/icons/besgnulinux-colors/categories/scalable/csd-sound.svg"
+      :path {evd-content >= 0.1 ? "/usr/share/icons/breeze-dark/actions/22/player-volume.svg" : "/usr/share/icons/breeze-dark/actions/22/player-volume-muted.svg"}
       :css getcss
       :class "evd-icon"
       :valign "center"

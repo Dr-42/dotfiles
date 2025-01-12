@@ -4,7 +4,7 @@
 ;; Restart
 ;; Logout
 
-(defvar powertray "scripts/powertray.py")
+(defvar powertray "/home/spandan/.local/bin/eww-ctl powertray")
 
 (defwidget powertray[]
 	(eventbox

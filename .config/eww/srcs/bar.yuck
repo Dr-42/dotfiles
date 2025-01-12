@@ -1,28 +1,28 @@
 (defpoll battery :interval "30s"
-	`scripts/battery.py`)
+	`/home/spandan/.local/bin/eww-ctl battery`)
 
 (defpoll volume :interval "1s"
-	`scripts/volume.py`)
+	`/home/spandan/.local/bin/eww-ctl volume`)
 
 (defpoll volume_num :interval "1s"
-	`scripts/get_volume.py`)
+	`/home/spandan/.local/bin/eww-ctl get_volume`)
 
 (defpoll workspaces :interval "0.1s"
-	`scripts/workspaces.py`)
+	`/home/spandan/.local/bin/eww-ctl workspaces`)
 
 (defpoll brightness :interval "1s"
-	`scripts/brightness.py`)
+	`/home/spandan/.local/bin/eww-ctl brightness`)
 
 (defpoll brightness_num :interval "1s"
 	`brightnessctl get -P`)
 
 (defpoll active_window :interval "1s"
-	`scripts/active_window.py`)
+	`/home/spandan/.local/bin/eww-ctl active_window`)
 
 (defpoll showbar 
 	:interval "0.1s"
 	:initial "true"
-	`scripts/showbar.py`)
+	`/home/spandan/.local/bin/eww-ctl showbar`)
 
 
 (defwidget bar[]
@@ -43,12 +43,12 @@
 			(eventbox
 				:css getcss
 				:onclick `echo "pavucontrol" | at now`
-				:onscroll "scripts/set_volume.py {}"
+				:onscroll "/home/spandan/.local/bin/eww-ctl set_volume {}"
 				:tooltip "Volume: ${volume_num}%"
 				volume)
 			(eventbox
 				:css getcss
-				:onscroll "scripts/set_brightness.py {}"
+				:onscroll "/home/spandan/.local/bin/eww-ctl set_brightness {}"
 				:tooltip "Brightness: ${brightness_num}%"
 				brightness)
 			(label
@@ -59,7 +59,7 @@
 				:css getcss
 				:onclick `${end-binary} history toggle`
 				:tooltip `Notifications`
-				""
+				" "
 			)
 			(systray
 				:css getcss
