@@ -1,0 +1,13 @@
+[Unit]
+Description=Update system packages at boot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/pacman -Syu --noconfirm
+ExecStartPost=/usr/bin/logger -t system-update "System updated successfully"
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target

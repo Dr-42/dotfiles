@@ -78,6 +78,7 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   ts_ls = {},
+  volar = {},
   clangd = {},
   rust_analyzer = {},
   lua_ls = {
@@ -243,30 +244,61 @@ return { -- LSP Configuration & Plugins
       on_attach = on_attach,
       capabilities = capabilities,
       init_options = {
-        plugins = { -- I think this was my breakthrough that made it work
+        plugins = {
           {
-            name = "@vue/typescript-plugin",
-            location = "/usr/local/lib/node_modules/@vue/language-server",
-            languages = { "vue" },
+            name = '@vue/typescript-plugin',
+            location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+            languages = { 'vue' },
           },
         },
       },
-      filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+      settings = {
+        typescript = {
+          tsserver = {
+            useSyntaxServer = false,
+          },
+          inlayHints = {
+            includeInlayParameterNameHints = 'all',
+            includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+            includeInlayFunctionParameterTypeHints = true,
+            includeInlayVariableTypeHints = true,
+            includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+            includeInlayPropertyDeclarationTypeHints = true,
+            includeInlayFunctionLikeReturnTypeHints = true,
+            includeInlayEnumMemberValueHints = true,
+          },
+        },
+      },
     }
 
     require('lspconfig').volar.setup {
-      cmd = { "npx", "vue-language-server", "--stdio" },
       init_options = {
         vue = {
-          hybridMode = true,
+          hybridMode = false,
         },
-        -- "html.format.wrapAttributes": "force-expand-multiline"
-        html = {
-          format = {
-            wrapAttributes = "force-expand-multiline",
+      },
+      settings = {
+        typescript = {
+          inlayHints = {
+            enumMemberValues = {
+              enabled = true,
+            },
+            functionLikeReturnTypes = {
+              enabled = true,
+            },
+            propertyDeclarationTypes = {
+              enabled = true,
+            },
+            parameterTypes = {
+              enabled = true,
+              suppressWhenArgumentMatchesName = true,
+            },
+            variableTypes = {
+              enabled = true,
+            },
           },
         },
-      }
+      },
     }
   end
 }
