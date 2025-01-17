@@ -3,7 +3,7 @@ Description=Auto start automusic
 After=network.target
 
 [Service]
-ExecStart=%h/.local/bin/automusic
+ExecStart=bash -c "%h/.local/bin/automusic >> /tmp/automusic.log 2>&1"
 Restart=on-failure
 
 [Install]

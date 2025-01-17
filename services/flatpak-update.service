@@ -3,7 +3,7 @@ Description=Update Flatpak apps every 6 hours
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '/usr/bin/flatpak update -y > /var/log/flatpak-update.log 2>&1'
+ExecStart=/bin/bash -c '/usr/bin/flatpak update -y > /tmp/flatpak-update.log 2>&1'
 
 [Timer]
 # start on boot directly
