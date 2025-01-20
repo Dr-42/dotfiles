@@ -1,5 +1,5 @@
 (defpoll getimage :interval "10m" `/home/spandan/.local/bin/eww-ctl getimage`)
-(defpoll gonger :interval "1s" "/home/spandan/.local/bin/eww-ctl playgong | at now")
+(defpoll gonger :interval "1s" `echo "/home/spandan/.local/bin/eww-ctl playgong" | at now`)
 ;; (defpoll getcss :interval "1m" "/home/spandan/.local/bin/eww-ctl getcss")
 (defvar getcss ".bar { background-color: #000000; }")
 ;; Update getcss on change in image
