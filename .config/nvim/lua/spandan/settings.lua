@@ -40,6 +40,9 @@ setft({ "crust", "syn" }, "crust")
 -- hyprlang
 setft({ "hypr", "conf" }, "hyprlang")
 
+-- systemd
+setft({ "service", "timer", "socket", "target", "swap", "automount" }, "systemd")
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
