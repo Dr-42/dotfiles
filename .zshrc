@@ -1,7 +1,5 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/spandan/.zsh/completions:"* ]]; then export FPATH="/home/spandan/.zsh/completions:$FPATH"; fi
-export ENABLE_CORRECTION="true"
 fastfetch
+export ENABLE_CORRECTION="true"
 
 export EDITOR=nvim
 alias vim='nvim'

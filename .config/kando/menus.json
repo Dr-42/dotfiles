@@ -1,0 +1,156 @@
+{
+  "menus": [
+    {
+      "shortcut": "Control+Space",
+      "shortcutID": "main-menu",
+      "centered": true,
+      "root": {
+        "type": "submenu",
+        "name": "Main Menu",
+        "icon": "archlinux",
+        "iconTheme": "simple-icons-colored",
+        "children": [
+          {
+            "type": "submenu",
+            "name": "Apps",
+            "icon": "homeassistantcommunitystore",
+            "iconTheme": "simple-icons-colored",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "gimp"
+                },
+                "name": "GIMP",
+                "icon": "gimp",
+                "iconTheme": "simple-icons-colored"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "time-scheduler-client",
+                  "delayed": true
+                },
+                "name": "Time Scheduler",
+                "icon": "timescale",
+                "iconTheme": "simple-icons-colored"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "flatpak run com.usebottles.bottles",
+                  "delayed": false
+                },
+                "name": "Bottles",
+                "icon": "applearcade",
+                "iconTheme": "simple-icons-colored"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "steam-runtime",
+                  "delayed": false
+                },
+                "name": "Steam",
+                "icon": "steam",
+                "iconTheme": "simple-icons-colored"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "firefox"
+                },
+                "name": "Web Browser",
+                "icon": "firefoxbrowser",
+                "iconTheme": "simple-icons-colored"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Music",
+            "icon": "applemusic",
+            "iconTheme": "simple-icons-colored",
+            "children": [
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaPlayPause",
+                  "delayed": false
+                },
+                "name": "Play / Pause",
+                "icon": "play_pause",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 0
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaTrackNext",
+                  "delayed": false
+                },
+                "name": "Next Title",
+                "icon": "skip_next",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 90
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "AudioVolumeMute",
+                  "delayed": false
+                },
+                "name": "Mute",
+                "icon": "music_off",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "hotkey",
+                "data": {
+                  "hotkey": "MediaTrackPrevious",
+                  "delayed": false
+                },
+                "name": "Previous Title",
+                "icon": "skip_previous",
+                "iconTheme": "material-symbols-rounded",
+                "angle": 270
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Settings",
+            "icon": "googlecloudspanner",
+            "iconTheme": "simple-icons-colored",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "plasma-open-settings",
+                  "delayed": true
+                },
+                "name": "Plasma  Settings",
+                "icon": "kdeplasma",
+                "iconTheme": "simple-icons-colored"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "kando -s",
+                  "delayed": true
+                },
+                "name": "Kando Settings",
+                "icon": "treehouse",
+                "iconTheme": "simple-icons"
+              }
+            ]
+          }
+        ]
+      },
+      "anchored": false,
+      "warpMouse": true
+    }
+  ],
+  "templates": []
+}

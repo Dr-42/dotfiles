@@ -1,8 +1,10 @@
+
 window {
     margin: 0px;
     border: 5px solid 1e1e2e;
-    background-color: #cdd6f4;
+    background-color: rgba(25.77963, 25.77963, 25.77963, 0.9);
     border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(250.24007, 250.24007, 250.24007, 0.9);
 }
 
 #input {
@@ -12,7 +14,7 @@ window {
     border: none;
     color: #cdd6f4;
     font-weight: bold;
-    background-color: #1e1e2e;
+    background-color: rgba(0, 0, 0, 0.9);
     /* background: ; */
    	outline: none;
     border-radius: 10px;
@@ -20,25 +22,25 @@ window {
     margin-bottom: 2px;
 }
 #input:focus {
-    border: 0px solid #1e1e2e;
+    border: 0px solid rgba(254.97728, 254.97728, 254.97728, 0.9);
+    background-color: rgba(25.77963, 25.77963, 25.77963, 0.9);
     margin-bottom: 0px;
 }
 
 #inner-box {
     margin: 4px;
-    border: 10px solid #1e1e2e;
-    color: #cdd6f4;
+    border: 1px solid rgba(254.97728, 254.97728, 254.97728, 0.9);
+    color: rgba(0, 0, 0, 0.9);
     font-weight: bold;
-    background-color: #1e1e2e;
-    /* background-color: red; */
+    background-color: rgba(25.77963, 25.77963, 25.77963, 0.9);
     border-radius: 15px;
 }
 
 #outer-box {
     margin: 0px;
-    border: 1.5px solid #ffffff;
-    border-radius: 10px;
-    background-color: #1e1e2e;
+    border: 1.5px solid rgba(254.97728, 254.97728, 254.97728, 0.9);
+    border-radius: 2px;
+    background-color: rgba(25.77963, 25.77963, 25.77963, 0.9);
 }
 
 #scroll {
@@ -53,18 +55,17 @@ window {
 }
 
 #img:selected {
-    background-color: #89b4fa;
+    background-color: rgba(0, 0, 0, 0.9);
     margin-right: 10px;
     border-radius: 10px;
 }
 
 #text:selected {
-    color: #cdd6f4;
-    color: black;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.9);
     margin: 0px 0px;
     border: none;
     border-radius: 10px;
-    background-color: #89b4fa;
 }
 
 #entry {
@@ -78,5 +79,6 @@ window {
     margin: 0px 0px;
     border: none;
     border-radius: 5px;
-    background-color: #89b4fa;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.9);
 }
