@@ -28,7 +28,7 @@
               {
                 "type": "command",
                 "data": {
-                  "command": "x-www-browser"
+                  "command": "firefox"
                 },
                 "name": "Firefox",
                 "icon": "globe",
@@ -46,7 +46,7 @@
               {
                 "type": "command",
                 "data": {
-                  "command": "x-terminal-emulator"
+                  "command": "kitty"
                 },
                 "name": "Kitty",
                 "icon": "terminal",
