@@ -3,7 +3,7 @@
     {
       "shortcut": "Control+Space",
       "shortcutID": "main-menu",
-      "centered": true,
+      "centered": false,
       "root": {
         "type": "submenu",
         "name": "Main Menu",
@@ -12,9 +12,9 @@
         "children": [
           {
             "type": "submenu",
-            "name": "Apps",
-            "icon": "homeassistantcommunitystore",
-            "iconTheme": "simple-icons-colored",
+            "name": "Utils",
+            "icon": "apps",
+            "iconTheme": "material-symbols-rounded",
             "children": [
               {
                 "type": "command",
@@ -23,17 +23,53 @@
                 },
                 "name": "GIMP",
                 "icon": "gimp",
-                "iconTheme": "simple-icons-colored"
+                "iconTheme": "simple-icons"
               },
               {
                 "type": "command",
                 "data": {
-                  "command": "time-scheduler-client",
-                  "delayed": true
+                  "command": "x-www-browser"
                 },
-                "name": "Time Scheduler",
-                "icon": "timescale",
-                "iconTheme": "simple-icons-colored"
+                "name": "Firefox",
+                "icon": "globe",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open ~"
+                },
+                "name": "Dolphin",
+                "icon": "folder",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "x-terminal-emulator"
+                },
+                "name": "Kitty",
+                "icon": "terminal",
+                "iconTheme": "material-symbols-rounded"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "data": {},
+            "name": "Gaming",
+            "icon": "gamepad",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "steam",
+                  "delayed": false
+                },
+                "name": "Steam",
+                "icon": "steam",
+                "iconTheme": "simple-icons"
               },
               {
                 "type": "command",
@@ -42,78 +78,8 @@
                   "delayed": false
                 },
                 "name": "Bottles",
-                "icon": "applearcade",
-                "iconTheme": "simple-icons-colored"
-              },
-              {
-                "type": "command",
-                "data": {
-                  "command": "steam-runtime",
-                  "delayed": false
-                },
-                "name": "Steam",
-                "icon": "steam",
-                "iconTheme": "simple-icons-colored"
-              },
-              {
-                "type": "command",
-                "data": {
-                  "command": "firefox"
-                },
-                "name": "Web Browser",
-                "icon": "firefoxbrowser",
-                "iconTheme": "simple-icons-colored"
-              }
-            ]
-          },
-          {
-            "type": "submenu",
-            "name": "Music",
-            "icon": "applemusic",
-            "iconTheme": "simple-icons-colored",
-            "children": [
-              {
-                "type": "hotkey",
-                "data": {
-                  "hotkey": "MediaPlayPause",
-                  "delayed": false
-                },
-                "name": "Play / Pause",
-                "icon": "play_pause",
-                "iconTheme": "material-symbols-rounded",
-                "angle": 0
-              },
-              {
-                "type": "hotkey",
-                "data": {
-                  "hotkey": "MediaTrackNext",
-                  "delayed": false
-                },
-                "name": "Next Title",
-                "icon": "skip_next",
-                "iconTheme": "material-symbols-rounded",
-                "angle": 90
-              },
-              {
-                "type": "hotkey",
-                "data": {
-                  "hotkey": "AudioVolumeMute",
-                  "delayed": false
-                },
-                "name": "Mute",
-                "icon": "music_off",
+                "icon": "water_bottle",
                 "iconTheme": "material-symbols-rounded"
-              },
-              {
-                "type": "hotkey",
-                "data": {
-                  "hotkey": "MediaTrackPrevious",
-                  "delayed": false
-                },
-                "name": "Previous Title",
-                "icon": "skip_previous",
-                "iconTheme": "material-symbols-rounded",
-                "angle": 270
               }
             ]
           },
@@ -121,35 +87,70 @@
             "type": "submenu",
             "data": {},
             "name": "Settings",
-            "icon": "googlecloudspanner",
-            "iconTheme": "simple-icons-colored",
+            "icon": "settings",
+            "iconTheme": "material-symbols-rounded",
             "children": [
               {
                 "type": "command",
                 "data": {
-                  "command": "plasma-open-settings",
-                  "delayed": true
+                  "command": "kando -s",
+                  "delayed": false
                 },
-                "name": "Plasma  Settings",
-                "icon": "kdeplasma",
-                "iconTheme": "simple-icons-colored"
+                "name": "Kando Settings",
+                "icon": "googlecloudspanner",
+                "iconTheme": "simple-icons"
+              }
+            ]
+          },
+          {
+            "type": "submenu",
+            "name": "Bookmarks",
+            "icon": "folder_special",
+            "iconTheme": "material-symbols-rounded",
+            "children": [
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open ~/Downloads"
+                },
+                "name": "Downloads",
+                "icon": "download",
+                "iconTheme": "material-symbols-rounded"
               },
               {
                 "type": "command",
                 "data": {
-                  "command": "kando -s",
-                  "delayed": true
+                  "command": "xdg-open ~/Projects",
+                  "delayed": false
                 },
-                "name": "Kando Settings",
-                "icon": "treehouse",
-                "iconTheme": "simple-icons"
+                "name": "Projects",
+                "icon": "code",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open ~/Documents"
+                },
+                "name": "Documents",
+                "icon": "text_ad",
+                "iconTheme": "material-symbols-rounded"
+              },
+              {
+                "type": "command",
+                "data": {
+                  "command": "xdg-open ~"
+                },
+                "name": "Home",
+                "icon": "home",
+                "iconTheme": "material-symbols-rounded"
               }
             ]
           }
         ]
       },
-      "anchored": false,
-      "warpMouse": true
+      "warpMouse": false,
+      "anchored": true
     }
   ],
   "templates": []

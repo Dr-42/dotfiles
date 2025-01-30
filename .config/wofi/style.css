@@ -2,9 +2,9 @@
 window {
     margin: 0px;
     border: 5px solid 1e1e2e;
-    background-color: rgba(25.77963, 25.77963, 25.77963, 0.9);
+    background-color: rgba(37.702606, 76.79856, 84.4592, 0.9);
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(250.24007, 250.24007, 250.24007, 0.9);
+    box-shadow: 2px 2px 2px rgba(119.55875, 228.9681, 240.35106, 0.9);
 }
 
 #input {
@@ -14,7 +14,7 @@ window {
     border: none;
     color: #cdd6f4;
     font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(2.792335, 2.6168792, 2.9556077, 0.9);
     /* background: ; */
    	outline: none;
     border-radius: 10px;
@@ -22,25 +22,25 @@ window {
     margin-bottom: 2px;
 }
 #input:focus {
-    border: 0px solid rgba(254.97728, 254.97728, 254.97728, 0.9);
-    background-color: rgba(25.77963, 25.77963, 25.77963, 0.9);
+    border: 0px solid rgba(227.36832, 214.11362, 214.25023, 0.9);
+    background-color: rgba(37.702606, 76.79856, 84.4592, 0.9);
     margin-bottom: 0px;
 }
 
 #inner-box {
     margin: 4px;
-    border: 1px solid rgba(254.97728, 254.97728, 254.97728, 0.9);
-    color: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(227.36832, 214.11362, 214.25023, 0.9);
+    color: rgba(2.792335, 2.6168792, 2.9556077, 0.9);
     font-weight: bold;
-    background-color: rgba(25.77963, 25.77963, 25.77963, 0.9);
+    background-color: rgba(37.702606, 76.79856, 84.4592, 0.9);
     border-radius: 15px;
 }
 
 #outer-box {
     margin: 0px;
-    border: 1.5px solid rgba(254.97728, 254.97728, 254.97728, 0.9);
+    border: 1.5px solid rgba(227.36832, 214.11362, 214.25023, 0.9);
     border-radius: 2px;
-    background-color: rgba(25.77963, 25.77963, 25.77963, 0.9);
+    background-color: rgba(37.702606, 76.79856, 84.4592, 0.9);
 }
 
 #scroll {
@@ -55,14 +55,14 @@ window {
 }
 
 #img:selected {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(2.792335, 2.6168792, 2.9556077, 0.9);
     margin-right: 10px;
     border-radius: 10px;
 }
 
 #text:selected {
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.9);
+    color: rgb(252.20767, 252.38312, 252.04439);
+    background-color: rgba(2.792335, 2.6168792, 2.9556077, 0.9);
     margin: 0px 0px;
     border: none;
     border-radius: 10px;
@@ -79,6 +79,6 @@ window {
     margin: 0px 0px;
     border: none;
     border-radius: 5px;
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.9);
+    color: rgb(252.20767, 252.38312, 252.04439);
+    background-color: rgba(2.792335, 2.6168792, 2.9556077, 0.9);
 }
