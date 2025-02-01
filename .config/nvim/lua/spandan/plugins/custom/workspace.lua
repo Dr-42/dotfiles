@@ -20,6 +20,9 @@ local find_project_language = function(path)
     elseif string.match(file, "%.java$") then
       project_language = "java"
       break
+    elseif string.match(file, "%.s$") then
+      project_language = "asm"
+      break
     elseif string.match(file, "%.c$") or string.match(file, "%.h$") then
       project_language = "c"
       break
@@ -40,6 +43,7 @@ local function get_language_icon(language)
   local java, java_color = webdevicons.get_icon("some.java", "java")
   local c, c_color = webdevicons.get_icon("some.c", "c")
   local cpp, cpp_color = webdevicons.get_icon("some.cpp", "cpp")
+  local asm, asm_color = webdevicons.get_icon("some.s", "s")
 
   local icons = {
     python = { python, py_color },
@@ -49,7 +53,8 @@ local function get_language_icon(language)
     java = { java, java_color },
     c = { c, c_color },
     cpp = { cpp, cpp_color },
-    unknown = { "", "#eeeeee" },
+    asm = { asm, asm_color },
+    unknown = { "", "TelescopeResultsDefaultIcon" },
   }
   return icons[language]
 end
@@ -71,28 +76,32 @@ local open_project_i = function(root_path)
     local language = find_project_language(project_dir)
     local icon = get_language_icon(language)
     -- Prepend the language icon to the project name and color the icon
-    name = icon[1] .. " " .. name
-    table.insert(project_names, { project_dir .. "/README.md", name })
+    table.insert(project_names, { project_dir .. "/README.md", name, icon })
     table.insert(project_paths, project_dir)
     ::continue::
-  end
-  local get_readme = function(path)
-    local readme = path .. "/README.md"
-    if vim.fn.filereadable(readme) == 1
-    then
-      return vim.fn.readfile(readme)
-    else
-      return ""
-    end
   end
   pickers.new({}, {
     prompt_title = "Project",
     finder = finders.new_table {
       results = project_names,
       entry_maker = function(entry)
+        local entry_display = require("telescope.pickers.entry_display")
         return {
           value = entry[1],
-          display = entry[2],
+          display = function()
+            local displayer = entry_display.create({
+              separator = " ",
+              items = {
+                { width = 1 },
+                { remaining = true },
+              },
+            })
+
+            return displayer({
+              { entry[3][1], entry[3][2] },
+              { entry[2],    "TelescopeResultsDescription" },
+            })
+          end,
           ordinal = entry[2],
         }
       end
