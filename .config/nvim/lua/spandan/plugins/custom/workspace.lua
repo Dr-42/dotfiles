@@ -1,65 +1,57 @@
-local M = {}
+local function find_mc_ext(path, allowed_exts)
+  -- Build the command: change to the target directory then list non-ignored files.
+  local cmd = string.format("cd %q && git ls-files --exclude-standard -co", path)
 
-local find_project_language = function(path)
-  -- Get the language of the project
-  local project_language = "unknown"
-  local project_files = vim.fn.glob("`find " .. path .. " -type f`", false, true)
-  for _, file in ipairs(project_files) do
-    if string.match(file, "%.py$") then
-      project_language = "python"
-      break
-    elseif string.match(file, "%.rs$") then
-      project_language = "rust"
-      break
-    elseif string.match(file, "%.go$") then
-      project_language = "go"
-      break
-    elseif string.match(file, "%.js$") or string.match(file, "%.ts$") then
-      project_language = "javascript"
-      break
-    elseif string.match(file, "%.java$") then
-      project_language = "java"
-      break
-    elseif string.match(file, "%.s$") then
-      project_language = "asm"
-      break
-    elseif string.match(file, "%.c$") or string.match(file, "%.h$") then
-      project_language = "c"
-      break
-    elseif string.match(file, "%.cpp$") or string.match(file, "%.hpp$") then
-      project_language = "cpp"
-      break
+  -- Run the command; vim.fn.systemlist returns a table of output lines.
+  local files = vim.fn.systemlist(cmd)
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_err_writeln("Error: 'git ls-files' failed. Is the directory a Git repository?")
+    return nil
+  end
+
+  -- Count file extensions
+  local ext_counts = {}
+  for _, file in ipairs(files) do
+    -- Extract extension: everything after the last dot.
+    local ext = file:match("%.([^%.]+)$")
+    for _, allowed_ext in pairs(allowed_exts) do
+      if ext == allowed_ext then
+        ext_counts[ext] = (ext_counts[ext] or 0) + 1
+        goto continue
+      end
+    end
+    ::continue::
+  end
+
+
+  -- Find the most common extension.
+  local most_common = nil
+  local highest = 0
+  for ext, count in pairs(ext_counts) do
+    if count > highest then
+      most_common = ext
+      highest = count
     end
   end
-  return project_language
+  return most_common
 end
+
+local M = {}
 
 local function get_language_icon(language)
   local webdevicons = require("nvim-web-devicons")
-  local python, py_color = webdevicons.get_icon("some.py", "py")
-  local rust, rust_color = webdevicons.get_icon("some.rs", "rs")
-  local go, go_color = webdevicons.get_icon("some.go", "go")
-  local javascript, js_color = webdevicons.get_icon("some.js", "js")
-  local java, java_color = webdevicons.get_icon("some.java", "java")
-  local c, c_color = webdevicons.get_icon("some.c", "c")
-  local cpp, cpp_color = webdevicons.get_icon("some.cpp", "cpp")
-  local asm, asm_color = webdevicons.get_icon("some.s", "s")
-
-  local icons = {
-    python = { python, py_color },
-    rust = { rust, rust_color },
-    go = { go, go_color },
-    javascript = { javascript, js_color },
-    java = { java, java_color },
-    c = { c, c_color },
-    cpp = { cpp, cpp_color },
-    asm = { asm, asm_color },
-    unknown = { "", "TelescopeResultsDefaultIcon" },
-  }
-  return icons[language]
+  if language == nil then
+    return { "", "TelescopeResultsDefaultIcon" }
+  else
+    local icon, color = webdevicons.get_icon("some." .. language, language)
+    return { icon, color }
+  end
 end
 
 local open_project_i = function(root_path)
+  local recognised_exts = { "c", "ts", "rs", "cpp", "vue", "py", "lua", "dart", "js", "cs", "vim", "kt", "qml", "cu",
+    "sh", "s" }
+
   local pickers = require "telescope.pickers"
   local finders = require "telescope.finders"
   local conf = require("telescope.config").values
@@ -70,11 +62,11 @@ local open_project_i = function(root_path)
   local project_paths = {}
   for _, project_dir in ipairs(projects_dir_content) do
     local name = string.sub(project_dir, string.len(projects_dir) + 2)
-    if name == "probe" or name == "third_pary" then
+    if name == "probe" or name == "third_party" then
       goto continue
     end
-    local language = find_project_language(project_dir)
-    local icon = get_language_icon(language)
+    local ext = find_mc_ext(project_dir, recognised_exts)
+    local icon = get_language_icon(ext)
     -- Prepend the language icon to the project name and color the icon
     table.insert(project_names, { project_dir .. "/README.md", name, icon })
     table.insert(project_paths, project_dir)
