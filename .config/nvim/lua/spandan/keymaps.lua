@@ -93,8 +93,10 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>mp', require("mpv").toggle_player, { desc = '[M]usic [P]layer' })
   vim.keymap.set('n', '<leader>ol', open_link, { desc = '[O]pen [L]ink' })
 
-  vim.keymap.set('n', '<leader>chg', require('spandan.plugins.custom.hdr_guard').create_guard,
-    { desc = '[C]reate [H]eader [G]uard' })
+  vim.keymap.set('n', '<leader>chg', require('spandan.plugins.custom.c_utils').create_guard,
+    { desc = '[C] [H]eader [G]uard' })
+  vim.keymap.set('n', '<leader>chi', require('spandan.plugins.custom.c_utils').create_implementation,
+    { desc = '[C] [H]eader [I]mplementation' })
 
   vim.keymap.set('n', '<leader>wso', require('spandan.plugins.custom.workspace').open_project,
     { desc = '[W]ork[S]pace [O]pen' })
