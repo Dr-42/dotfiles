@@ -85,4 +85,13 @@ function M.create_guard()
   end
 end
 
+function M.goto_implementation()
+  local file_path = vim.fn.expand('%:p')
+  local file_extension = vim.fn.expand('%:e')
+  if file_extension == 'h' then
+    local c_file_path = file_path:gsub('%.h$', '.c'):gsub('/include', '', 1)
+    vim.cmd("e " .. c_file_path)
+  end
+end
+
 return M

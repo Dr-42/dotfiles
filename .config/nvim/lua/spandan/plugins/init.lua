@@ -18,5 +18,6 @@ return {
 	require('spandan.plugins.oil'),
 	require('spandan.plugins.mpv'),
 	require('spandan.plugins.render-md'),
+	require('spandan.plugins.games'),
 	-- 	require('spandan.plugins.hardtime'),
 }

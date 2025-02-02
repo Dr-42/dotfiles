@@ -97,6 +97,8 @@ function M.keymaps()
     { desc = '[C] [H]eader [G]uard' })
   vim.keymap.set('n', '<leader>chi', require('spandan.plugins.custom.c_utils').create_implementation,
     { desc = '[C] [H]eader [I]mplementation' })
+  vim.keymap.set('n', '<leader>chd', require('spandan.plugins.custom.c_utils').goto_implementation,
+    { desc = '[C] [H]eader [D]efinition' })
 
   vim.keymap.set('n', '<leader>wso', require('spandan.plugins.custom.workspace').open_project,
     { desc = '[W]ork[S]pace [O]pen' })
