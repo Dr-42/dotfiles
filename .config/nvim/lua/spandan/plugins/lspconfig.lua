@@ -1,6 +1,6 @@
 -- LSP settings.
 --  This function gets run when an LSP connects to a particular buffer.
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
   -- many times.
@@ -21,6 +21,13 @@ local on_attach = function(_, bufnr)
     end
 
     vim.keymap.set('v', keys, func, { buffer = bufnr, desc = desc })
+  end
+
+  if client.server_capabilities.inlayHintProvider then
+    vim.g.inlay_hints_visible = true
+    vim.lsp.inlay_hint.enable(true)
+  else
+    print("no inlay hints available")
   end
 
   -- vim.lsp.handlers['textDocument/hover'] = function(_, result, ctx, config)
@@ -96,7 +103,6 @@ local clangd_capabilities = function()
       'additionalTextEdits',
     },
   }
-  capabilities.offsetEncoding = 'utf-16'
   return capabilities
 end
 
@@ -121,6 +127,13 @@ return { -- LSP Configuration & Plugins
       cmd = {
         "clangd",
       },
+      inlay_hints = {
+        enabled = true,
+      },
+      -- current working directory
+      root_dir = function()
+        return vim.loop.cwd()
+      end,
     }
 
     require("lspconfig").asm_lsp.setup {
@@ -147,6 +160,7 @@ return { -- LSP Configuration & Plugins
 
     mason_lspconfig.setup {
       ensure_installed = vim.tbl_keys(servers),
+      automatic_installation = true,
     }
 
     mason_lspconfig.setup_handlers {

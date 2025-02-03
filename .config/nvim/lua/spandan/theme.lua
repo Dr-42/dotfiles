@@ -7,8 +7,8 @@ M.apply_theme = function()
 	-- vim.cmd [[colorscheme catppuccin]]
 	-- vim.g.nightflyTransparent = true
 	-- vim.cmd [[colorscheme nightfly]]
-	-- vim.cmd [[colorscheme rose-pine]]
-	vim.cmd [[colorscheme kanagawa]]
+	vim.cmd [[colorscheme rose-pine]]
+	-- vim.cmd [[colorscheme kanagawa]]
 	-- vim.cmd [[colorscheme everforest]]
 	-- vim.cmd [[colorscheme nightfox]]
 	-- vim.cmd [[colorscheme dayfox]]
