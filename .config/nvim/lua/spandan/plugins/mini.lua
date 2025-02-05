@@ -149,20 +149,70 @@ return {
         --starter.sections.telescope(),
         function()
           return {
-            { name = 'Workspaces km <leader>wso',            action = "lua require('spandan.plugins.custom.workspace').open_project()",          section = 'Workspaces' },
-            { name = 'Workspace Probe km <leader>wsp',       action = "lua require('spandan.plugins.custom.workspace').open_probe()",            section = 'Workspaces' },
-            { name = 'WorkSpace Third Party km <leader>wst', action = "lua require('spandan.plugins.custom.workspace').open_third_party()",      section = 'Workspaces' },
+            {
+              name = 'Workspaces km <leader>wso',
+              action = require('project-manager').open_projects,
+              section = 'Workspaces'
+            },
+            {
+              name = 'Workspace Probe km <leader>wsp',
+              action = function()
+                require('project-manager').open_project_by_key('probe')
+              end,
+              section = 'Workspaces'
+            },
+            {
+              name = 'WorkSpace Third Party km <leader>wst',
+              action = function()
+                require('project-manager').open_project_by_key('third_party')
+              end,
+              section = 'Workspaces'
+            },
 
-            { name = 'Recent Files km <leader>? ',           action = 'Telescope oldfiles',                                                      section = 'Files' },
-            { name = 'File km <leader>sf',                   action = 'Telescope find_files',                                                    section = 'Files' },
-            { name = 'Git Files km <leader>gf',              action = 'Telescope git_files',                                                     section = 'Files' },
 
-            { name = 'Neovim Config',                        action = 'lua require("spandan.plugins.custom.config_utils").open_neovim_config()', section = 'Configs' },
-            { name = 'Hyprland Config',                      action = 'lua require("spandan.plugins.custom.config_utils").open_dotfiles()',      section = 'Configs' },
+            {
+              name = 'Recent Files km <leader>? ',
+              action = 'Telescope oldfiles',
+              section = 'Files'
+            },
+            {
+              name = 'File km <leader>sf',
+              action = 'Telescope find_files',
+              section = 'Files'
+            },
+            {
+              name = 'Git Files km <leader>gf',
+              action = 'Telescope git_files',
+              section = 'Files'
+            },
 
-            { name = 'Snake',                                action = 'SnakeStart',                                                              section = 'Games' },
-            { name = '2048',                                 action = 'Play2048',                                                                section = 'Games' },
-            { name = 'Tetris',                               action = 'Tetris',                                                                  section = 'Games' },
+
+            {
+              name = 'Neovim Config',
+              action = 'lua require("spandan.plugins.custom.config_utils").open_neovim_config()',
+              section = 'Configs'
+            },
+            {
+              name = 'Hyprland Config',
+              action = 'lua require("spandan.plugins.custom.config_utils").open_dotfiles()',
+              section = 'Configs'
+            },
+
+            {
+              name = 'Snake',
+              action = 'SnakeStart',
+              section = 'Games'
+            },
+            {
+              name = '2048',
+              action = 'Play2048',
+              section = 'Games'
+            },
+            {
+              name = 'Tetris',
+              action = 'Tetris',
+              section = 'Games'
+            },
           }
         end
       },

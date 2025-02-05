@@ -93,6 +93,7 @@ return {
       -- Re-use the configuration for C
       dap.configurations.c = dap.configurations.cpp
       dap.configurations.rust = dap.configurations.cpp
+      dap.configurations.nasm = dap.configurations.cpp
     end
   }
 }

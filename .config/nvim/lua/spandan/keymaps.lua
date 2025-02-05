@@ -100,11 +100,17 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>chd', require('spandan.plugins.custom.c_utils').goto_implementation,
     { desc = '[C] [H]eader [D]efinition' })
 
-  vim.keymap.set('n', '<leader>wso', require('spandan.plugins.custom.workspace').open_project,
+  vim.keymap.set('n', '<leader>wso', require('project-manager').open_projects,
     { desc = '[W]ork[S]pace [O]pen' })
-  vim.keymap.set('n', '<leader>wsp', require('spandan.plugins.custom.workspace').open_probe,
+  vim.keymap.set('n', '<leader>wsp',
+    function()
+      require('project-manager').open_project_by_key("probe")
+    end,
     { desc = '[W]ork[S]pace [P]robe' })
-  vim.keymap.set('n', '<leader>wst', require('spandan.plugins.custom.workspace').open_third_party,
+  vim.keymap.set('n', '<leader>wst',
+    function()
+      require('project-manager').open_project_by_key("third_party")
+    end,
     { desc = '[W]ork[S]pace [T]hird Party' })
 end
 
