@@ -1,6 +1,7 @@
 return {
   {
-    "Dr-42/project_manager.nvim",
+    "Dr-42/project-manager.nvim",
+    -- dir = "~/Projects/project-manager.nvim",
     name = "project-manager",
     dependencies = {
       "nvim-telescope/telescope.nvim",
