@@ -99,6 +99,8 @@ function M.keymaps()
     { desc = '[C] [H]eader [I]mplementation' })
   vim.keymap.set('n', '<leader>chd', require('spandan.plugins.custom.c_utils').goto_implementation,
     { desc = '[C] [H]eader [D]efinition' })
+  vim.keymap.set('n', '<leader>rt', require('spandan.plugins.custom.c_utils').reset_nvim_tabs,
+    { desc = '[R]eset [T]abs' })
 
   vim.keymap.set('n', '<leader>wso', require('project-manager').open_projects,
     { desc = '[W]ork[S]pace [O]pen' })
@@ -112,6 +114,27 @@ function M.keymaps()
       require('project-manager').open_project_by_key("third_party")
     end,
     { desc = '[W]ork[S]pace [T]hird Party' })
+
+  -- Zotero integration maps
+  -- The defaults are kept as is
+  vim.keymap.set('n', '<leader>z', '<Nop>', { desc = '[Z]otero' })
+  vim.keymap.set('n', '<leader>zc', function()
+      --!pandoc <current-file> -s -o <output-file> -F zotref.py --citeproc --csl <zotero-citation-style>
+      -- Current file is the current buffer's file name
+      -- Ouput file is taken from vim input
+      -- Zotero citation style is a csl file. If multiple are present in the current dir, the first one is used
+      local current_file = vim.fn.expand("%")
+      -- Escape special characters
+      current_file = vim.fn.shellescape(current_file)
+
+      local output_file = vim.fn.input("Enter output file: ")
+      local csl_files = vim.fn.glob("*.csl")
+      local zotero_citation_style = csl_files
+      local cmd = "!pandoc " ..
+          current_file .. " -s -o " .. output_file .. " -F zotref.py --citeproc --csl " .. zotero_citation_style
+      vim.cmd(cmd)
+    end,
+    { desc = '[Z]otero [C]ompile' })
 end
 
 return M

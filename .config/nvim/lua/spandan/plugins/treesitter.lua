@@ -7,16 +7,9 @@ return { -- Highlight, edit, and navigate code
     pcall(require('nvim-treesitter.install').update { with_sync = true })
   end,
   config = function()
-    local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
-    parser_config.crust = {
-      install_info = {
-        url = "https://github.com/Dr-42/tree-sitter-crust", -- local path or git repo
-        files = { "src/parser.c" },                         -- note that some parsers also require src/scanner.c or src/scanner.cc
-      },
-    }
     require('nvim-treesitter.configs').setup {
       -- Add languages to be installed here that you want installed for treesitter
-      ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vimdoc', 'vim', 'glsl', 'markdown' },
+      ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'vimdoc', 'vim', 'glsl', 'markdown', 'html', 'latex', 'markdown_inline', 'yaml' },
       auto_install = true,
       sync_install = true,
 
@@ -79,5 +72,20 @@ return { -- Highlight, edit, and navigate code
         },
       },
     }
+
+    local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+    parser_config.crust = {
+      install_info = {
+        url = "https://github.com/Dr-42/tree-sitter-crust", -- local path or git repo
+        files = { "src/parser.c" },                         -- note that some parsers also require src/scanner.c or src/scanner.cc
+      },
+    }
+    vim.filetype.add({
+      extension = {
+        bend = "bend",
+      },
+    })
+
+    vim.treesitter.language.register("bend", { "bend" })
   end
 }

@@ -94,4 +94,11 @@ function M.goto_implementation()
   end
 end
 
+function M.reset_nvim_tabs()
+  vim.cmd("set shiftwidth=4")
+  vim.cmd("set tabstop=4")
+  vim.cmd("set softtabstop=4")
+  vim.cmd("set noexpandtab")
+end
+
 return M

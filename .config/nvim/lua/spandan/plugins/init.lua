@@ -20,5 +20,7 @@ return {
 	require('spandan.plugins.render-md'),
 	require('spandan.plugins.games'),
 	require('spandan.plugins.project-manager'),
+	require('spandan.plugins.qol'),
 	-- 	require('spandan.plugins.hardtime'),
+	require('spandan.plugins.zotcite'),
 }

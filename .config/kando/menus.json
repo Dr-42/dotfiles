@@ -70,16 +70,6 @@
                 "name": "Steam",
                 "icon": "steam",
                 "iconTheme": "simple-icons"
-              },
-              {
-                "type": "command",
-                "data": {
-                  "command": "flatpak run com.usebottles.bottles",
-                  "delayed": false
-                },
-                "name": "Bottles",
-                "icon": "water_bottle",
-                "iconTheme": "material-symbols-rounded"
               }
             ]
           },

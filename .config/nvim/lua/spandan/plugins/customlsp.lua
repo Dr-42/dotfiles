@@ -1,5 +1,8 @@
 return {
+  -- Rust
   { "simrat39/rust-tools.nvim" },
+  { "cordx56/rustowl",            dependencies = { "neovim/nvim-lspconfig" } },
+
   -- Kitty
   { "fladson/vim-kitty" },
   -- Qt QML
@@ -172,7 +175,6 @@ return {
   -- Cargo plugins
   {
     'saecki/crates.nvim',
-    tag = 'stable',
     config = function()
       require('crates').setup {
         completion = {

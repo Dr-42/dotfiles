@@ -91,6 +91,7 @@ local servers = {
   lua_ls = {
     disable = { "missing-fields", "incomplete-signature-doc" }
   },
+  elixirls = {},
 }
 
 local clangd_capabilities = function()
@@ -148,6 +149,17 @@ return { -- LSP Configuration & Plugins
         return vim.loop.cwd()
       end,
     }
+
+    require("lspconfig").elixirls.setup {
+      cmd = {
+        "elixir-ls",
+      },
+      -- current working directory
+      root_dir = function()
+        return vim.loop.cwd()
+      end,
+    }
+
     -- Setup neovim lua configuration
     require('neodev').setup()
     --
@@ -213,6 +225,7 @@ return { -- LSP Configuration & Plugins
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'crates' },
+        { name = 'cmp_zotcite' },
       },
     }
 
@@ -252,6 +265,7 @@ return { -- LSP Configuration & Plugins
     }
 
     require("rust-tools").setup(opts)
+
 
     -- Vue
     require('lspconfig').ts_ls.setup {
