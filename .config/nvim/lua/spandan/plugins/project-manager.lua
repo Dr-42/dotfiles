@@ -10,6 +10,7 @@ return {
     config = function()
       require("project-manager").setup({
         projects_root = vim.env.HOME .. "/Projects", -- or your preferred directory
+        allowed_exts = { "c", "ts", "rs", "cpp", "vue", "py", "lua", "dart", "js", "cs", "vim", "kt", "qml", "cu", "sh", "s", "ex", "hs" },
         ignore_dirs = { "probe", "third_party" },    -- directories to ignore
         extra_mappings = {                           -- additional mappings (if desired)
           probe = vim.env.HOME .. "/Projects/probe",

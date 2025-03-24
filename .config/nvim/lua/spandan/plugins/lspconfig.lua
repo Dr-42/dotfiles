@@ -94,6 +94,7 @@ local servers = {
   elixirls = {},
 }
 
+
 local clangd_capabilities = function()
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities.textDocument.completion.completionItem.snippetSupport = true

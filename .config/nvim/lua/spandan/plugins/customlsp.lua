@@ -1,6 +1,7 @@
 return {
   -- Rust
   { "simrat39/rust-tools.nvim" },
+  { "MrcJkb/haskell-tools.nvim" },
   { "cordx56/rustowl",            dependencies = { "neovim/nvim-lspconfig" } },
 
   -- Kitty
@@ -43,6 +44,7 @@ return {
           typescriptreact = formatters.prettierd,
           yaml = formatters.lsp,
           vue = formatters.volar,
+          elixir = formatters.lsp,
 
           go = {
             formatters.shell({

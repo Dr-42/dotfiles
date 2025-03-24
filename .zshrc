@@ -22,8 +22,7 @@ export PATH="$PATH:/opt/android-sdk/platform-tools/"
 export PATH="$PATH:/home/spandan/.local/share/nvim/lazy/zotcite/python3"
 
 #export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/fmodstudio/lib/"
-
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/lib32/usr/lib/"
+#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/lib32/usr/lib/"
 
 export CHROME_EXECUTABLE="chromium-browser"
 export ANDROID_HOME="/home/spandan/Android/Sdk"
@@ -54,3 +53,6 @@ source /usr/share/fzf/key-bindings.zsh
 # export PYENV_ROOT="$HOME/.pyenv"
 # [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 # eval "$(pyenv init - zsh)"
+export LD_LIBRARY_PATH=/home/spandan/.local/lib/arch-mojo:$LD_LIBRARY_PATH
+export MODULAR_HOME="/home/spandan/.modular"
+export PATH="/home/spandan/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
