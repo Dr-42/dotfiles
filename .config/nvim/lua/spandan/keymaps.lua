@@ -131,7 +131,8 @@ function M.keymaps()
       local csl_files = vim.fn.glob("*.csl")
       local zotero_citation_style = csl_files
       local cmd = "!pandoc " ..
-          current_file .. " -s -o " .. output_file .. " -F zotref.py --citeproc --csl " .. zotero_citation_style
+          current_file ..
+          " -s -o " .. output_file .. " -F zotref.py --pdf-engine xelatex --citeproc --csl " .. zotero_citation_style
       vim.cmd(cmd)
     end,
     { desc = '[Z]otero [C]ompile' })
