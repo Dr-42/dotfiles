@@ -6,6 +6,9 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Enable nerd font
+vim.g.have_nerd_font = true
+
 -- Make all files create with unix line endings
 vim.o.fileformat = 'unix'
 vim.o.fileformats = 'unix,dos'
@@ -38,7 +41,11 @@ setft({ "h" }, "c")
 setft({ "crust", "syn" }, "crust")
 
 -- hyprlang
-setft({ "hypr", "conf" }, "hyprlang")
+-- setft({ "hypr", "conf" }, "hyprlang")
+-- Check if the file path contains hypr
+if string.find(vim.fn.expand('%:p'), "hypr") then
+	setft({ "hypr", "conf" }, "hyprlang")
+end
 
 -- systemd
 setft({ "service", "timer", "socket", "target", "swap", "automount" }, "systemd")
