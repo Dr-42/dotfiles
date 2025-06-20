@@ -2,7 +2,6 @@ return {
   -- Rust
   { "simrat39/rust-tools.nvim" },
   { "MrcJkb/haskell-tools.nvim" },
-  { "cordx56/rustowl",            dependencies = { "neovim/nvim-lspconfig" } },
 
   -- Kitty
   { "fladson/vim-kitty" },

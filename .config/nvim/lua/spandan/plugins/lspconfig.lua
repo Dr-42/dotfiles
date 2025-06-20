@@ -85,7 +85,6 @@ local servers = {
   -- pyright = {},
   -- rust_analyzer = {},
   ts_ls = {},
-  volar = {},
   clangd = {},
   rust_analyzer = {},
   lua_ls = {
@@ -176,15 +175,6 @@ return { -- LSP Configuration & Plugins
       automatic_installation = true,
     }
 
-    mason_lspconfig.setup_handlers {
-      function(server_name)
-        require('lspconfig')[server_name].setup {
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = servers[server_name],
-        }
-      end,
-    }
     -- nvim-cmp setup
     local cmp = require 'cmp'
     local luasnip = require 'luasnip'

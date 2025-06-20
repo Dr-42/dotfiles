@@ -1,14 +1,10 @@
+clear
 fastfetch
-export ENABLE_CORRECTION="true"
-
+setopt CORRECT
 export EDITOR=nvim
 alias vim='nvim'
 alias ls='eza --icons --group-directories-first'
 alias cd='z'
-
-# Flatpak aliases
-alias bottles='flatpak run --env="GSK_RENDERER=ngl" --env="DISPLAY=:0" com.usebottles.bottles'
-#alias bottles='flatpak run com.usebottles.bottles'
 
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
@@ -20,9 +16,6 @@ export PATH="$PATH:/home/spandan/.deno/bin"
 export PATH="$PATH:/opt/android-sdk/platform-tools/"
 
 export PATH="$PATH:/home/spandan/.local/share/nvim/lazy/zotcite/python3"
-
-#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/fmodstudio/lib/"
-#export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/lib32/usr/lib/"
 
 export CHROME_EXECUTABLE="chromium-browser"
 export ANDROID_HOME="/home/spandan/Android/Sdk"
@@ -50,9 +43,10 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 source /usr/share/fzf/key-bindings.zsh
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init - zsh)"
+
 export LD_LIBRARY_PATH=/home/spandan/.local/lib/arch-mojo:$LD_LIBRARY_PATH
 export MODULAR_HOME="/home/spandan/.modular"
 export PATH="/home/spandan/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+
+# Cargo specific
+export RUSTC_WRAPPER=sccache
