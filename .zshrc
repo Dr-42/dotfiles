@@ -5,6 +5,17 @@ export EDITOR=nvim
 alias vim='nvim'
 alias ls='eza --icons --group-directories-first'
 alias cd='z'
+alias :qa='exit'
+alias :q='exit'
+alias :wq='exit'
+alias :wqa='exit'
+alias :w='exit'
+alias :qa='exit'
+alias :q='exit'
+alias :wq='exit'
+alias :wqa='exit'
+alias :w='exit'
+alias :qa='exit'
 
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
