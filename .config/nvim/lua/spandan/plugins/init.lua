@@ -1,4 +1,5 @@
 return {
+	require("spandan.plugins.image-nvim"),
 	require("spandan.plugins.mini"),
 	require("spandan.plugins.colorschemes"),
 	require("spandan.plugins.nvimtree"),
