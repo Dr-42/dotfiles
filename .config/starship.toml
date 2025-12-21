@@ -1,6 +1,6 @@
 # ~/.config/starship.toml
 # Use custom format
-format = '[$os | $directory$git_branch$git_status> ](fg:bold green)'
+format = '[$os | $directory$git_branch$git_status>](fg:bold green) '
 right_format = '$time'
 scan_timeout = 100
 add_newline = false
@@ -27,3 +27,4 @@ disabled = false
 Fedora = ''
 Windows = ''
 Arch = ''
+NixOS = '󱄅'
