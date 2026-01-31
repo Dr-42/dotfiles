@@ -162,10 +162,10 @@ return {
 				elixirls = {
 					cmd = { "elixir-ls" },
 				},
-				asm_lsp = {
-					cmd = { "asm-lsp" },
-					filetypes = { "asm", "s", "S" },
-				},
+				-- asm_lsp = {
+				-- 	cmd = { "asm-lsp" },
+				-- 	filetypes = { "asm", "s", "S" },
+				-- },
 				lua_ls = {
 					settings = {
 						Lua = {

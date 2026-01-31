@@ -12,9 +12,15 @@ export MANPAGER="nvim +Man!"
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 
 # Aliases
+
+# - Neovim
 alias vim='nvim'
+
+# - NixOS Management
 alias nixedit='sudoedit /etc/nixos/configuration.nix'
-# 'ls' is already aliased in configuration.nix, but you can keep this too
+alias nixup='sudo nixos-rebuild switch'
+
+# - Eza as ls replacement
 alias ls='eza --icons --group-directories-first' 
 
 # Initialize starship
