@@ -7,7 +7,7 @@ setopt CORRECT
 setopt appendhistory
 
 # Environment Variables
-export EDITOR=nvim
+export EDITOR=hx
 export MANPAGER="nvim +Man!"
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
 

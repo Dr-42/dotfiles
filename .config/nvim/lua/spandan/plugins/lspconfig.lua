@@ -124,7 +124,7 @@ return { -- LSP Configuration & Plugins
 			on_attach = on_attach,
 			capabilities = clangd_capabilities(),
 			cmd = {
-				"clangd",
+				"steam-run clangd",
 			},
 			inlay_hints = {
 				enabled = true,

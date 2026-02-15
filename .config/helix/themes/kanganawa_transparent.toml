@@ -1,0 +1,7 @@
+# ~/.config/helix/themes/kanagawa_transparent.toml
+
+inherits = "kanagawa" # or "kanagawa_dragon" if you prefer the darker one
+
+"ui.background" = {}
+"ui.statusline" = { fg = "fujiWhite", bg = "sumiInk0" } # Optional: keeps statusline opaque
+"ui.bufferline" = { fg = "fujiWhite", bg = "sumiInk0" } # Optional: keeps bufferline opaque

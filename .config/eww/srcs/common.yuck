@@ -1,0 +1,8 @@
+(defpoll gonger :interval "1s" "scripts/playgong.py")
+;; (defpoll getcss :interval "1m" "scripts/getcss.py")
+(defvar getcss ".bar { background-color: #000000; }")
+(defpoll getimage :interval "10m" `scripts/getimage.py`)
+;; Update getcss on change in image
+
+(defvar showcal false)
+(defvar showpowertray false)

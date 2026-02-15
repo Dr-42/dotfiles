@@ -1,0 +1,93 @@
+(defpoll battery :interval "30s"
+	`scripts/battery.py`)
+
+(defpoll volume :interval "1s"
+	`scripts/volume.py`)
+
+(defpoll volume_num :interval "1s"
+	`scripts/get_volume.py`)
+
+(defpoll workspaces :interval "0.1s"
+	`scripts/workspaces.py`)
+
+(defpoll brightness :interval "1s"
+	`scripts/brightness.py`)
+
+(defpoll brightness_num :interval "1s"
+	`brightnessctl get -P`)
+
+(defpoll active_window :interval "1s"
+	`scripts/active_window.py`)
+
+(defpoll showbar 
+	:interval "0.1s"
+	:initial "true"
+	`scripts/showbar.py`)
+
+
+(defwidget bar[]
+	(box 
+		:visible {showbar == "true"}
+		:css getcss
+		:class "main_content"
+		:space-evenly true
+		:orientation "h"
+		(literal :css getcss :content workspaces)
+		(label :css getcss :class "time_battery" :truncate true :text active_window)
+		(box
+			:css getcss
+			:class "time_battery"
+			:halign "end" 
+			:spacing 8
+			:space-evenly false
+			(eventbox
+				:css getcss
+				:onclick `echo "pavucontrol" | at now`
+				:onscroll "scripts/set_volume.py {}"
+				:tooltip "Volume: ${volume_num}%"
+				volume)
+			(eventbox
+				:css getcss
+				:onscroll "scripts/set_brightness.py {}"
+				:tooltip "Brightness: ${brightness_num}%"
+				brightness)
+			(label
+				:css getcss
+				:text "${battery} "
+				:tooltip `Battery: ${round(EWW_BATTERY["total_avg"], 0)}%`)
+			(eventbox
+				:css getcss
+				:onclick `${end-binary} history toggle`
+				:tooltip `Notifications`
+				""
+			)
+			(systray
+				:css getcss
+				:class "tray"
+				:spacing 2
+				:orientation "h"
+				:space-evenly true)
+			(eventbox
+				:css getcss
+				:onclick `${EWW_CMD} update showcal=true; ${EWW_CMD} open cal`
+				:tooltip `${formattime(EWW_TIME, "%A, %B %d, %Y")}`
+				`${formattime(EWW_TIME, "%I:%M:%S %p")}`
+			)
+			(button
+				:css getcss
+				:onclick `${EWW_CMD} update showpowertray=true; ${EWW_CMD} open powertray`
+				:tooltip "Power"
+				""
+			)
+)))
+
+(defwidget cal[]
+	(eventbox
+		:visible showcal
+		:css getcss
+		:class "time_battery"
+		:onhover `${EWW_CMD} update showcal=true`
+		:onhoverlost `${EWW_CMD} update showcal=false`
+		:visible showcal
+		(calendar))
+)

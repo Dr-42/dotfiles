@@ -1,0 +1,45 @@
+(defvar evd-content 0.0)
+(defvar evd-content-string "")
+
+(defwindow evd-frame
+  :monitor 0
+  :geometry (geometry
+    :x "0px"
+    :y "150px"
+    :anchor "bottom center")
+  :stacking "fg"
+  :windowtype "dialog"
+  :passthrough true
+  :wm-ignore true
+  (evd-widget))
+
+(defwidget evd-widget[]
+  (box
+    :orientation "horizontal"
+    :space-evenly false
+    :class "evd-box"
+    :css getcss
+    (image
+      :path "/home/spandan/.local/share/icons/besgnulinux-colors/categories/scalable/csd-sound.svg"
+      :css getcss
+      :class "evd-icon"
+      :valign "center"
+      :image-width 25
+      :image-height 25)
+    (progress
+      :class "evd-scale"
+      :css getcss
+      :valign "center"
+      :min 0.0
+      :max 100.0
+      :value evd-content
+      :orientation "horizontal")
+    (label
+      :css getcss
+      :valign "center"
+      :class "evd-text"
+      :text evd-content-string)
+  )
+)
+
+

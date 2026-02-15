@@ -1,7 +1,10 @@
-theme = "dracula_at_night"
+theme = "kanagawa_transparent" # Assuming you created the transparent override we discussed
 
 [editor]
 line-number = "relative"
+bufferline = "multiple"      # EQUIVALENT: mini.tabline
+true-color = true
+color-modes = true           # Color the statusline based on mode (matches your explicit mode_hl)
 
 [editor.cursor-shape]
 insert = "bar"
@@ -10,3 +13,55 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+# -----------------------------------------------------------------------------
+# STATUSLINE MIGRATION (mini.statusline)
+# -----------------------------------------------------------------------------
+# Neovim Layout: Mode | Git | Diag | Macro | Filename | ... | Venv | Fileinfo | Location
+# Helix Layout:  Mode | Git | Diag | ...   | Filename | ... | ...  | Fileinfo | Location
+# Note: Helix cannot currently show "Active Venv" or "Macro Recording" status dynamically.
+
+[editor.statusline]
+left = ["mode", "spacer", "version-control", "spacer", "diagnostics"]
+center = ["file-name"]
+right = ["file-encoding", "file-type", "spacer", "position", "position-percentage"]
+separator = "│"
+
+# Customizing the mode names to match the blocky feel
+[editor.statusline.mode]
+normal = "NORMAL"
+insert = "INSERT"
+select = "SELECT"
+
+# -----------------------------------------------------------------------------
+# KEYMAP MIGRATION (mini.starter & mini.surround)
+# -----------------------------------------------------------------------------
+[keys.normal]
+# "mini.surround" equivalents (built-in)
+# ms (surround) -> replace `sa`
+# mr (replace)  -> replace `sr`
+# md (delete)   -> replace `sd`
+
+[keys.normal.space]
+# Files & Pickers
+f = "file_picker"             # <leader>f
+F = "file_picker"             # <leader>F (optional backup)
+b = "buffer_picker"           # <leader>b
+"?" = "file_picker"           # <leader>? (Recent files)
+
+# Git
+g = { f = "file_picker" }     # <leader>gf (Helix auto-detects git root)
+
+# Config Shortcuts (Your custom mappings)
+c = { n = ":open ~/.config/nvim/init.lua", h = ":open ~/.config/hypr/hyprland.conf", x = ":open ~/.config/helix/config.toml" }
+
+# Window/Buffer Management (Standard Helix, but explicit is good)
+w = { c = ":buffer-close", o = ":buffer-close-others" }
+
+
+[keys.insert]
+# Navigate completion lists and pickers with C-j/C-k
+"C-h" = "move_char_left"
+"C-j" = "move_visual_line_down"
+"C-k" = "move_visual_line_up"
+"C-l" = "move_char_right"

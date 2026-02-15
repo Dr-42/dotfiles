@@ -1,22 +1,73 @@
-(defpoll hour :interval "1s" "date +%I")
-(defpoll min  :interval "1s" "date +%M")
-(defpoll sec  :interval "1s" "date +%S")
+(include "srcs/common.yuck")
+(include "srcs/clock.yuck")
+(include "srcs/background.yuck")
+(include "srcs/end.yuck")
+(include "srcs/bar.yuck")
+(include "srcs/powertray.yuck")
+(include "srcs/evd.yuck")
 
-(defwidget fabrial_clock []
-  (box :class "clock-face" :space-evenly false
-       ;; The Rim (Glowing with Stormlight)
-       (box :class "clock-rim"
-         ;; Hour Hand
-         (box :class "hand hour-hand" 
-              :style "transform: rotate(${hour * 30 + min / 2}deg);")
-         ;; Minute Hand
-         (box :class "hand min-hand" 
-              :style "transform: rotate(${min * 6}deg);")
-         ;; Second Hand (The Rhythm)
-         (box :class "hand sec-hand" 
-              :style "transform: rotate(${sec * 6}deg);")
-         ;; Center Hub (The Gemstone)
-         (box :class "clock-hub"))))
-       
-  
- 
+(defwindow clock
+  :css getcss
+  :monitor 0
+  :anchor "top left"
+  :geometry (geometry
+    :x      "3%"
+    :y      "10%"
+    :anchor "top left")
+  :stacking   "bg"
+  :windowtype "dock"
+  :reserve    (struts :distance "50px" :side "top")
+  (clock))
+
+
+(defwindow background 
+  :stacking "bg" 
+  :focusable "false" 
+  :monitor 0
+  :passthrough true
+  :wm-ignore true
+  :hexpand true
+  :vexpand true
+  :geometry (geometry 
+    :anchor "center"
+    :x 0 
+    :y 0 
+    :width "100%"
+    :height "100%")
+  (background))
+
+
+(defwindow bar
+  :monitor 0
+  :stacking "fg" 
+  :css getcss
+  :geometry (geometry 
+    :width { 1920 / 1.25 }
+    :anchor "top center"
+  )
+  (bar)
+)
+
+(defwindow cal
+  :monitor 0
+  :stacking "fg" 
+  :css getcss
+  :geometry (geometry 
+    :x "2%"
+    :y "2%"
+    :anchor "top right"
+  )
+  (cal)
+)
+
+(defwindow powertray
+  :monitor 0
+  :stacking "fg" 
+  :css getcss
+  :geometry (geometry 
+    :x "2%"
+    :y "2%"
+    :anchor "top right"
+  )
+  (powertray)
+)

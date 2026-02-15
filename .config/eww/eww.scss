@@ -1,62 +1,31 @@
-$bg: #0f1419;
-$fg: #e6e6e6;
-$primary: #00bfff; /* Extracted Stormlight */
-$secondary: #4c4c4c; /* Extracted Voidlight */
-
-.clock-face {
-    background-color: rgba(18, 22, 28, 0.8);
-    border-radius: 50%;
-    min-width: 200px;
-    min-height: 200px;
-    box-shadow: 0 0 15px $stormlight-blue; /* Using your rust tool's palette */
+* {
+  all: unset;
 }
 
-.clock-rim {
-    position: relative;
-    margin: 10px;
-}
+.tray menu {
+  border-radius: 10px;
+  padding: 5px 0px;
 
-.hand {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform-origin: 50% 100%; /* Pivot from bottom center */
-    border-radius: 4px;
-}
+  background-color: rgba(0, 0, 0, 0.8);
 
-.hour-hand {
-    background-color: #e6e6e6;
-    min-height: 50px;
-    min-width: 6px;
-    margin-top: -50px; /* Offset to center pivot */
-    margin-left: -3px;
-}
+  >menuitem {
+    padding: 0px 5px;
 
-.min-hand {
-    background-color: #00bfff; /* Stormlight */
-    min-height: 80px;
-    min-width: 4px;
-    margin-top: -80px;
-    margin-left: -2px;
-}
+    &:disabled label {
+      color: gray;
+    }
 
-.sec-hand {
-    background-color: #ff4444; /* Voidlight accent */
-    min-height: 90px;
-    min-width: 2px;
-    margin-top: -90px;
-    margin-left: -1px;
-}
+    &:hover {
+      background-color: #0e4679;
+    }
+  }
 
-.clock-hub {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    min-width: 12px;
-    min-height: 12px;
-    margin-left: -6px;
-    margin-top: -6px;
-    background-color: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #ffffff;
+  separator {
+    background-color: #222222;
+    padding-top: 1px;
+
+    &:last-child {
+      padding: unset;
+    }
+  }
 }
