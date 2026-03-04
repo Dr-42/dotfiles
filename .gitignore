@@ -1,3 +1,4 @@
 .config/hypr/hyprpaper.conf
 .config/hypr/hyprpaper.conf.bak
 .config/eww/scripts/__pycache__
+.config/helix/runtime

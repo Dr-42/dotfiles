@@ -1,0 +1,52 @@
+[language-server.lsp-ai]
+command = "lsp-ai"
+
+[language-server.lsp-ai.config.memory]
+file_store = {}
+
+[language-server.lsp-ai.config.models.model1]
+type = "ollama"
+model = "starcoder2:3b"
+
+[language-server.lsp-ai.config.completion]
+model = "model1"
+parameters = { options = { num_predict = 64, num_ctx = 1024 } }
+
+# --- Language Definitions ---
+
+# Synovium config
+[[language]]
+name = "synovium"
+scope = "source.syn"
+injection-regex = "syn(ovium)?"
+file-types = ["syn"]
+roots = []
+comment-token = "//"
+indent = { tab-width = 4, unit = "    " }
+language-servers = [ "lsp-ai" ]
+
+[[grammar]]
+name = "synovium"
+source = { path = "/home/spandan/Projects/probe/synovium/tree-sitter-synovium" }
+
+# Common languages
+[[language]]
+name = "rust"
+scope = "source.rs"
+language-servers = [ "rust-analyzer", "lsp-ai" ]
+
+[[language]]
+name = "c"
+scope = "source.c"
+language-servers = [ "clangd", "lsp-ai" ]
+
+[[language]]
+name = "python"
+scope = "source.py"
+language-servers = [ "pyright", "lsp-ai" ]
+
+[[language]]
+name = "plaintext"
+scope = "source.md"
+file-types = ["md"]
+language-servers = [ "lsp-ai" ]

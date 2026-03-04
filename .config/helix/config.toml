@@ -1,4 +1,4 @@
-theme = "kanagawa_transparent" # Assuming you created the transparent override we discussed
+theme = "github_dark_transparent"
 
 [editor]
 line-number = "relative"

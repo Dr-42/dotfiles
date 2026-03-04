@@ -1,1 +1,1 @@
-require('spandan')
+require("spandan")

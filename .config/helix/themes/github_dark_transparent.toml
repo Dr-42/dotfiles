@@ -1,0 +1,8 @@
+# ~/.config/helix/themes/github_dark_transparent.toml
+
+inherits = "github_dark"
+
+"ui.background" = {}
+# Keep the statusline and bufferline opaque so they don't bleed into the terminal text
+"ui.statusline" = { bg = "#0d1117" } 
+"ui.bufferline" = { bg = "#010409" }
