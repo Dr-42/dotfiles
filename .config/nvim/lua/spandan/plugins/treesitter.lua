@@ -1,55 +1,66 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	-- Eager load is correct for the main plugin
 	lazy = false,
 	priority = 1000,
 	build = ":TSUpdate",
 
-	-- COMMENT THIS OUT FOR NOW
-	-- We must disable this to stop the crash loop
-	-- dependencies = {
-	--   'nvim-treesitter/nvim-treesitter-textobjects',
-	-- },
-
 	config = function()
-		-- 1. Setup Treesitter FIRST
-		require("nvim-treesitter").setup({
-			ensure_installed = {
-				"c",
-				"cpp",
-				"go",
-				"lua",
-				"python",
-				"rust",
-				"typescript",
-				"vimdoc",
-				"vim",
-				"markdown",
-				"markdown_inline",
+		-- 1. Inject Synovium directly into the parsers table
+		require("nvim-treesitter.parsers").synovium = {
+			install_info = {
+				url = vim.fn.expand("~/Projects/probe/tree-sitter/synovium"),
+				files = { "src/parser.c" },
 			},
+		}
 
-			auto_install = true,
-			sync_install = false,
-			ignore_install = {},
-
-			highlight = { enable = true },
-			indent = { enable = true, disable = { "python" } },
-
-			incremental_selection = {
-				enable = true,
-				keymaps = {
-					init_selection = "<c-space>",
-					node_incremental = "<c-space>",
-					scope_incremental = "<c-s>",
-					node_decremental = "<c-backspace>",
-				},
+		-- 2. Tell Neovim about your custom filetypes
+		vim.filetype.add({
+			extension = {
+				syn = "synovium",
+				synovium = "synovium",
+				bend = "bend",
 			},
-
-			-- Disable textobjects config temporarily
-			-- textobjects = { ... }
 		})
 
-		vim.filetype.add({ extension = { bend = "bend" } })
+		-- Link the filetypes to their parsers
+		vim.treesitter.language.register("synovium", { "synovium" })
 		vim.treesitter.language.register("bend", { "bend" })
+
+		-- 3. Install missing standard parsers automatically
+		local ts = require("nvim-treesitter")
+		local required_parsers = {
+			"c",
+			"cpp",
+			"go",
+			"lua",
+			"python",
+			"rust",
+			"typescript",
+			"vimdoc",
+			"vim",
+			"markdown",
+			"markdown_inline",
+		}
+
+		local installed = ts.get_installed()
+		local missing = vim.iter(required_parsers)
+			:filter(function(p)
+				return not vim.tbl_contains(installed, p)
+			end)
+			:totable()
+
+		if #missing > 0 then
+			ts.install(missing)
+		end
+
+		-- 4. Enable highlighting using native Neovim APIs
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = "*",
+			callback = function(args)
+				-- pcall safely attempts to start treesitter.
+				-- If a parser doesn't exist for the filetype, it silently falls back to standard regex syntax.
+				pcall(vim.treesitter.start, args.buf)
+			end,
+		})
 	end,
 }
