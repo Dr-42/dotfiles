@@ -37,8 +37,8 @@ setft({ "lalrpop" }, "lalrpop")
 -- Set c header file types
 setft({ "h" }, "c")
 
--- Set crust file types
-setft({ "crust", "syn" }, "crust")
+-- Set rust file types
+setft({ "syn" }, "synovium")
 
 -- hyprlang
 -- setft({ "hypr", "conf" }, "hyprlang")

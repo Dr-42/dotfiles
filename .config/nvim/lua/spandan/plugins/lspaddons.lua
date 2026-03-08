@@ -97,6 +97,25 @@ return {
 			}
 			vim.lsp.enable("clangd")
 
+			-- ==========================================
+			-- 🚀 SYNOVIUM LSP INJECTION
+			-- ==========================================
+			-- Register the .syn file extension
+			vim.filetype.add({ extension = { syn = "synovium" } })
+
+			-- Define the custom server
+			vim.lsp.config.synovium = {
+				-- This assumes you have run `go build -o synovium main.go`
+				-- and placed the binary in your PATH (e.g., ~/.local/bin or /usr/local/bin)
+				-- Alternatively, use an absolute path: cmd = { "/path/to/your/repo/synovium", "lsp" }
+				cmd = { "synovium", "lsp" },
+				filetypes = { "synovium" },
+				root_markers = { ".git", "main_test.syn" },
+				capabilities = capabilities,
+			}
+			vim.lsp.enable("synovium")
+			-- ==========================================
+
 			-- 2. Define Mason-managed servers
 			local servers = {
 				rust_analyzer = {

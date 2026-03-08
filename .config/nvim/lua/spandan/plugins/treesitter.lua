@@ -5,27 +5,6 @@ return {
 	build = ":TSUpdate",
 
 	config = function()
-		-- 1. Inject Synovium directly into the parsers table
-		require("nvim-treesitter.parsers").synovium = {
-			install_info = {
-				url = vim.fn.expand("~/Projects/probe/tree-sitter/synovium"),
-				files = { "src/parser.c" },
-			},
-		}
-
-		-- 2. Tell Neovim about your custom filetypes
-		vim.filetype.add({
-			extension = {
-				syn = "synovium",
-				synovium = "synovium",
-				bend = "bend",
-			},
-		})
-
-		-- Link the filetypes to their parsers
-		vim.treesitter.language.register("synovium", { "synovium" })
-		vim.treesitter.language.register("bend", { "bend" })
-
 		-- 3. Install missing standard parsers automatically
 		local ts = require("nvim-treesitter")
 		local required_parsers = {
@@ -41,6 +20,19 @@ return {
 			"markdown",
 			"markdown_inline",
 		}
+
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "TSUpdate",
+			callback = function()
+				require("nvim-treesitter.parsers").synovium = {
+					install_info = {
+						path = "/home/spandan/Projects/probe/tree-sitter-synovium",
+						-- optional entries:
+						queries = "/home/spandan/Projects/probe/tree-sitter-synovium/queries", -- also install queries from given directory
+					},
+				}
+			end,
+		})
 
 		local installed = ts.get_installed()
 		local missing = vim.iter(required_parsers)
