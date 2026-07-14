@@ -84,13 +84,31 @@ vim.opt.matchtime = 2 -- How long to show matching bracket
 vim.opt.backup = false -- Don't create backup files
 vim.opt.writebackup = false -- Don't create backup before writing
 vim.opt.swapfile = false -- Don't create swap files
-vim.opt.undofile = true -- Persistent undo
-vim.opt.undodir = vim.fn.expand("~/.vim/undodir") -- Undo directory
-vim.opt.updatetime = 300 -- Faster completion
+
+-- Persistent undo configuration
+local undodir = vim.fn.expand("~/.vim/undodir")
+if vim.fn.isdirectory(undodir) == 0 then
+	vim.fn.mkdir(undodir, "p") -- Automatically create the directory if it doesn't exist
+end
+vim.opt.undodir = undodir -- Undo directory
+vim.opt.undofile = true -- Persistent undo for every file edited
+
+vim.opt.updatetime = 250 -- Faster completion (consolidated to 250)
 vim.opt.timeoutlen = 500 -- Key timeout duration
 vim.opt.ttimeoutlen = 0 -- Key code timeout
-vim.opt.autoread = true -- Auto reload files changed outside vim
 vim.opt.autowrite = true -- Don't auto save
+
+-- Autoreload files changed outside vim
+vim.opt.autoread = true
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+	pattern = "*",
+	callback = function()
+		-- Ensure we only checktime for actual files to avoid errors in prompt/terminal buffers
+		if vim.api.nvim_buf_get_name(0) ~= "" then
+			vim.cmd("checktime")
+		end
+	end,
+})
 
 -- Behavior settings
 vim.opt.hidden = true -- Allow hidden buffers
@@ -113,21 +131,8 @@ vim.opt.encoding = "UTF-8" -- Set encoding
 vim.o.numberwidth = 2
 vim.o.signcolumn = "auto"
 
--- Enable mouse mode
-vim.o.mouse = "a"
-
 -- Enable break indent
 vim.o.breakindent = true
-
--- Save undo history
-vim.o.undofile = true
-
--- Case insensitive searching UNLESS /C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
--- Decrease update time
-vim.o.updatetime = 250
 
 -- Set colorscheme
 vim.o.termguicolors = true
@@ -141,7 +146,6 @@ if vim.fn.has("win32") == 1 then
 	vim.o.shellcmdflag = "-NoProfile -command"
 	vim.o.shellquote = '"'
 	vim.o.shellxquote = ""
-	--vim.o.shell = 'C:/msys64/msys2_shell.cmd -defterm -here -no-start -mingw64 -shell zsh'
 end
 
 -- Set foldmethod to indent

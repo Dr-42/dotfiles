@@ -147,6 +147,18 @@ function M.keymaps()
 			.. zotero_citation_style
 		vim.cmd(cmd)
 	end, { desc = "[Z]otero [C]ompile" })
+
+	-- Spell check
+	-- In your init.lua or keymaps.lua
+	vim.keymap.set("n", "<leader>sp", function()
+		vim.opt.spell = not (vim.opt.spell:get())
+		if vim.opt.spell:get() then
+			vim.opt.spelllang = "en_uk"
+			print("Spellcheck: ON")
+		else
+			print("Spellcheck: OFF")
+		end
+	end, { desc = "Toggle Spellcheck" })
 end
 
 return M
